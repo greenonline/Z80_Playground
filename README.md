@@ -137,9 +137,47 @@ Available on Github: [61512 for KiCAD 6](https://github.com/greenonline/61512_fo
 
 As a 74HC32 was not present on KiCAD 6, I had to use a 74LS32 instead – same pinout.
 
+## Parts list
+
+| Part    | Qty | Description                           |
+|---------|-----|---------------------------------------|
+| Z80     | 1   | CPU                                   |
+| 61512   | 1   | RAM                                   |
+| 28C256  | 1   | EEPROM                                |
+| 16C550  | 1   | UART                                  |
+| 74HC02  | 1   | NOR                                   |
+| 74HC32  | 2   | OR                                    |
+| 74HC14  | 1   | NOT                                   |
+| switch  | 3   | Push button                           |
+| LED     | 5   | Power, user, halt, rom, disk          |
+| R       | 14  | Resistor                              |
+| 470R    | 1   | Resistor   CPU clock                  |
+| 1k      | 5   | Resistor   LED                        |
+| 1k5     | 1   | Resistor   UART clock                 |
+| 10k     | 6   | Resistor   pull down (3), pull up (3) |
+| 1M      | 1   | Resistor   CPU clock                  |
+| C       | 13  | Capacitor                             |
+| 8 pF    | 2   | Capacitor   CPU Crystal               |
+| 22 pF   | 1   | Capacitor   UART Crytal               |
+| 47 pF   | 1   | Capacitor   UART Crytal               |
+| 100 nF  | 8   | Capacitor   Decoupling                |
+| 1 µF    | 1   | Capacitor   Interrupt                 |
+| 10 µF   | 1   | Capacitor   Reset                     |
+| 47 µF   | 1   | Capacitor   Power                     |
+| 1x03    | 2   | Header, J1 and J2                     |
+| 1x06    | 1   | Header, TTL Serial, H1                |
+| 2x03    | 1   | USB1                                  |
+| 2x08    | 1   | USB2                                  |
+| 1x36    | 1   | Edge connector, H2 (optional)         |
+| 1x40    | 1   | Edge connector, H2 (optional)         |
+| CH375   | 1   | USB module                            |
+| FTDI    | 1   | USB to TTL serial                     |
 
 
 ## TODO
 
  - Rename XTAL to X1 and X2 instead of Y1 and Y2?
  - Rename Headers and Jumpers? H1 or J1?
+ - Add ZIF for EEPROM?
+ - 4 IC mention and link
+ - The OR gates in the original schmatic look awful and are inconsistant with the NOR gates, which *are* correctly depicted.
