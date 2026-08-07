@@ -3,25 +3,30 @@ A repo containing info for the Z80 SBC, designed by John Squires
 
 # Z80_Playground
 
-Or [PlaygroundZ80](https://github.com/greenonline/playgroundZ80)!!!
+Or [playgroundZ80](https://github.com/greenonline/playgroundZ80)!!!
 
 ## Preamble
 
-John Squires, of the now defunt [8bitstack.co.uk](https://8bitstack.co.uk), and the YouTube channel, [John Squires](https://www.youtube.com/@CircuitBreaker256), created a very nifty Z80 SBC that could run CP/M and Tiny BASIC, amongst other things.
+John Squires, of the now defunt [8bitstack.co.uk](https://8bitstack.co.uk), and the YouTube channel, [John Squires](https://www.youtube.com/@CircuitBreaker256), created a very nifty Z80 SBC that could run CP/M and Tiny BASIC, amongst other things. 
+
+Whilst it is now pretty difficult to find much info out about its design, he did mention that an earlier iteration upon breadboard, was based upon the Four IC Z80 SBC – In the videos he refers to similarity of the breadboard version to the "4 IC Z80", most probably this: [A 4\$, 4ICs, Z80 homemade computer on breadboard](https://hackaday.io/project/19000-a-4-4ics-z80-homemade-computer-on-breadboard/). 
 
 Unfortunately, around 2022, new videos ceased to be posted, and the whole project seemed to have died.
 
-There don't appear to be any parts lists, schematics, PCB layouts, gerber files – basically, there seems to be little in the way of hardward documentationb, apart from the videos. However, there are still Github repos for the software, that are still up, so that is good.
+There don't appear to be any parts lists, schematics, PCB layouts, Gerber files, etc. – basically, there seems to be little in the way of hardware documentation, apart from the videos. However, there are still Github repos for the software, that are still up, so that is good.
 
 Using the Wayback machine I managed to get hold of some PDFs of the schematics for v1.1 and v.1.2, and some additional software, see the section **Wayback data** below.
 
 From these schematic diagrams, using KiCAD 6, I managed to recreate the schematics and the PCB, for v1.2.
 
-I reused, where I could, the Squires 'forward-slash-and-lowercase-camelcase' type of annotation – even though it feels rather inconsistant and messy/awkward.
+I reused, where I could, the Squires 'forward-slash-and-lowercase-camelcase' type of annotation – even though it feels rather inconsistent and messy/awkward.
 
-I also made two other variants: a (IMHO) better annotated version (`GOL`, AKA `MJ`, variant), using a a shorter (more standard) 'uppercase-and-underscore' form of annotation., and; a version using an RC2014 Extended bus (`RCBUS` variant), that should make the board a bit more useful, *if* you so happen to have an RC2014 lying around – see [playgroundZ80](https://github.com/greenonline/playgroundZ80).
+In addition to the original Squires version, I also made two other variants: 
 
-There is also my initial attempt, that has two styles of annotation: the Squires 'forward-slash-and-lowercase-camelcase' type and a shorter (more standard) 'uppercase-and-underscore' form of annotation. This is the `dual version` variant.
+ - A (IMHO) better annotated version (`GOL`, AKA `MJ`, variant), using a shorter (more standard) 'uppercase-and-underscore' form of annotation, and; 
+ - A version using an RC2014 Extended bus (`RCBUS` variant), that should make the board a bit more useful, *if* you so happen to have an RC2014 lying around – see [playgroundZ80](https://github.com/greenonline/playgroundZ80).
+
+There is also a version arising from my *initial attempt*, that has two styles of annotation: the Squires 'forward-slash-and-lowercase-camelcase' type and a shorter (more standard) 'uppercase-and-underscore' form of annotation. This is the so-called `dual version` variant. I have retained this as a starting point for other variants, but it should not be used as a complete board design.
 
 I have also had to make some changes relating to how KiCAD works, do the resulting schematics will not match exactly.
 
@@ -179,5 +184,4 @@ As a 74HC32 was not present on KiCAD 6, I had to use a 74LS32 instead – same p
  - Rename XTAL to X1 and X2 instead of Y1 and Y2?
  - Rename Headers and Jumpers? H1 or J1?
  - Add ZIF for EEPROM?
- - 4 IC mention and link
- - The OR gates in the original schmatic look awful and are inconsistant with the NOR gates, which *are* correctly depicted.
+ - The OR gates in the original schematic look awful and are inconsistent with the NOR gates, which *are* correctly depicted.
