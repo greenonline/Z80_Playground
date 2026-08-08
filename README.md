@@ -7,9 +7,9 @@ Or [playgroundZ80](https://github.com/greenonline/playgroundZ80)!!!
 
 ## Preamble
 
-John Squires, of the now defunt [8bitstack.co.uk](https://8bitstack.co.uk), and the YouTube channel, [John Squires](https://www.youtube.com/@CircuitBreaker256), created a very nifty Z80 SBC that could run CP/M and Tiny BASIC, amongst other things. 
+John Squires, of the now defunt [8bitstack.co.uk](https://8bitstack.co.uk), and the YouTube channel, [John Squires](https://www.youtube.com/@CircuitBreaker256), created a very nifty Z80 SBC, called *Z80 Playground*, that could run CP/M and Tiny BASIC, amongst other things. 
 
-Whilst it is now pretty difficult to find much info out about its design, he did mention that an earlier iteration upon breadboard, was based upon the Four IC Z80 SBC – In the videos he refers to similarity of the breadboard version to the "4 IC Z80", most probably this: [A 4\$, 4ICs, Z80 homemade computer on breadboard](https://hackaday.io/project/19000-a-4-4ics-z80-homemade-computer-on-breadboard/). 
+Whilst it is now pretty difficult to find much info out about its design, he did mention that an earlier iteration upon breadboard, was based upon the *Four IC Z80 SBC* – in the videos, he refers to similarity of the breadboard version to the "4 IC Z80" design – which is, most probably, this project, [A 4\$, 4ICs, Z80 homemade computer on breadboard](https://hackaday.io/project/19000-a-4-4ics-z80-homemade-computer-on-breadboard/). 
 
 Unfortunately, around 2022, new videos ceased to be posted, and the whole project seemed to have died.
 
@@ -17,7 +17,7 @@ There don't appear to be any parts lists, schematics, PCB layouts, Gerber files,
 
 Using the Wayback machine I managed to get hold of some PDFs of the schematic diagrams for v1.1 and v.1.2, and some additional software, see the section **Wayback data** below.
 
-While I couldn't find any PDFs of the v1.0 schematic digram, I did manage to get some screenshots of the v1.0 schematic digram, from a video. See section **Screenshots** below.
+While I couldn't find any PDFs of the v1.0 schematic digram, I did manage to get some screenshots of the v1.0 schematic digram, from a video. See the section **Screenshots** below.
 
 From the schematic diagrams, using KiCAD 6, I managed to recreate the schematics and the PCB, for v1.2.
 
@@ -50,6 +50,20 @@ From the [Wayback Machine for 8bitstack.co.uk](https://web.archive.org/web/20210
  - [More links, z80ccp](https://web.archive.org/web/20210508135102/http://8bitstack.co.uk/)
  - [Even more links, sd.com, z80ccp, core_jump, 2048](https://web.archive.org/web/20211020202250/http://8bitstack.co.uk/)
  - There are many *other* snapshots of the site, present on the Wayback Machine, that I have not investigated, due to time constraints. I only checked the earliest three snapshots or so.
+ 
+### Z80 Playground based projects
+
+ - [A self-contained CP/M computer based on the Z80 Playground](https://kevinboone.me/z80pg.html)
+ - [John Squires "Z80 Playground"](https://www.mccrash-racing.co.uk/philg/z80playground/playground.htm)
+ - [Building a Z80-MBC3 standalone computer](https://www.digitalplayground.be/?p=6292)
+
+### Manuals
+
+#### German
+
+ - From [Projekte___Z80-Playground](https://erik-bartmann.de/?Projekte___Z80-Playground):
+   - [Danke für den Kauf](https://erik-bartmann.de/userfiles/downloads/Z80/Danke%20fuer%20den%20Kauf%20des%20Z80-Playground.pdf), repo copy: [Danke für den Kauf](xtras/manuals/de/Danke%20fuer%20den%20Kauf%20des%20Z80-Playground.pdf) 
+   - [Z80-Playground](https://erik-bartmann.de/userfiles/downloads/Z80/Z80Playground.pdf), repo copy: [Z80-Playground](xtras/manuals/de/Z80Playground.pdf)
 
 ## Videos
 
@@ -78,7 +92,7 @@ The screenshots of schematics and PCB layout of the v1.0 board were taken from [
 
 ### Wayback data
 
-Information and data recovered from the Wayback machine, included in *this* repo:
+Information and data recovered from the  [Wayback Machine for 8bitstack.co.uk](https://web.archive.org/web/20210000000000*/8bitstack.co.uk), included in *this* repo:
 
  - Hardware
    - [V1.1 schematic PDF](xtras/hardware/wayback/Schematic_Z80-playground_v1_1.pdf)
@@ -96,8 +110,6 @@ Source links:
  - [More links, z80ccp](https://web.archive.org/web/20210508135102/http://8bitstack.co.uk/)
  - [Even more links, sd.com, z80ccp, core_jump, 2048](https://web.archive.org/web/20211020202250/http://8bitstack.co.uk/)
  
- 
- 
 ### Footprints used
 
 #### MJ/GOL variant
@@ -113,15 +125,15 @@ Capacitors:
 
 Resistors:
 
- - R8 10k: `Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal`
+ - `R8` 10k: `Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal`
 
 XTAL
 
- - Y1 :`Crystal:Crystal_HC49-4H_Vertical`
+ - `Y1` :`Crystal:Crystal_HC49-4H_Vertical`
 
 Switch
 
- - SW1: `Button_Switch_SMD:SW_SPST_CK_RS282G05A3`
+ - `SW1`: `Button_Switch_SMD:SW_SPST_CK_RS282G05A3`
  - Also posible: `Button_Switch_SMD:SW_Tactile_SPST_NO_Straight_CK_PTS636Sx25SMTRLFS`
  - OMRON: `???`
 
@@ -150,46 +162,114 @@ Available on Github: [61512 for KiCAD 6](https://github.com/greenonline/61512_fo
 
 As a 74HC32 was not present on KiCAD 6, I had to use a 74LS32 instead – same pinout.
 
+### Layout
+
+Please refer to [Z80 Playground v1.2 - layout](documentation/Z80%20Playground%20v1.2%20-%20layout.md).
+
 ## Parts list
 
-| Part    | Qty | Description                           |
-|---------|-----|---------------------------------------|
-| Z80     | 1   | CPU                                   |
-| 61512   | 1   | RAM                                   |
-| 28C256  | 1   | EEPROM                                |
-| 16C550  | 1   | UART                                  |
-| 74HC02  | 1   | NOR                                   |
-| 74HC32  | 2   | OR                                    |
-| 74HC14  | 1   | NOT                                   |
-| switch  | 3   | Push button                           |
-| LED     | 5   | Power, user, halt, rom, disk          |
-| R       | 14  | Resistor                              |
-| 470R    | 1   | Resistor   CPU clock                  |
-| 1k      | 5   | Resistor   LED                        |
-| 1k5     | 1   | Resistor   UART clock                 |
-| 10k     | 6   | Resistor   pull down (3), pull up (3) |
-| 1M      | 1   | Resistor   CPU clock                  |
-| C       | 13  | Capacitor                             |
-| 8 pF    | 2   | Capacitor   CPU Crystal               |
-| 22 pF   | 1   | Capacitor   UART Crytal               |
-| 47 pF   | 1   | Capacitor   UART Crytal               |
-| 100 nF  | 8   | Capacitor   Decoupling                |
-| 1 µF    | 1   | Capacitor   Interrupt                 |
-| 10 µF   | 1   | Capacitor   Reset                     |
-| 47 µF   | 1   | Capacitor   Power                     |
-| 1x03    | 2   | Header, J1 and J2                     |
-| 1x06    | 1   | Header, TTL Serial, H1                |
-| 2x03    | 1   | USB1                                  |
-| 2x08    | 1   | USB2                                  |
-| 1x36    | 1   | Edge connector, H2 (optional)         |
-| 1x40    | 1   | Edge connector, H2 (optional)         |
-| CH375   | 1   | USB module                            |
-| FTDI    | 1   | USB to TTL serial                     |
+Note: This following table is deprecated by the next expanded table down.
 
+| Part    | Qty | Description                            |
+|---------|-----|----------------------------------------|
+| IC      | 8   | IC        total                        |
+| Z80     | 1   | CPU                                    |
+| 61512   | 1   | RAM                                    |
+| 28C256  | 1   | EEPROM                                 |
+| 16C550  | 1   | UART                                   |
+| 74HC02  | 1   | NOR                                    |
+| 74HC32  | 2   | OR                                     |
+| 74HC14  | 1   | NOT                                    |
+| Switch  | 3   | Push button                            |
+| LED     | 5   | Power, user, halt, rom, disk           |
+| R       | 14  | Resistor  total                        |
+| 470R    | 1   | Resistor  - CPU clock                  |
+| 1k      | 5   | Resistor  - LED                        |
+| 1k5     | 1   | Resistor  - UART clock                 |
+| 10k     | 6   | Resistor  - Pull down (3), pull up (3) |
+| 1M      | 1   | Resistor  - CPU clock                  |
+| C       | 13  | Capacitor total                        |
+| 8 pF    | 2   | Capacitor - CPU Crystal                |
+| 22 pF   | 1   | Capacitor - UART Crytal                |
+| 47 pF   | 1   | Capacitor - UART Crytal                |
+| 100 nF  | 8   | Capacitor - Decoupling                 |
+| 1 µF    | 1   | Capacitor - Interrupt                  |
+| 10 µF   | 1   | Capacitor - Reset                      |
+| 47 µF   | 1   | Capacitor - Power                      |
+| Header  | 6   | Header total                           |
+| 1x03    | 2   | Header, J1 and J2                      |
+| 1x06    | 1   | Header, TTL Serial, H1                 |
+| 2x03    | 1   | USB1                                   |
+| 2x08    | 1   | USB2                                   |
+| 1x36    | 1   | Edge connector, H2 (optional)          |
+| 1x40    | 1   | Edge connector, H2 (optional)          |
+| CH375   | 1   | USB module                             |
+| FTDI    | 1   | USB to TTL serial                      |
+
+Note: Three capacitors, C14-C16, are not present in the schematic.
+
+A more complete table, showing component IDs:
+
+| ID                | Part    | Qty | Description                            |
+|-------------------|---------|-----|----------------------------------------|
+| ----------------- | IC      | 8   | IC        total                        |
+| U1                | Z80     | 1   | CPU                                    |
+| U2                | 61512   | 1   | RAM                                    |
+| U3                | 28C256  | 1   | EEPROM                                 |
+| U11               | 16C550  | 1   | UART                                   |
+| U8                | 74HC02  | 1   | NOR                                    |
+| U5,6              | 74HC32  | 2   | OR                                     |
+| U7                | 74HC14  | 1   | NOT                                    |
+| ----------------- | R       | 14  | Resistor  total                        |
+| R6                | 470R    | 1   | Resistor  - CPU clock                  |
+| R1-3, R10, R16    | 1k      | 5   | Resistor  - LED                        |
+| R7                | 1k5     | 1   | Resistor  - UART clock                 |
+| R4, R8-9, R13-15  | 10k     | 6   | Resistor  - Pull down (3), pull up (3) |
+| R5                | 1M      | 1   | Resistor  - CPU clock                  |
+| ----------------- | C       | 15  | Capacitor total                        |
+| C5,6              | 8 pF    | 2   | Capacitor - CPU Crystal                |
+| C18               | 22 pF   | 1   | Capacitor - UART Crytal                |
+| C17               | 47 pF   | 1   | Capacitor - UART Crytal                |
+| C3-4, C7-13       | 100 nF  | 8   | Capacitor - Decoupling                 |
+| C2                | 1 µF    | 1   | Capacitor - Interrupt                  |
+| C1                | 10 µF   | 1   | Capacitor - Reset                      |
+| C8                | 47 µF   | 1   | Capacitor - Power                      |
+| ----------------- | Header  | 6   | Header total                           |
+| J1, J2 (P1, P2)   | 1x03    | 2   | Header, J1 and J2                      |
+| H1                | 1x06    | 1   | Header, TTL Serial, H1                 |
+| J5     (U10)      | 2x03    | 1   | USB1                                   |
+| J6     (U10)      | 2x08    | 1   | USB2                                   |
+| H2                | 1x36    | 1   | Edge connector, H2 (optional)          |
+| H2                | 1x40    | 1   | Edge connector, H2 (optional)          |
+| ----------------- | Switch  | 3   | Switch total                           |
+| SW1-3             | Switch  | 3   | Push button                            |
+| ----------------- | LED     | 5   | LED total                              |
+| LED1-5            | LED     | 5   | Power, user, halt, rom, disk           |
+| ----------------- | Other   | 2   | Other total                            |
+| U10               | CH375   | 1   | USB module                             |
+| TTL serial        | FTDI    | 1   | USB to TTL serial                      |
+
+
+
+## Additional "homebrew" notes
+
+See [Homebrew](documentation/Homebrew/Homebrew.md) for some rough auxiliary notes about homebrew retro SBC systems.
+
+[Or put on separate repo?]
 
 ## TODO
 
  - Rename XTAL to X1 and X2 instead of Y1 and Y2?
- - Rename Headers and Jumpers? H1 or J1?
+   - X1 and X2 renamed Y1 and Y2, as KiCAD auto named
+ - Rename Headers and Jumpers? H1 or J1? P1 or J1?
+   - P1 and P2 renamed J1 and J2, as they are jumpers
+   - H1 and H2 are actually headers, renamed from KiCAD default of J1 and J2
+   - J5 and J6 are not jumpers, but connectors to the CH375S board
  - Add ZIF for EEPROM?
+   - It is smaller without ZIF
+   - ZIF is ugly?
+   - ZIF is unnecessary for an unmodified board, i.e. fixed ROM
+   - ZIF is useful for "playing about" – reduces wear, damage, etc..
  - The OR gates in the original schematic look awful and are inconsistent with the NOR gates, which *are* correctly depicted.
+ - Modify symbol title 72LS32 -> 74HC32?
+ - Are all of the ceramic caps silkscreened as polarised caps? There are only three electrolytic caps (1, 10, and 47 µF)
