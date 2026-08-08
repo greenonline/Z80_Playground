@@ -70,7 +70,11 @@ disk             user1 halt /rom
 TTL Serial: TX RX VCC RTS GNS
 ```
 
+Note: C14, C15 and C16 are missing from layout – they are missing from schematic as well.
+
 #### Images used to see component IDs
+
+##### YouTube
 
 In order to identify the components of the board, I took a couple of series of screenshots from a couple of videos.
 
@@ -83,7 +87,18 @@ The second series are much clearer screenshots, as it shows an unpopulated board
    - [How to make a Z80 Playground from a kit](https://www.youtube.com/watch?v=t-Bo6TdpKzw)
    
  These screenshots can be seen here, [v.1.2](../xtras/hardware/screenshots/v1.2)
+ 
+##### eBay
 
+I managed to find some sold-out items on eBay in Canada. From [Z80 Playground Single Board Computer Kit](https://www.cafr.ebay.ca/itm/114754711447):
+
+[![PCB v1.2][1]][1]
+ 
+[![PCB v1.2 blurry][2]][2]
+
+
+  [1]: ../xtras/hardware/screenshots/v1.2/ebay/Z80%20Playground%20v1.2%20PCB%20and%20components.jpeg "PCB v1.2"
+  [2]: ../xtras/hardware/screenshots/v1.2/ebay/Z80%20Playground%20v1.2%20PCB%20(blurry).jpg "PCB v1.2 blurry"
 
 ### Deviations from original
 
