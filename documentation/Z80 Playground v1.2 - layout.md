@@ -90,7 +90,7 @@ The second series are much clearer screenshots, as it shows an unpopulated board
  
 ##### eBay
 
-I managed to find some sold-out items on eBay in Canada. From [Z80 Playground Single Board Computer Kit](https://www.cafr.ebay.ca/itm/114754711447):
+I managed to find some sold-out items on eBay in Canada, from whence I save the photos of the PCB and components. From [Z80 Playground Single Board Computer Kit](https://www.cafr.ebay.ca/itm/114754711447) (£41.00, C$77.10):
 
 [![PCB v1.2][1]][1]
  
