@@ -13,6 +13,13 @@ Whilst it is now pretty difficult to find much info out about its design, he did
 
 Unfortunately, around 2022, new videos ceased to be posted, and the whole project seemed to have died.
 
+This is the best image of the PCB and components that I could find, via [a sold out ebay listing](https://www.cafr.ebay.ca/itm/114754711447):
+
+[![PCB v1.2][1]][1]
+
+  [1]: xtras/hardware/screenshots/v1.2/ebay/Z80%20Playground%20v1.2%20PCB%20and%20components.jpeg "PCB v1.2"
+
+
 There don't appear to be any parts lists, schematics, PCB layouts, Gerber files, etc. – basically, there seems to be little in the way of hardware documentation, apart from the videos. However, there are still Github repos for the software, that are still up, so that is good.
 
 Using the Wayback machine I managed to get hold of some PDFs of the schematic diagrams for v1.1 and v.1.2, and some additional software, see the section **Wayback data** below.
