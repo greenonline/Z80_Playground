@@ -15,15 +15,17 @@ Unfortunately, around 2022, new videos ceased to be posted, and the whole projec
 
 There don't appear to be any parts lists, schematics, PCB layouts, Gerber files, etc. – basically, there seems to be little in the way of hardware documentation, apart from the videos. However, there are still Github repos for the software, that are still up, so that is good.
 
-Using the Wayback machine I managed to get hold of some PDFs of the schematics for v1.1 and v.1.2, and some additional software, see the section **Wayback data** below.
+Using the Wayback machine I managed to get hold of some PDFs of the schematic diagrams for v1.1 and v.1.2, and some additional software, see the section **Wayback data** below.
 
-From these schematic diagrams, using KiCAD 6, I managed to recreate the schematics and the PCB, for v1.2.
+While I couldn't find any PDFs of the v1.0 schematic digram, I did manage to get some screenshots of the v1.0 schematic digram, from a video. See section **Screenshots** below.
 
-I reused, where I could, the Squires 'forward-slash-and-lowercase-camelcase' type of annotation – even though it feels rather inconsistent and messy/awkward.
+From the schematic diagrams, using KiCAD 6, I managed to recreate the schematics and the PCB, for v1.2.
+
+I reused, where I could, the Squires '*forward-slash-and-lowercase-camelcase*' type of annotation – even though it feels rather inconsistent and messy/awkward.
 
 In addition to the original Squires version, I also made two other variants: 
 
- - A (IMHO) better annotated version (`GOL`, AKA `MJ`, variant), using a shorter (more standard) 'uppercase-and-underscore' form of annotation, and; 
+ - A (IMHO) better annotated version (`GOL`, AKA `MJ`, variant), using a shorter (more standard) '*uppercase-and-underscore*' form of annotation, and; 
  - A version using an RC2014 Extended bus (`RCBUS` variant), that should make the board a bit more useful, *if* you so happen to have an RC2014 lying around – see [playgroundZ80](https://github.com/greenonline/playgroundZ80).
 
 There is also a version arising from my *initial attempt*, that has two styles of annotation: the Squires 'forward-slash-and-lowercase-camelcase' type and a shorter (more standard) 'uppercase-and-underscore' form of annotation. This is the so-called `dual version` variant. I have retained this as a starting point for other variants, but it should not be used as a complete board design.
@@ -67,6 +69,12 @@ Some links to videos on John Squires' YouTube channel:
   - There *may* be others...
 
 ## Notes
+
+### Screenshots
+
+Some [screen shots of v.1.0 schematic](xtras/hardware/screenshots/v1.0/) are available.
+
+The screenshots of schematics and PCB layout of the v1.0 board were taken from [Z80 Playground - the Single Board Computer that runs CP/M](https://www.youtube.com/watch?v=CIgxkcXNp1w&list=PL3arA6T9kycrDQMQRP57nJH84IMWwp1zI&index=7) at [4:05](https://www.youtube.com/watch?v=CIgxkcXNp1w&list=PL3arA6T9kycrDQMQRP57nJH84IMWwp1zI&index=7&t=245).
 
 ### Wayback data
 
