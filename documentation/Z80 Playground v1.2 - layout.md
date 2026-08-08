@@ -96,14 +96,40 @@ I managed to find some sold-out items on eBay in Canada, from whence I save the 
  
 [![PCB v1.2 blurry][2]][2]
 
-
-  [1]: ../xtras/hardware/screenshots/v1.2/ebay/Z80%20Playground%20v1.2%20PCB%20and%20components.jpeg "PCB v1.2"
-  [2]: ../xtras/hardware/screenshots/v1.2/ebay/Z80%20Playground%20v1.2%20PCB%20(blurry).jpg "PCB v1.2 blurry"
-
 ### Deviations from original
 
  - P1 and P2 renamed J1 and J2, as they are jumpers
  - X1 and X2 renamed Y1 and Y2, as KiCAD auto named
 
+### Spacing of the CH376S connectors
+
+The correct physical orientation, spacing and alignment of the two header pin sockets, J5 (02x03) and J6 (02x08), to the CH376S PCB is *essential*. Mostly in their *relative position to eachother* but also, to a lesser extent, the *absolute position on the board*, such that the daughter board does not protrude. The latter part also goes for the TTL serial daughter board.
+
+J5:
+
+ - From top: 
+ - From left: 
+
+J6:
+
+ - From top: 
+ - From left: 
+
+J5 to J6:
+
+ - Horizontal: 
+ - Vertical: 
+
+Note that the shorted Rx and GND pins on J5 are on the side of the 2x3 socket *towards the inside* of the daughter board:
+
+[![CH375S showing jumper on J5][3]][3]
+
+
+
+<!-- Images -->
+
+  [1]: ../xtras/hardware/screenshots/v1.2/ebay/Z80%20Playground%20v1.2%20PCB%20and%20components.jpeg "PCB v1.2"
+  [2]: ../xtras/hardware/screenshots/v1.2/ebay/Z80%20Playground%20v1.2%20PCB%20(blurry).jpg "PCB v1.2 blurry"
+  [3]: ../xtras/hardware/screenshots/CH375S/CH375S%20showing%20jumper%20on%20J5.png "CH375S showing jumper on J5"
 
 
