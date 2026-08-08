@@ -82,7 +82,7 @@ The second series are much clearer screenshots, as it shows an unpopulated board
 
    - [How to make a Z80 Playground from a kit](https://www.youtube.com/watch?v=t-Bo6TdpKzw)
    
- These screenshots can be seen here, [v.1.2](xtras/hardware/screenshots/v1.2)
+ These screenshots can be seen here, [v.1.2](../xtras/hardware/screenshots/v1.2)
 
 
 ### Deviations from original
