@@ -130,65 +130,7 @@ Source links:
  
 ### Footprints used
 
-#### MJ/GOL variant
-
-This was the first PCB layout attempt. The footprints used are listed below.
-
-Capacitors:
-
- - `C1` 10 µF: `Capacitor_THT:CP_Radial_D5.0mm_P2.50mm`
- - `C2` 1 µF: `Capacitor_THT:CP_Radial_D5.0mm_P2.00mm`
- - `C8` 47 µF: `Capacitor_THT:CP_Radial_D6.3mm_P2.50mm`
- - `C13` 100 nF: `Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm`
- - `C9` 100 nF: `Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm`
- - `C17` 47 pF: `Capacitor_THT:C_Disc_D3.8mm_W2.6mm_P2.50mm`
- - `C18` 22 pF: `Capacitor_THT:C_Disc_D3.8mm_W2.6mm_P2.50mm`
- - `C5` 8 pF: `Capacitor_THT:C_Disc_D3.8mm_W2.6mm_P2.50mm`
- - `C6` 8 pF: `Capacitor_THT:C_Disc_D3.8mm_W2.6mm_P2.50mm`
- - Maybe for `C5` and `C6` 8 pF (RCBUS): `Capacitor_THT:C_Disc_D3.0mm_W2.0mm_P2.50mm`
-
-Resistors:
-
- - `R8` 10k: `Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal`
- - Vertical: `Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical`
-
-XTAL
-
- - `Y1`: `Crystal:Crystal_HC49-4H_Vertical`
-
-Switch
-
- - `SW1`: `Button_Switch_SMD:SW_SPST_CK_RS282G05A3`
- - Also possible: `Button_Switch_SMD:SW_Tactile_SPST_NO_Straight_CK_PTS636Sx25SMTRLFS`
- - OMRON: `???`
-
-Headers
-
- - `H1`: `Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Horizontal`
- - `H2`: was `My_Components:Conn_Pin_Header_39x1_2.54mm`, now `Connector_PinHeader_2.54mm:PinHeader_1x39_P2.54mm_Horizontal`
- - `H3` (RCBUS): `Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Horizontal`
- - `H4` (RCBUS): `Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Horizontal`
-
-Jumpers:
-
- - `J1`: `Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical`
- - `J2`: `Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical`
- - `J5`: `Connector_PinSocket_2.54mm:PinSocket_2x03_P2.54mm_Vertical`
- - `J6`: `Connector_PinSocket_2.54mm:PinSocket_2x08_P2.54mm_Vertical`
-
-LED:
-
- - `LED1`: `LED_THT:LED_D3.0mm`
-
-IC:
-
- - `U8` (GOL): `Package_DIP:DIP-14_W7.62mm_LongPads`
- - `U5` (Squires): `Package_DIP:DIP-14_W7.62mm`
- - `U6` (Squires): `Package_DIP:DIP-14_W7.62mm`
- - `U7` (Squires): `Package_DIP:DIP-14_W7.62mm`
- - `U8` (Squires): `Package_DIP:DIP-14_W7.62mm`
- - `U8` (RCBUS): `Package_DIP:DIP-14_W7.62mm`
-
+See [Z80 Playground v1.2 - footprints](documentation/Z80%20Playground%20v1.2%20-%20footprints.md) for notes on the component footprints used for the Z80 Playground v1.2 layout.
 
 ### KiCAD 6 quirks
 
@@ -210,88 +152,7 @@ Please refer to [Z80 Playground v1.2 - layout](documentation/Z80%20Playground%20
 
 ## Parts list
 
-Note: This following table is deprecated by the next expanded table down.
-
-| Part    | Qty | Description                            |
-|---------|-----|----------------------------------------|
-| IC      | 8   | IC        total                        |
-| Z80     | 1   | CPU                                    |
-| 61512   | 1   | RAM                                    |
-| 28C256  | 1   | EEPROM                                 |
-| 16C550  | 1   | UART                                   |
-| 74HC02  | 1   | NOR                                    |
-| 74HC32  | 2   | OR                                     |
-| 74HC14  | 1   | NOT                                    |
-| Switch  | 3   | Push button                            |
-| LED     | 5   | Power, user, halt, rom, disk           |
-| R       | 14  | Resistor  total                        |
-| 470R    | 1   | Resistor  - CPU clock                  |
-| 1k      | 5   | Resistor  - LED                        |
-| 1k5     | 1   | Resistor  - UART clock                 |
-| 10k     | 6   | Resistor  - Pull down (3), pull up (3) |
-| 1M      | 1   | Resistor  - CPU clock                  |
-| C       | 13  | Capacitor total                        |
-| 8 pF    | 2   | Capacitor - CPU Crystal                |
-| 22 pF   | 1   | Capacitor - UART Crytal                |
-| 47 pF   | 1   | Capacitor - UART Crytal                |
-| 100 nF  | 8   | Capacitor - Decoupling                 |
-| 1 µF    | 1   | Capacitor - Interrupt                  |
-| 10 µF   | 1   | Capacitor - Reset                      |
-| 47 µF   | 1   | Capacitor - Power                      |
-| Header  | 6   | Header total                           |
-| 1x03    | 2   | Header, J1 and J2                      |
-| 1x06    | 1   | Header, TTL Serial, H1                 |
-| 2x03    | 1   | USB1                                   |
-| 2x08    | 1   | USB2                                   |
-| 1x36    | 1   | Edge connector, H2 (optional)          |
-| 1x40    | 1   | Edge connector, H2 (optional)          |
-| CH376S  | 1   | USB module                             |
-| FTDI    | 1   | USB to TTL serial                      |
-
-Note: Three capacitors, C14-C16, are not present in the schematic.
-
-A more complete table, showing component IDs:
-
-| ID                | Part    | Qty | Description                            |
-|-------------------|---------|-----|----------------------------------------|
-| ----------------- | IC      | 8   | IC        total                        |
-| U1                | Z80     | 1   | CPU                                    |
-| U2                | 61512   | 1   | RAM                                    |
-| U3                | 28C256  | 1   | EEPROM                                 |
-| U11               | 16C550  | 1   | UART                                   |
-| U8                | 74HC02  | 1   | NOR                                    |
-| U5,6              | 74HC32  | 2   | OR                                     |
-| U7                | 74HC14  | 1   | NOT                                    |
-| ----------------- | R       | 14  | Resistor  total                        |
-| R6                | 470R    | 1   | Resistor  - CPU clock                  |
-| R1-3, R10, R16    | 1k      | 5   | Resistor  - LED                        |
-| R7                | 1k5     | 1   | Resistor  - UART clock                 |
-| R4, R8-9, R13-15  | 10k     | 6   | Resistor  - Pull down (3), pull up (3) |
-| R5                | 1M      | 1   | Resistor  - CPU clock                  |
-| ----------------- | C       | 15  | Capacitor total                        |
-| C5,6              | 8 pF    | 2   | Capacitor - CPU Crystal                |
-| C18               | 22 pF   | 1   | Capacitor - UART Crytal                |
-| C17               | 47 pF   | 1   | Capacitor - UART Crytal                |
-| C3-4, C7-13       | 100 nF  | 8   | Capacitor - Decoupling                 |
-| C2                | 1 µF    | 1   | Capacitor - Interrupt                  |
-| C1                | 10 µF   | 1   | Capacitor - Reset                      |
-| C8                | 47 µF   | 1   | Capacitor - Power                      |
-| ----------------- | Header  | 6   | Header total                           |
-| J1, J2 (P1, P2)   | 1x03    | 2   | Header, J1 and J2                      |
-| H1                | 1x06    | 1   | Header, TTL Serial, H1                 |
-| J5     (U10)      | 2x03    | 1   | USB1                                   |
-| J6     (U10)      | 2x08    | 1   | USB2                                   |
-| H2                | 1x36    | 1   | Edge connector, H2 (optional)          |
-| H2                | 1x40    | 1   | Edge connector, H2 (optional)          |
-| ----------------- | Switch  | 3   | Switch total                           |
-| SW1-3             | Switch  | 3   | Push button                            |
-| ----------------- | LED     | 5   | LED total                              |
-| LED1-5            | LED     | 5   | Power, user, halt, rom, disk           |
-| ----------------- | Other   | 2   | Other total                            |
-| U10               | CH376S  | 1   | USB module                             |
-| TTL serial        | FTDI    | 1   | USB to TTL serial                      |
-
-
+Please refer to [Z80 Playground v1.2 - parts list](documentation/Z80%20Playground%20v1.2%20-%20parts%20list.md).
 
 ## Additional "homebrew" notes
 
