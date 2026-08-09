@@ -124,12 +124,30 @@ Note that the shorted Rx and GND pins on J5 are on the side of the 2x3 socket *t
 
 [![CH375S showing jumper on J5][3]][3]
 
+It will be difficult to guesstimate the measurements, without having a physical CH376S module to measure.
 
+### Routing
+
+The routing proved tricker than I expected, mostly as I had preumed that there was an autoroute feature in KiCAD 6 – I was mistaken. Even PCB design software bck in the 80's had autoroute, so gawd knows why KiCAD 6 doesn't!
+
+These four screenshots, showing the traces, were taken to use to replicate the routing:
+
+[![Z80 Playground v1.2 - PCB front#1][4]][4]
+
+[![Z80 Playground v1.2 - PCB front#2][5]][5]
+
+[![Z80 Playground v1.2 - PCB front#3][6]][6]
+
+[![Z80 Playground v1.2 - PCB rear#1][7]][7]
 
 <!-- Images -->
 
   [1]: ../xtras/hardware/screenshots/v1.2/ebay/Z80%20Playground%20v1.2%20PCB%20and%20components.jpeg "PCB v1.2"
   [2]: ../xtras/hardware/screenshots/v1.2/ebay/Z80%20Playground%20v1.2%20PCB%20(blurry).jpg "PCB v1.2 blurry"
   [3]: ../xtras/hardware/screenshots/CH375S/CH375S%20showing%20jumper%20on%20J5.png "CH375S showing jumper on J5"
+  [4]: ../xtras/hardware/screenshots/v1.2/unpopulated/Z80%20Playground%20v1.2%20-%20PCB%20front_1.png "Z80 Playground v1.2 - PCB front#1"
+  [5]: ../xtras/hardware/screenshots/v1.2/unpopulated/Z80%20Playground%20v1.2%20-%20PCB%20front_2.png "Z80 Playground v1.2 - PCB front#2"
+  [6]: ../xtras/hardware/screenshots/v1.2/unpopulated/Z80%20Playground%20v1.2%20-%20PCB%20front_3.png "Z80 Playground v1.2 - PCB front#3"
+  [7]: ../xtras/hardware/screenshots/v1.2/unpopulated/Z80%20Playground%20v1.2%20-%20PCB%20rear_1.png "Z80 Playground v1.2 - PCB rear#1"
 
 
