@@ -13,18 +13,19 @@ Whilst it is now pretty difficult to find much info out about its design, he did
 
 Unfortunately, around 2022, new videos ceased to be posted, and the whole project seemed to have died. The Wayback Machine shows 8bitstack.co.uk as unresposive on [8 June 2022](https://web.archive.org/web/20230621025919/http://8bitstack.co.uk/), and the domain was up for sale by [Feb 21 2023](https://web.archive.org/web/20240221232442/https://8bitstack.co.uk/). The last good snapshot was on [April 13 2022](https://web.archive.org/web/20230413220854/https://8bitstack.co.uk/).
 
-This is the best image of the PCB and components that I could find, via [a sold out ebay listing](https://www.cafr.ebay.ca/itm/114754711447):
+This is the best image of the PCB and components that I could find, via [a sold out ebay listing](https://www.cafr.ebay.ca/itm/114754711447) on eBay in Canada, from 2021 – even though the year is not shown in the listing, 2021 is the last year that April 7 fell on a Wednesday (Mercredi):
 
 [![PCB v1.2][1]][1]
 
   [1]: xtras/hardware/screenshots/v1.2/ebay/Z80%20Playground%20v1.2%20PCB%20and%20components.jpeg "PCB v1.2"
 
-
 There don't appear to be any parts lists, schematics, PCB layouts, Gerber files, etc. – basically, there seems to be little in the way of hardware documentation, apart from the videos. However, there are still Github repos for the software, that are still up, so that is good.
 
-Using the Wayback machine I managed to get hold of some PDFs of the schematic diagrams for v1.1 and v.1.2, and some additional software, see the section **Wayback data** below.
+However, using the Wayback machine I managed to get hold of some PDFs of the schematic diagrams for v1.1 and v.1.2, and some additional software, see the section **Wayback data** below. 
 
 While I couldn't find any PDFs of the v1.0 schematic digram, I did manage to get some screenshots of the v1.0 schematic digram, from a video. See the section **Screenshots** below.
+
+In the same video, [Z80 Playground - the Single Board Computer that runs CP/M](https://www.youtube.com/watch?v=CIgxkcXNp1w), at [1:45](https://www.youtube.com/watch?v=CIgxkcXNp1w&t=105), John states that the schematics (for v1.0) were drawn in EasyEDA and there is no reason no to assume that the same package was used for the v1.2 schematics.
 
 From the schematic diagrams, using KiCAD 6, I managed to recreate the schematics and the PCB, for v1.2.
 
@@ -52,6 +53,7 @@ For the PCB, I had to guess what footprints to use, so they may not match the or
 ### RC2014
 
  - [RC2014](https://rc2014.co.uk/)
+ - [RC2014 bus specification](https://smallcomputercentral.com/rc2014-bus/specification-rc2014-bus/)
 
 ### 8bitstack.co.uk
 
@@ -176,7 +178,7 @@ See [Homebrew](documentation/Homebrew/Homebrew.md) for some rough auxiliary note
  - The OR gates in the original schematic look awful and are inconsistent with the NOR gates, which *are* correctly depicted.
  - Modify symbol title 72LS32 -> 74HC32?
  - Why is C1 10µF but C2 is 1µF?
- - Change J5 from Conn_02x03_Odd_Even
- - Change J6 from Conn_02x08_Odd_Even
+ - Change J5 from `Conn_02x03_Odd_Even`
+ - Change J6 from `Conn_02x08_Odd_Even`
  - Change J5 and J6 to H5 and H6? As they are headers?
- - Put footprint and parts list into two documents in documentation/, and link from main README, in order to reduce clutter.
+ - RCBUS should use/provide the extended 80 pin variant.
