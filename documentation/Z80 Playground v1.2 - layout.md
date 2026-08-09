@@ -6,6 +6,11 @@ The Z80 Playground v1.2 layout, as derived from the images shown in the video, [
 
 ## Notes
 
+### Board size
+
+ - Dimensions: 101.60 x 101.60 mm
+ - Layer: `Edge Cuts`
+
 ### Basic block diagram layout
 
 Showing the location of various components, but with few part numbers:
@@ -20,7 +25,7 @@ disk            user1 halt /rom
 |R             "                   R       |
 |  J5  R C C R        TTLSerial            |
 |C UART           R           R R R   XTAL |
-|  "              C+  LEDpwr  R   C    "   |  <- Power
+|  "              C+  LED     R   C    "   |  <- Power (LED)
 | C                               C        |
 |EEPROM          Button Button Button      |
 |  "           C  RAM                      |
@@ -53,7 +58,7 @@ disk             user1 halt /rom
 |R3             "                 U7   R14      |
 |  J5  R8 C1 C2 R15        TTLSerial            |
 |C11 U11_UART       R16         R13 R5 R6  XTAL |
-|       "           C8  LED3    R7   C17   UART |  <- Power
+|       "           C8  LED3    R7   C17   UART |  <- Power (LED)
 |C3                                  C18        |
 |U3_EEPROM ZIF    SW1  SW3  SW2                 |
 |  "              Rst /INT /NMI                 |
@@ -103,7 +108,7 @@ I managed to find some sold-out items on eBay in Canada, from whence I save the 
 
 ### Spacing of the CH376S connectors
 
-The correct physical orientation, spacing and alignment of the two header pin sockets, J5 (02x03) and J6 (02x08), to the CH376S PCB is *essential*. Mostly in their *relative position to eachother* but also, to a lesser extent, the *absolute position on the board*, such that the daughter board does not protrude. The latter part also goes for the TTL serial daughter board.
+The correct physical orientation, spacing and alignment of the two header pin sockets, J5 (02x03) and J6 (02x08), to the CH376S PCB is *essential*. Mostly in their *relative position to each other* but also, to a lesser extent, the *absolute position on the board*, such that the daughter board does not protrude. The latter part also goes for the TTL serial daughter board.
 
 J5:
 
@@ -128,7 +133,7 @@ It will be difficult to guesstimate the measurements, without having a physical 
 
 ### Routing
 
-The routing proved tricker than I expected, mostly as I had preumed that there was an autoroute feature in KiCAD 6 – I was mistaken. Even PCB design software bck in the 80's had autoroute, so gawd knows why KiCAD 6 doesn't!
+The routing proved tricker than I expected, mostly as I had presumed that there was an autoroute feature in KiCAD 6 – I was mistaken... Even PCB design software back in the 80's had autoroute, so gawd knows why KiCAD 6 doesn't! Too early a version, I guess.
 
 These four screenshots, showing the traces, were taken to use to replicate the routing:
 
@@ -139,6 +144,18 @@ These four screenshots, showing the traces, were taken to use to replicate the r
 [![Z80 Playground v1.2 - PCB front#3][6]][6]
 
 [![Z80 Playground v1.2 - PCB rear#1][7]][7]
+
+TOP TIP: Use rear for near-as-possible verticals, and front for near-as-possible horizontals, only – it makes life a lot easier. Use vias to "zig-zag" across the board, thereby avoiding long diagonals, on any plane, at all costs.
+
+After partially routing the GOL variant in my own manner, I decided to add the footprints to the Squires and RBUS variants, and to route them manually from new. For the Squires variant, I diligently copied the traces shown in the photos above, and for the RBUS variant I used the better of the two – TODO: XXX = GOL or Squires???
+
+#### Freerouting
+
+[Freerouting](https://github.com/freerouting/freerouting) is, apparently, a standalone ultiity that can take KiCAD 6 PCB files and auto-route them.
+
+Unfortunately, I couldn't get Java (JRE) running correctly on my High Sierra Mac, to get the Java version of Freerouting to run – the native Mac version is ARM only.
+
+---
 
 <!-- Images -->
 
