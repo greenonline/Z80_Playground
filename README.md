@@ -11,7 +11,7 @@ John Squires, of the now defunt [8bitstack.co.uk](https://8bitstack.co.uk), and 
 
 Whilst it is now pretty difficult to find much info out about its design, he did mention that an earlier iteration upon breadboard, was based upon the *Four IC Z80 SBC* – in the videos, he refers to similarity of the breadboard version to the "4 IC Z80" design – which is, most probably, this project, [A 4\$, 4ICs, Z80 homemade computer on breadboard](https://hackaday.io/project/19000-a-4-4ics-z80-homemade-computer-on-breadboard/). 
 
-Unfortunately, around 2022, new videos ceased to be posted, and the whole project seemed to have died.
+Unfortunately, around 2022, new videos ceased to be posted, and the whole project seemed to have died. The Wayback Machine shows 8bitstack.co.uk as unresposive on [8 June 2022](https://web.archive.org/web/20230621025919/http://8bitstack.co.uk/), and the domain was up for sale by [Feb 21 2023](https://web.archive.org/web/20240221232442/https://8bitstack.co.uk/). The last good snapshot was on [April 13 2022](https://web.archive.org/web/20230413220854/https://8bitstack.co.uk/).
 
 This is the best image of the PCB and components that I could find, via [a sold out ebay listing](https://www.cafr.ebay.ca/itm/114754711447):
 
@@ -49,7 +49,11 @@ For the PCB, I had to guess what footprints to use, so they may not match the or
 
 ## Links
 
+### RC2014
+
  - [RC2014](https://rc2014.co.uk/)
+
+### 8bitstack.co.uk
 
 From the [Wayback Machine for 8bitstack.co.uk](https://web.archive.org/web/20210000000000*/8bitstack.co.uk):
 
@@ -57,6 +61,13 @@ From the [Wayback Machine for 8bitstack.co.uk](https://web.archive.org/web/20210
  - [More links, z80ccp](https://web.archive.org/web/20210508135102/http://8bitstack.co.uk/)
  - [Even more links, sd.com, z80ccp, core_jump, 2048](https://web.archive.org/web/20211020202250/http://8bitstack.co.uk/)
  - There are many *other* snapshots of the site, present on the Wayback Machine, that I have not investigated, due to time constraints. I only checked the earliest three snapshots or so.
+
+### Scribd
+
+Schematics:
+
+ - [v1.1](https://www.scribd.com/document/489322111/Schematic-Z80-playground-v1-1)
+ - [v1.2](https://www.scribd.com/document/636188052/Schematic-Z80-playground-v-1-2)
  
 ### Z80 Playground based projects
 
@@ -125,35 +136,59 @@ This was the first PCB layout attempt. The footprints used are listed below.
 
 Capacitors:
 
+ - `C1` 10 µF: `Capacitor_THT:CP_Radial_D5.0mm_P2.50mm`
+ - `C2` 1 µF: `Capacitor_THT:CP_Radial_D5.0mm_P2.00mm`
  - `C8` 47 µF: `Capacitor_THT:CP_Radial_D6.3mm_P2.50mm`
+ - `C13` 100 nF: `Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm`
  - `C9` 100 nF: `Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm`
  - `C17` 47 pF: `Capacitor_THT:C_Disc_D3.8mm_W2.6mm_P2.50mm`
+ - `C18` 22 pF: `Capacitor_THT:C_Disc_D3.8mm_W2.6mm_P2.50mm`
+ - `C5` 8 pF: `Capacitor_THT:C_Disc_D3.8mm_W2.6mm_P2.50mm`
  - `C6` 8 pF: `Capacitor_THT:C_Disc_D3.8mm_W2.6mm_P2.50mm`
+ - Maybe for `C5` and `C6` 8 pF (RCBUS): `Capacitor_THT:C_Disc_D3.0mm_W2.0mm_P2.50mm`
 
 Resistors:
 
  - `R8` 10k: `Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal`
+ - Vertical: `Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical`
 
 XTAL
 
- - `Y1` :`Crystal:Crystal_HC49-4H_Vertical`
+ - `Y1`: `Crystal:Crystal_HC49-4H_Vertical`
 
 Switch
 
  - `SW1`: `Button_Switch_SMD:SW_SPST_CK_RS282G05A3`
- - Also posible: `Button_Switch_SMD:SW_Tactile_SPST_NO_Straight_CK_PTS636Sx25SMTRLFS`
+ - Also possible: `Button_Switch_SMD:SW_Tactile_SPST_NO_Straight_CK_PTS636Sx25SMTRLFS`
  - OMRON: `???`
 
 Headers
 
- - `H1`, `Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Horizontal`
- - `H2`, was `My_Components:Conn_Pin_Header_39x1_2.54mm`, now `Connector_PinHeader_2.54mm:PinHeader_1x39_P2.54mm_Horizontal`, 
+ - `H1`: `Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Horizontal`
+ - `H2`: was `My_Components:Conn_Pin_Header_39x1_2.54mm`, now `Connector_PinHeader_2.54mm:PinHeader_1x39_P2.54mm_Horizontal`
+ - `H3` (RCBUS): `Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Horizontal`
+ - `H4` (RCBUS): `Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Horizontal`
 
-Jumpwers:
+Jumpers:
 
- - `J1`, `Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical`
- - `J5`, `Connector_PinSocket_2.54mm:PinSocket_2x03_P2.54mm_Vertical`
- - `J6`, `Connector_PinSocket_2.54mm:PinSocket_2x08_P2.54mm_Vertical`
+ - `J1`: `Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical`
+ - `J2`: `Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical`
+ - `J5`: `Connector_PinSocket_2.54mm:PinSocket_2x03_P2.54mm_Vertical`
+ - `J6`: `Connector_PinSocket_2.54mm:PinSocket_2x08_P2.54mm_Vertical`
+
+LED:
+
+ - `LED1`: `LED_THT:LED_D3.0mm`
+
+IC:
+
+ - `U8` (GOL): `Package_DIP:DIP-14_W7.62mm_LongPads`
+ - `U5` (Squires): `Package_DIP:DIP-14_W7.62mm`
+ - `U6` (Squires): `Package_DIP:DIP-14_W7.62mm`
+ - `U7` (Squires): `Package_DIP:DIP-14_W7.62mm`
+ - `U8` (Squires): `Package_DIP:DIP-14_W7.62mm`
+ - `U8` (RCBUS): `Package_DIP:DIP-14_W7.62mm`
+
 
 ### KiCAD 6 quirks
 
@@ -210,7 +245,7 @@ Note: This following table is deprecated by the next expanded table down.
 | 2x08    | 1   | USB2                                   |
 | 1x36    | 1   | Edge connector, H2 (optional)          |
 | 1x40    | 1   | Edge connector, H2 (optional)          |
-| CH375   | 1   | USB module                             |
+| CH376S  | 1   | USB module                             |
 | FTDI    | 1   | USB to TTL serial                      |
 
 Note: Three capacitors, C14-C16, are not present in the schematic.
@@ -253,7 +288,7 @@ A more complete table, showing component IDs:
 | ----------------- | LED     | 5   | LED total                              |
 | LED1-5            | LED     | 5   | Power, user, halt, rom, disk           |
 | ----------------- | Other   | 2   | Other total                            |
-| U10               | CH375   | 1   | USB module                             |
+| U10               | CH376S  | 1   | USB module                             |
 | TTL serial        | FTDI    | 1   | USB to TTL serial                      |
 
 
@@ -271,7 +306,7 @@ See [Homebrew](documentation/Homebrew/Homebrew.md) for some rough auxiliary note
  - Rename Headers and Jumpers? H1 or J1? P1 or J1?
    - P1 and P2 renamed J1 and J2, as they are jumpers
    - H1 and H2 are actually headers, renamed from KiCAD default of J1 and J2
-   - J5 and J6 are not jumpers, but connectors to the CH375S board
+   - J5 and J6 are not jumpers, but connectors to the CH376S board
  - Add ZIF for EEPROM?
    - It is smaller without ZIF
    - ZIF is ugly?
@@ -279,4 +314,8 @@ See [Homebrew](documentation/Homebrew/Homebrew.md) for some rough auxiliary note
    - ZIF is useful for "playing about" – reduces wear, damage, etc..
  - The OR gates in the original schematic look awful and are inconsistent with the NOR gates, which *are* correctly depicted.
  - Modify symbol title 72LS32 -> 74HC32?
- - Are all of the ceramic caps silkscreened as polarised caps? There are only three electrolytic caps (1, 10, and 47 µF)
+ - Why is C1 10µF but C2 is 1µF?
+ - Change J5 from Conn_02x03_Odd_Even
+ - Change J6 from Conn_02x08_Odd_Even
+ - Change J5 and J6 to H5 and H6? As they are headers?
+ - Put footprint and parts list into two documents in documentation/, and link from main README, in order to reduce clutter.
