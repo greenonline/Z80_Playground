@@ -8,12 +8,25 @@ The Z80 Playground v1.2 layout, as derived from the images shown in the video, [
 
 ### Board size
 
- - Dimensions: 101.60 x 101.60 mm
+ - Dimensions: 101.60 x 101.60 mm 
+   - 10x10 cm is mentioned by John Squires at [7:35](https://www.youtube.com/watch?v=CIgxkcXNp1w&t=455s) in [Z80 Playground - the Single Board Computer that runs CP/M](https://www.youtube.com/watch?v=CIgxkcXNp1w)
+   - He also mentions:
+     - Used Autorouter on EasyEDA
+     - Four mounting holes
+     - Rounded corners
+     - Ground plane on bottom side
+     - VCC plane on top side
+     - Power connectors at top left
+     - Place components, use autorouter, rerrange connectors until autoroute completes.
  - Layer: `Edge Cuts`
 
 ### Basic block diagram layout
 
-Showing the location of various components, but with few part numbers:
+Working, mostly, from this image:
+
+[![Z80 Playground v1.2 - board layout][1]][1]
+
+I came up with some rough diagrms howing the location of various components, but with few part numbers:
 
 ```none
 disk            user1 halt /rom
@@ -97,9 +110,9 @@ The second series are much clearer screenshots, as it shows an unpopulated board
 
 I managed to find some sold-out items on eBay in Canada, from whence I save the photos of the PCB and components. From [Z80 Playground Single Board Computer Kit](https://www.cafr.ebay.ca/itm/114754711447) (£41.00, C$77.10):
 
-[![PCB v1.2][1]][1]
+[![PCB v1.2][2]][2]
  
-[![PCB v1.2 blurry][2]][2]
+[![PCB v1.2 blurry][3]][3]
 
 ### Deviations from original
 
@@ -127,7 +140,7 @@ J5 to J6:
 
 Note that the shorted Rx and GND pins on J5 are on the side of the 2x3 socket *towards the inside* of the daughter board:
 
-[![CH375S showing jumper on J5][3]][3]
+[![CH375S showing jumper on J5][4]][4]
 
 It will be difficult to guesstimate the measurements, without having a physical CH376S module to measure.
 
@@ -137,13 +150,13 @@ The routing proved tricker than I expected, mostly as I had presumed that there 
 
 These four screenshots, showing the traces, were taken to use to replicate the routing:
 
-[![Z80 Playground v1.2 - PCB front#1][4]][4]
+[![Z80 Playground v1.2 - PCB front#1][5]][5]
 
-[![Z80 Playground v1.2 - PCB front#2][5]][5]
+[![Z80 Playground v1.2 - PCB front#2][6]][6]
 
-[![Z80 Playground v1.2 - PCB front#3][6]][6]
+[![Z80 Playground v1.2 - PCB front#3][7]][7]
 
-[![Z80 Playground v1.2 - PCB rear#1][7]][7]
+[![Z80 Playground v1.2 - PCB rear#1][8]][8]
 
 TOP TIP: Use rear for near-as-possible verticals, and front for near-as-possible horizontals, only – it makes life a lot easier. Use vias to "zig-zag" across the board, thereby avoiding long diagonals, on any plane, at all costs.
 
@@ -153,18 +166,37 @@ After partially routing the GOL variant in my own manner, I decided to add the f
 
 [Freerouting](https://github.com/freerouting/freerouting) is, apparently, a standalone ultiity that can take KiCAD 6 PCB files and auto-route them.
 
-Unfortunately, I couldn't get Java (JRE) running correctly on my High Sierra Mac, to get the Java version of Freerouting to run – the native Mac version is ARM only.
+Unfortunately, I couldn't get Java (JRE) running correctly on my Catalina Mac, to get the Java version of Freerouting to run – the native Mac version is ARM only.
+
+#### Pitch
+
+What pitch is being used in the Squires PCB. If one zooms in on the front of the board, [Z80 Playground v1.2 - unpopulated all front_1](../xtras/hardware/screenshots/v1.2/unpopulated/Z80%20Playground%20v1.2%20-%20unpopulated%20all%20front_1.png), shows 20-21 horizontal tracks within CPU outline:
+
+[![Z80 Playground v1.2 - unpopulated all front_1][9]][9]
+
+Whereas I can only get 5 (with vias), although *without using vias*, I can get, more or less, the same concentration of adjacent lines in KiCAD 6, 25 tracks in fact:
+
+[![KiCAD 6 PCB Test - 25 Tracks beneath Z80][10]][10]
+
+Hoewver, looking at this rather clear image of the rear of the board, [Z80 Playground v1.2 - PCB rear_1](../xtras/hardware/screenshots/v1.2/unpopulated/Z80%20Playground%20v1.2%20-%20PCB%20rear_1.png), reveals that two tracks are often passed between the pins of ICs, whereas KiCAD 6 will not allow this (using out-of-the-box settings), and I can only route one track between the pins of a Z80, or whatever IC.
+
+[![Z80 Playground v1.2 - PCB rear_1][11]][11]
+
 
 ---
 
 <!-- Images -->
 
-  [1]: ../xtras/hardware/screenshots/v1.2/ebay/Z80%20Playground%20v1.2%20PCB%20and%20components.jpeg "PCB v1.2"
-  [2]: ../xtras/hardware/screenshots/v1.2/ebay/Z80%20Playground%20v1.2%20PCB%20(blurry).jpg "PCB v1.2 blurry"
-  [3]: ../xtras/hardware/screenshots/CH375S/CH375S%20showing%20jumper%20on%20J5.png "CH375S showing jumper on J5"
-  [4]: ../xtras/hardware/screenshots/v1.2/unpopulated/Z80%20Playground%20v1.2%20-%20PCB%20front_1.png "Z80 Playground v1.2 - PCB front#1"
-  [5]: ../xtras/hardware/screenshots/v1.2/unpopulated/Z80%20Playground%20v1.2%20-%20PCB%20front_2.png "Z80 Playground v1.2 - PCB front#2"
-  [6]: ../xtras/hardware/screenshots/v1.2/unpopulated/Z80%20Playground%20v1.2%20-%20PCB%20front_3.png "Z80 Playground v1.2 - PCB front#3"
-  [7]: ../xtras/hardware/screenshots/v1.2/unpopulated/Z80%20Playground%20v1.2%20-%20PCB%20rear_1.png "Z80 Playground v1.2 - PCB rear#1"
+  [1]: ../xtras/hardware/screenshots/v1.2/populated/Z80%20Playground%20v1.2%20-%20board%20layout.png "Z80 Playground v1.2 - board layout"
+  [2]: ../xtras/hardware/screenshots/v1.2/ebay/Z80%20Playground%20v1.2%20PCB%20and%20components.jpeg "PCB v1.2"
+  [3]: ../xtras/hardware/screenshots/v1.2/ebay/Z80%20Playground%20v1.2%20PCB%20(blurry).jpg "PCB v1.2 blurry"
+  [4]: ../xtras/hardware/screenshots/CH375S/CH375S%20showing%20jumper%20on%20J5.png "CH375S showing jumper on J5"
+  [5]: ../xtras/hardware/screenshots/v1.2/unpopulated/Z80%20Playground%20v1.2%20-%20PCB%20front_1.png "Z80 Playground v1.2 - PCB front#1"
+  [6]: ../xtras/hardware/screenshots/v1.2/unpopulated/Z80%20Playground%20v1.2%20-%20PCB%20front_2.png "Z80 Playground v1.2 - PCB front#2"
+  [7]: ../xtras/hardware/screenshots/v1.2/unpopulated/Z80%20Playground%20v1.2%20-%20PCB%20front_3.png "Z80 Playground v1.2 - PCB front#3"
+  [8]: ../xtras/hardware/screenshots/v1.2/unpopulated/Z80%20Playground%20v1.2%20-%20PCB%20rear_1.png "Z80 Playground v1.2 - PCB rear#1"
+  [9]: ../xtras/hardware/screenshots/v1.2/unpopulated/Z80%20Playground%20v1.2%20-%20unpopulated%20all%20front_1.png "Z80 Playground v1.2 - unpopulated all front_1"
+  [10]: ../xtras/hardware/screenshots/test_images/KiCAD%206%20PCB%20Test%20-%2025%20Tracks%20beneath%20Z80.png "KiCAD 6 PCB Test - 25 Tracks beneath Z80"
+  [11]: ../xtras/hardware/screenshots/v1.2/unpopulated/Z80%20Playground%20v1.2%20-%20PCB%20rear_1.png "Z80 Playground v1.2 - PCB rear_1"
 
 
