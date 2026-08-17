@@ -18,7 +18,7 @@ Capacitors:
  - `C2` 1 µF: `Capacitor_THT:CP_Radial_D5.0mm_P2.00mm`
  - `C8` 47 µF: `Capacitor_THT:CP_Radial_D6.3mm_P2.50mm`
  - `C13` 100 nF: `Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm`
- - `C9` 100 nF: `Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm`
+ - `C9` 100 nF:  `Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm`
  - `C17` 47 pF: `Capacitor_THT:C_Disc_D3.8mm_W2.6mm_P2.50mm`
  - `C18` 22 pF: `Capacitor_THT:C_Disc_D3.8mm_W2.6mm_P2.50mm`
  - `C5` 8 pF: `Capacitor_THT:C_Disc_D3.8mm_W2.6mm_P2.50mm`
@@ -46,12 +46,18 @@ Headers
  - `H2`: was `My_Components:Conn_Pin_Header_39x1_2.54mm`, now `Connector_PinHeader_2.54mm:PinHeader_1x39_P2.54mm_Horizontal`
  - `H3` (RCBUS): `Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Horizontal`
  - `H4` (RCBUS): `Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Horizontal`
+ - `H2` (RCBUS80): `Connector_PinHeader_2.54mm:PinHeader_1x40_P2.54mm_Vertical`
+ - `H3` (RCBUS80): `Connector_PinHeader_2.54mm:PinHeader_1x40_P2.54mm_Vertical`
+ - Trying to use a 2x40 but the footprint has the pins numbered odd-even when I want top to bottom. Annoying.
+ - `H2` (RCBUS80/40) `Connector_PinHeader_2.54mm:PinHeader_2x40_P2.54mm_Horizontal`
 
 Jumpers:
 
  - `J1`: `Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical`
  - `J2`: `Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical`
  - `J5`: `Connector_PinSocket_2.54mm:PinSocket_2x03_P2.54mm_Vertical`
+ - `J7`: `Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical`
+ - `J8`: `Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical`
  - `J6`: `Connector_PinSocket_2.54mm:PinSocket_2x08_P2.54mm_Vertical`
 
 LED:
@@ -66,3 +72,7 @@ IC:
  - `U7` (Squires): `Package_DIP:DIP-14_W7.62mm`
  - `U8` (Squires): `Package_DIP:DIP-14_W7.62mm`
  - `U8` (RCBUS): `Package_DIP:DIP-14_W7.62mm`
+
+Mounting holes:
+
+ - `MountingHole_2.2mm_M2_DIN965_Pad`, Ref and footprint both set to not visible. REFs start top left REF1, clockwise
