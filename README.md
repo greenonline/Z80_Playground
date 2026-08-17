@@ -7,13 +7,13 @@ Or [playgroundZ80](https://github.com/greenonline/playgroundZ80)!!!
 
 ## Preamble
 
-John Squires, of the now defunt [8bitstack.co.uk](https://8bitstack.co.uk), and the YouTube channel, [John Squires](https://www.youtube.com/@CircuitBreaker256), created a very nifty Z80 SBC, called *Z80 Playground*, that could run CP/M and Tiny BASIC, amongst other things. 
+John Squires, of the now defunct [8bitstack.co.uk](https://8bitstack.co.uk), and the YouTube channel, [John Squires](https://www.youtube.com/@CircuitBreaker256), created a very nifty Z80 SBC, called *Z80 Playground*, that could run CP/M and Tiny BASIC, amongst other things. 
 
 Whilst it is now pretty difficult to find much info out about its design, he did mention that an earlier iteration upon breadboard, was based upon the *Four IC Z80 SBC* – in the videos, he refers to similarity of the breadboard version to the "4 IC Z80" design – which is, most probably, this project, [A 4\$, 4ICs, Z80 homemade computer on breadboard](https://hackaday.io/project/19000-a-4-4ics-z80-homemade-computer-on-breadboard/). 
 
-Unfortunately, around 2022, new videos ceased to be posted, and the whole project seemed to have died. The Wayback Machine shows 8bitstack.co.uk as unresposive on [8 June 2022](https://web.archive.org/web/20230621025919/http://8bitstack.co.uk/), and the domain was up for sale by [Feb 21 2023](https://web.archive.org/web/20240221232442/https://8bitstack.co.uk/). The last good snapshot was on [April 13 2022](https://web.archive.org/web/20230413220854/https://8bitstack.co.uk/).
+Unfortunately, around 2022, new videos ceased to be posted, and the whole project seemed to have died. The Wayback Machine shows 8bitstack.co.uk as unresponsive on [8 June 2022](https://web.archive.org/web/20230621025919/http://8bitstack.co.uk/), and the domain was up for sale by [Feb 21 2023](https://web.archive.org/web/20240221232442/https://8bitstack.co.uk/). The last good snapshot was on [April 13 2022](https://web.archive.org/web/20230413220854/https://8bitstack.co.uk/).
 
-This is the best image of the PCB and components that I could find, via [a sold out ebay listing](https://www.cafr.ebay.ca/itm/114754711447) on eBay in Canada, from 2021 – even though the year is not shown in the listing, 2021 is the last year that April 7 fell on a Wednesday (Mercredi):
+This is the best image of the PCB and components that I could find, via [a sold out eBay listing](https://www.cafr.ebay.ca/itm/114754711447) on eBay in Canada, from 2021 – even though the year is not shown in the listing, 2021 is the last year that April 7 fell on a Wednesday (Mercredi):
 
 [![PCB v1.2][1]][1]
 
@@ -31,7 +31,7 @@ From the schematic diagrams, using KiCAD 6, I managed to recreate the schematics
 
 I reused, where I could, the Squires '*forward-slash-and-lowercase-camelcase*' type of annotation – even though it feels rather inconsistent and messy/awkward.
 
-The board sold by 8bitstack.co.uk was, I believe, a 4 layer board – in the video, [Z80 Playground - the Single Board Computer that runs CP/M](https://www.youtube.com/watch?v=CIgxkcXNp1w) at [7:46](https://www.youtube.com/watch?v=CIgxkcXNp1w&t=466), John Squires states that he prefers to have a front power plane and a rear ground plane, hence a four plane board. However, I opted to use a simpler two layer board, as the frequencie involved are less than 10 MHz.
+The board sold by 8bitstack.co.uk was, I believe, a 4 layer board – in the video, [Z80 Playground - the Single Board Computer that runs CP/M](https://www.youtube.com/watch?v=CIgxkcXNp1w) at [7:46](https://www.youtube.com/watch?v=CIgxkcXNp1w&t=466), John Squires states that he prefers to have a front power plane and a rear ground plane, hence a four plane board. However, I opted to use a simpler two layer board, as the frequencies involved are less than 10 MHz.
 
 In addition to the original Squires version, I also made two other variants: 
 
@@ -252,7 +252,7 @@ Not sure that i like the idea of possible shorts – Use captan tape for protect
  - Change J6 from `Conn_02x08_Odd_Even`
  - Change J5 and J6 to H5 and H6? As they are headers?
  - RCBUS should use/provide the extended 80 pin variant.
- - Should version number not be 1.2, confusig? Maybe 1.2.0.1, 1.2.0.2, 1.2.0.3, 1.2.0.4, or  1.2.0.1s, 1.2.0.1g, 1.2.0.1r,  or  1.2.0.1squires, 1.2.0.1gol, 1.2.0.1rcbus. etc.
+ - Should version number not be 1.2, confusing? Maybe 1.2.0.1, 1.2.0.2, 1.2.0.3, 1.2.0.4, or  1.2.0.1s, 1.2.0.1g, 1.2.0.1r,  or  1.2.0.1squires, 1.2.0.1gol, 1.2.0.1rcbus. etc.
  - Should I try to manually trace the Squires PCB tracks? 
  - The decoupling capacitors are not autorouted to their ICs correctly – might need to manually do that first!
  - Flip RC2014 bus
@@ -272,8 +272,8 @@ Not sure that i like the idea of possible shorts – Use captan tape for protect
  - Moving switches higher (like GOL) gives more room for RAM traces?
  - Move R8C1C2R15 closer together?
  - Drill 4 holes - DONE!
-   - The holes should really be in the same place on all boards, to provide consistant mounting points
-   - Use a "group" and copy beteen boards for consistency
+   - The holes should really be in the same place on all boards, to provide consistent mounting points
+   - Use a "group" and copy between boards for consistency
  - Outline of PCB - DONE?
  - Add a note about forward and reversed bus connectors
  - RCBUS only has 39 pin connector!!! Doesn't matter though as the schematic and PCB layout is only "for show" – use the RCBUS80 board just partial pins instead.
@@ -377,4 +377,4 @@ See also [Scott's Z80SBC Part-1: 4-layer PCBs with Eagle and JLCPCB](https://www
 
 [When should I switch to a 4 layer board?](https://www.reddit.com/r/PrintedCircuitBoard/comments/1gnvgkv/when_should_i_switch_to_a_4_layer_board/). 
 
-While not strictly required for a simple 8 MHz Z80 board, it *has* made routing a lot simpler, haved the number of vias and eased the use of bypass capacitors due to the lack of GND and VCC traces everywhere.
+While not strictly required for a simple 8 MHz Z80 board, it *has* made routing a lot simpler, halved the number of vias and eased the use of bypass capacitors due to the lack of GND and VCC traces everywhere.
