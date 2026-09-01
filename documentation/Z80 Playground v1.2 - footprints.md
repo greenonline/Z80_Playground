@@ -43,13 +43,17 @@ Switch
 Headers
 
  - `H1`: `Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Horizontal`
- - `H2`: was `My_Components:Conn_Pin_Header_39x1_2.54mm`, now `Connector_PinHeader_2.54mm:PinHeader_1x39_P2.54mm_Horizontal`
+ - `H1` (Squires): was `Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Horizontal` now `Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical`
+ - `H2` (Squires): was `My_Components:Conn_Pin_Header_39x1_2.54mm`, now `Connector_PinHeader_2.54mm:PinHeader_1x39_P2.54mm_Horizontal`, better for less silkscreen of the pins: `Connector_PinHeader_2.54mm:PinHeader_1x39_P2.54mm_Vertical`
  - `H3` (RCBUS): `Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Horizontal`
  - `H4` (RCBUS): `Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Horizontal`
  - `H2` (RCBUS80): `Connector_PinHeader_2.54mm:PinHeader_1x40_P2.54mm_Vertical`
  - `H3` (RCBUS80): `Connector_PinHeader_2.54mm:PinHeader_1x40_P2.54mm_Vertical`
  - Trying to use a 2x40 but the footprint has the pins numbered odd-even when I want top to bottom. Annoying.
  - `H2` (RCBUS80/40) `Connector_PinHeader_2.54mm:PinHeader_2x40_P2.54mm_Horizontal`
+ - FOr H2, it is better to use the vertical connector footprint, less silkscreen
+ - `H2` (RCBUS80): `Connector_PinHeader_2.54mm:PinHeader_2x40_P2.54mm_Vertical`
+ - `H2` (RCBUS40): `Connector_PinHeader_2.54mm:PinHeader_1x40_P2.54mm_Vertical`
 
 Jumpers:
 

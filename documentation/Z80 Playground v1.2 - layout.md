@@ -4,6 +4,16 @@
 
 The Z80 Playground v1.2 layout, as derived from the images shown in the video, [Z80 playground v1.2 - The Z80 Single Board Computer - How to install CP/M programs and run them](https://www.youtube.com/watch?v=MaolTlk7XKM).
 
+It should be noted that each board, of a particular bus type (i.e. Squires/GOL, RCBUS40 and RCBUS80), has a slightly different layout. This is due, primarily, for the ICs at least, to the fact that certain placements would route for certain buses, while they wouldn't for other bus types and so the components had to be shifted differing amounts in order to get a particular board/bus type to route. 
+
+Once a suitable routable layout had been found for each board/bus type, then from that point on the boards developed independently - in virtual isolation, with little, or no, cross-reference - and received tweaks that other boards may, or may not, have also had applied. 
+
+However, in all honesty, the smaller discrete components that are not consistently placed, in particular the "disk" LED and bypass capacitors, are probably down to laziness and bad planning.
+
+That said, the silkscreen labelling should be more-or-less consistent across the boards.
+
+If I were to redo and start from scratch, the boards might be a bit more consistent, but reverse engineering someone else's work isn't easy and what is more, I wouldn't want to do it all again – this little lot took three weeks.
+
 ## Notes
 
 ### Board size
@@ -17,7 +27,7 @@ The Z80 Playground v1.2 layout, as derived from the images shown in the video, [
      - Ground plane on bottom side
      - VCC plane on top side
      - Power connectors at top left
-     - Place components, use autorouter, rerrange connectors until autoroute completes.
+     - Place components, use autorouter, rearrange connectors until autoroute completes.
  - Layer: `Edge Cuts`
 
 ### Basic block diagram layout
@@ -26,7 +36,7 @@ Working, mostly, from this image:
 
 [![Z80 Playground v1.2 - board layout][1]][1]
 
-I came up with some rough diagrms howing the location of various components, but with few part numbers:
+I came up with some rough diagrams showing the location of various components, but with few part numbers:
 
 ```none
 disk            user1 halt /rom
@@ -85,7 +95,7 @@ disk             user1 halt /rom
 |            Edge connector                     |
 |-----------------------------------------------|
 
-TTL Serial: TX RX VCC RTS GNS
+TTL Serial: TX RX VCC RTS GND
 ```
 
 Note: C14, C15 and C16 are missing from layout – they are missing from schematic as well.
@@ -170,7 +180,7 @@ Whereas I can only get 5 (with vias), although *without using vias*, I can get, 
 
 [![KiCAD 6 PCB Test - 25 Tracks beneath Z80][11]][11]
 
-Hoewver, looking at this rather clear image of the rear of the board, [Z80 Playground v1.2 - PCB rear_1](../xtras/hardware/screenshots/v1.2/unpopulated/Z80%20Playground%20v1.2%20-%20PCB%20rear_1.png), reveals that two tracks are often passed between the pins of ICs, whereas KiCAD 6 will not allow this (using out-of-the-box settings), and I can only route one track between the pins of a Z80, or whatever IC.
+However, looking at this rather clear image of the rear of the board, [Z80 Playground v1.2 - PCB rear_1](../xtras/hardware/screenshots/v1.2/unpopulated/Z80%20Playground%20v1.2%20-%20PCB%20rear_1.png), reveals that two tracks are often passed between the pins of ICs, whereas KiCAD 6 will not allow this (using out-of-the-box settings), and I can only route one track between the pins of a Z80, or whatever IC.
 
 [![Z80 Playground v1.2 - PCB rear_1][12]][12]
 
@@ -180,6 +190,44 @@ Hoewver, looking at this rather clear image of the rear of the board, [Z80 Playg
  - [snapping-to-grid](https://forum.kicad.info/t/snapping-to-grid/33669)
  - [losing_my_mind_re_grid_snapping](https://www.reddit.com/r/KiCad/comments/1fc5agm/losing_my_mind_re_grid_snapping/)
 
+
+## A better layout
+
+The crystals, especially the crystal for the UART, are far from their respective ICs. The clock signal to the CPU is fine, as it is immediately buffered by the NOT gate.
+
+The clock signal for the UART however has to navigate its way across the breadth of the board, in order to reach the UART.
+
+Easy to achieve, just swap the components round the power LED with the components around the UART XTAL.
+
+```none
+disk             user1 halt /rom
+  |                |    |    |
+  v                v    v    v
+|-----------------------------------------------|
+|                                 C7            |
+|     J2 J1    J6 LED4 LED6 LED1 7414  R14 XTAL |
+|LED2           "  R10  R1   R2    "   C5  CPU  |
+|R3             "                 U7   C6       |
+|  J5  R8 C1 C2 R15        TTLSerial            |
+|C11 U11_UART       C17         R13 R5 R6       |
+|       "           C18  XTAL   R7     R16 LED3 |  <- Power (LED)
+|C3                                    C8       |
+|U3_EEPROM ZIF    SW1  SW3  SW2                 |
+|  "              Rst /INT /NMI                 |
+|  "           C12  U2_RAM                      |
+|                                               |
+|                                               |
+|C13 74HC32  R4     U1_CPU           7432 C10   |
+|     U6     C9       "                U5       |
+|C4  74HC02  R9       "                 "       |
+|     U8                                        |
+|            Edge connector                     |
+|-----------------------------------------------|
+
+TTL Serial: TX RX VCC RTS GNS
+```
+
+Also swap C5/C6 nd R14, due to the hole necessitating the CPU crystal being shifted down.
 
 ---
 
@@ -197,5 +245,11 @@ Hoewver, looking at this rather clear image of the rear of the board, [Z80 Playg
   [10]: ../xtras/hardware/screenshots/v1.2/unpopulated/Z80%20Playground%20v1.2%20-%20unpopulated%20all%20front_1.png "Z80 Playground v1.2 - unpopulated all front_1"
   [11]: ../xtras/hardware/screenshots/test_images/KiCAD%206%20PCB%20Test%20-%2025%20Tracks%20beneath%20Z80.png "KiCAD 6 PCB Test - 25 Tracks beneath Z80"
   [12]: ../xtras/hardware/screenshots/v1.2/unpopulated/Z80%20Playground%20v1.2%20-%20PCB%20rear_1.png "Z80 Playground v1.2 - PCB rear_1"
+
+
+
+
+
+
 
 
