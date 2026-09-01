@@ -257,6 +257,10 @@ Note: The 2×3 footprint used should be two 1×3 modules with a slight gap betwe
 
 > There are, however, two module variants, both of which look identical at first glance. The most obvious difference is a singe 1×3 header vs two 1×3 headers. The more critical difference though is the 2×8 pinout. The RC2014 module is designed to take the CH375 module with the 8 data lines, D0-D7 on the very outside pins, and the power and control pins on the inside. The variant with a single 1×3 header has the data lines on the inside pins and the power and control pins on the outside. This latter module will not work with this PCB.
 
+#### Footnote
+
+<sup>*</sup> IMHO, the underside is the worst possible orientation for a daughter board. Daughter boards should really mount to the front of a board. However, in this limited-real-estate case, it is understandable why it was done in this manner. The motherboard's own LEDs would be covered by a front mounting daughter board, if the TTL connector were to remain in the same location.
+
 ## Serial/power module
 
 Dimensions (red FTDI): 18 x 36 mm
@@ -305,21 +309,12 @@ RTS RX TX 5V CTS GND (component side up, from left)
 
 Compare this to a red FTDI board: `GND RTS VCC RX TX`!!! (This might be correct, but reversed for both CTS/RTS n TX/RX, if RTS is CTS <- TODO: Check this!)
 
-
-
-
-
  - If different, then it should really use the correct serial board, instead of the Arduino RESET_DTR/upload board (i.e. the red FTDI should not be used, or have connectors provided for).
    - Do this in a PRO version of the board, or playground Z80
      - Should retain original Z80Playground replica status as someone may need, or depend upon, the original style TTL boards, as originally intended by Squires
        - but could just re-route and add another sub variant, as was done for T/S sub variant, so C/T/S, with C being the new CTS/RTS board
          - but which way up and down of the CTS board is also important, as it was for T/S, so not C/T/S but rather T/S, as before, and C/R for CTS  (component side up) and reversed (component side down)?
 
-
-
-#### Footnote
-
-<sup>*</sup> IMHO, this is the worst possible orientation for a daughter board. Daughter boards should really mount to the front of a board. However, in this limited-real-estate case, it is understandable why it was done in this manner. The motherboard's own LEDs would be covered by a front mounting daughter board, if the TTL connector were to remain in the same location.
 
 ### Front side annotations
 
