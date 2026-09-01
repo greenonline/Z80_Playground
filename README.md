@@ -257,6 +257,18 @@ Note: The 2×3 footprint used should be two 1×3 modules with a slight gap betwe
 
 > There are, however, two module variants, both of which look identical at first glance. The most obvious difference is a singe 1×3 header vs two 1×3 headers. The more critical difference though is the 2×8 pinout. The RC2014 module is designed to take the CH375 module with the 8 data lines, D0-D7 on the very outside pins, and the power and control pins on the inside. The variant with a single 1×3 header has the data lines on the inside pins and the power and control pins on the outside. This latter module will not work with this PCB.
 
+Dimensions: 27.5 x 48 mm
+
+02x08 from 02x03: 23.5 mm
+
+Seperation of 01x03 from 01x03: ~0.5 mm
+
+Bottom 2 pins of 02x08 in line with two 3 pins of 02x03
+
+02x08 is 4 mm from edge top and bottom, and 2 mm from edge on the right (outside) of board, and 41 (40.5) mm from left outside edge.
+
+02x03 is 10.5 mm from left outside edge, and 30.5 mm from right outside edge, 22 mm from top edge and ~1 mm from bottom edge
+
 
 ## Serial/power module
 
@@ -417,6 +429,8 @@ a11 a12 a13 a14 a15 clk d4 d3 d5 d6 5v d2 d7 d0 d1 /in /n /h /mr /ir
 Text Height/Width: 0.5 mm
 
 ## TODO
+
+(Most of these have actually been done, just not marked as such)
 
  - Rename XTAL to X1 and X2 instead of Y1 and Y2?
    - X1 and X2 renamed Y1 and Y2, as KiCAD auto named
@@ -592,15 +606,15 @@ Text Height/Width: 0.5 mm
 
 Ensure:
 
-ROM to the left
-RAM not totally to the right
-Crytals are shifted left (not down) and close to caps
-U5 is on the right edge
-HL 5 is correct and not overlapping.
-Silkscreen vertical connectors
-C7 is close to U7
-Silkscreen TTL serial pins (forward) 
-Silkscreen TTL serial pins (and reversed) 
+ - ROM to the left
+ - RAM not totally to the right
+ - Crystals are shifted left (not down) and close to caps
+ - U5 is on the right edge
+ - HL 5 is correct and not overlapping.
+ - Silkscreen vertical connectors
+ - C7 is close to U7
+ - Silkscreen TTL serial pins (forward) 
+ - Silkscreen TTL serial pins (and reversed) 
 
 
 
