@@ -1541,10 +1541,187 @@ CANDIDATE
 
 But no planes!!!
 
+##########################################################################################
+
+I had two major hurdles: forgetting to place the mounting holes before finialising routing, and; the orientation of the TTL serial connector.
+
+The first issue was solved by some manual re-routing. The same for the TTL serial connector. However, in the latter case, the orientation of the TTL serial connector in original layout by John Squires suited *his FTDI module*, as shown in [Flow Control for UART Serial communication between Z80 Playground and a PC](https://www.youtube.com/watch?v=RFxSKGnuisE) at [8:56](https://www.youtube.com/watch?v=RFxSKGnuisE), which has less common *reversed ordering* of the connectors. So, most fortuitously, it transpired that *my* original orientation of the connector was suitable for the more usual clone red FTDI module.
+
+##########################################################################################
+
+
+TODO: Check silkscreen of CH376S outline U10
+
+Changed outline size: Moved: Left in from holes. Right in next to right edge of 02x08.
+Moved down
+
+TODO: check consistant position of disk LED (moved on GOL and squire down and right (one notch or two). But RCBUS40 has it well more to the right (and down a bit).
+
+### CH375S adjusting
+
+
+#### Squires aligned4b2paz
+
+Cloned from aligned4b2pa (CANDIDATE)
+
+OK, done
+Err/Warn: 1/0
+UART cap not in a good location, and not connected
+
+#### Squires aligned4b2pcz
+
+Cloned from aligned4b2pc
+
+OK, done
+Err/Warn: 1/0
+UART cap not in a good location, and not connected
 
 
 
+#### Squires aligned4b4z
 
+Cloned from aligned4b4
+
+Done ok
+
+Err/Warn: 1/0
+
+UART cap not in a good location, and not connected
+
+#### Squires aligned4b6z
+
+Cloned from aligned4b6
+
+Done ok
+
+Err/Warn: 1/0
+
+UART cap not in a good location, and not connected
+
+#### GOL aligned2pc2z
+
+Cloned from aligned2pc2
+
+Done ok
+
+Err/Warn: 1/2
+
+#### GOL aligned2pc3z
+
+Cloned from aligned2pc3
+
+Done ok
+
+Err/Warn: 1/2
+
+
+#### GOL alignedcz
+
+Cloned from alignedc
+Easy, just moved connector
+Done ok
+
+Err/Warn: 1/2
+
+#### GOL alignedez
+
+Cloned from alignede
+Easy, just moved connector
+Done ok
+
+Err/Warn: 1/2
+
+
+#### RCBUS40r3iz
+
+Cloned from RCBUS40r3i
+
+Easy, just moved connector
+Done ok
+
+Err/Warn: 1/4
+
+
+#### RCBUS40r3jz
+
+Cloned from RCBUS40r3j
+
+Easy, just moved connector
+Done ok
+
+Err/Warn: 1/4
+
+#### RCBUS40r3ipz
+
+Cloned from RCBUS40r3ip
+
+Easy, just moved connector
+Done ok
+
+Err/Warn: 1/4
+
+
+#### RCBUS40r3ip2z
+
+Cloned from RCBUS40r3ip2
+
+Easy, just moved connector
+Done ok
+
+Err/Warn: 1/4
+
+
+#### RCBUS80r5gz
+
+Cloned from RCBUS80r5g
+
+Easy, just moved connector
+Done ok
+
+Err/Warn: 1/7
+
+
+#### RCBUS80r5fz
+
+Cloned from RCBUS80r5f
+
+Easy, just moved connector
+Done ok
+
+Err/Warn: 1/7
+
+#### RCBUS80r5cp2fixed4z
+
+Cloned from RCBUS80r5cp2fixed4
+
+Easy, just moved connector
+Done ok
+
+Err/Warn: 1/7
+
+
+#### RCBUS80r5cp2fixed3z
+
+Cloned from RCBUS80r5cp2fixed3
+
+Easy, just moved connector
+Done ok
+
+Err/Warn: 1/7
+
+
+#### Squires aligned4b6z2
+
+Cloned from aligned4b6z
+
+Added via to Z80 VCC Cap
+
+The new Squires RS2 candidate, replaces aligned4b6z
+
+
+#### Bypass capacitors checked
+
+See [Z80 Playground v1.2 - bypass capacitors](Z80%20Playground%20v1.2%20-%20bypass%20capacitors.md).
 
 
 

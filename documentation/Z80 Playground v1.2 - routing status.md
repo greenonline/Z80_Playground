@@ -1,5 +1,8 @@
 # Z80 Playground v1.2 - routing status
 
+Note: This is an old list of routing attempts. See [PCB Candidates](documentation/Z80%20Playground%20v1.2%20-%20PCB%20candidates.md) for a more up-to-date, and final, list
+
+---
 
 The idea is to reduce the *via count* (V.C.). Anything below 65 vias is good, the lower the better - 65 is a semi-abitrary value chosen through empirical observation of over 40 autoroute processes.
 
@@ -70,6 +73,8 @@ Garbage formatting and old attempts (historical?):
  - GOL/MJr - 47 vias
  - GOL/MJf - 79 vias
 
+* not aligned
+
 GOL hole issues:
 
  - GOLaligned - 47 vias
@@ -101,5 +106,4 @@ Best:
 
 
 
-* not aligned
 

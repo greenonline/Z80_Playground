@@ -1,4 +1,4 @@
-# Z80 Playground v1.2 - bypass capacitors 
+# Z80 Playground v1.2 - bypass capacitors
 
 
 |Board| U1 VCC | U1 GND | U2 VCC | U2 GND | U3 VCC | U3 GND | U5 VCC | U5 GND | U6 VCC | U6 GND | U7 VCC | U7 GND | U8 VCC | U8 GND | U11 VCC | U11 GND |
@@ -55,8 +55,8 @@ ICs
 
 ## Notes
 
- - RCBUS80 RS2, RT2, RS4, RT4:  U8 IC label missing in center of IC
- - RCBUS40 RS2, RT2, RS4, RT4:  U8 IC label missing in center of IC
+ - RCBUS80 RS2, RT2, RS4, RT4:  U8 IC label missing in center of IC on F.Fab layer north of IC - DONE!
+ - RCBUS40 RS2, RT2, RS4, RT4:  U8 IC label missing in center of IC on F.Fab layer north of IC - DONE!
  - RCBUS40 RS2, RT2: Possible, using via, to route U7 GND
  - Squires - 2 layers - may be possible to route U6 GND, if C4 moved close to U6
  - TODO: Check why Squires RS2 required extra via for VCC pushing to 55? Why Squires RT2 has only 54?
