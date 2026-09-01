@@ -17,8 +17,6 @@ This is the best image of the PCB and components that I could find, via [a sold 
 
 [![PCB v1.2][1]][1]
 
-  [1]: xtras/hardware/screenshots/v1.2/ebay/Z80%20Playground%20v1.2%20PCB%20and%20components.jpeg "PCB v1.2"
-
 There don't appear to be any parts lists, schematics, PCB layouts, Gerber files, etc. – basically, there seems to be little in the way of hardware documentation, apart from the videos. However, there are still Github repos for the software, that are still up, so that is good.
 
 However, using the Wayback machine I managed to get hold of some PDFs of the schematic diagrams for v1.1 and v.1.2, and some additional software, see the section **Wayback data** below. 
@@ -53,9 +51,6 @@ There is a needless **Routing status** section below, that contains a table, of 
 Here is a screenshot of the PCB and 3D view of the RCBUS80 variant:
 
 [![PCB and 3D image][2]][2]
-
-  [2]: xtras/hardware/screenshots/v1.2.1/PCB_and_3DView_RCBUS80r5cp2.png "PCB and 3D image"
-
 
 ## See also
 
@@ -283,7 +278,7 @@ Silkscreen on the front
 
 It should be noted that this pin order is for the strange serial module, with the board component side up, as shown in [Flow Control for UART Serial communication between Z80 Playground and a PC](https://www.youtube.com/watch?v=RFxSKGnuisE) at [8:56](https://www.youtube.com/watch?v=RFxSKGnuisE&t=536):
 
-[![Z80 Playground TTL serial board][1]][1]
+[![Z80 Playground TTL serial board][3]][3]
 
 ```none
 DTR RX TX VCC R/C GND (component side up, from left)
@@ -291,7 +286,7 @@ DTR RX TX VCC R/C GND (component side up, from left)
 
 However, for the more usual cloned FTDI module, with the board component side up, the connnections are in the reverse order..!
 
-[![Red FTDI TTL serial board][2]][2]
+[![Red FTDI TTL serial board][4]][4]
 
 ```none
  GND  RTS  VCC   RX   TX
@@ -302,7 +297,7 @@ Of course, one could flip the TTL serial board over in order to realign the pins
 
 The TTL serial board used by Small Commputers Central is
 
-[![TTL serial board as used by Small Computers Direct][3]][3]
+[![TTL serial board as used by Small Computers Direct][5]][5]
 
 ```none
 RTS RX TX 5V CTS GND (component side up, from left)
@@ -643,8 +638,11 @@ See [PCB Candidates](documentation/Z80%20Playground%20v1.2%20-%20PCB%20candidate
 
 <!-- Images -->
 
-  [1]: xtras/hardware/screenshots/TTL_serial_board/Z80PG_TTL_board.png "Z80 Playground TTL serial board"
-  [2]: xtras/hardware/screenshots/TTL_serial_board/Red_FTDI_board.png "Red FTDI TTL serial board"
-  [3]: xtras/hardware/screenshots/TTL_serial_board/SCD_TTL_board_hi.jpg "TTL serial board as used by Small Computers Direct"
+  [1]: xtras/hardware/screenshots/v1.2/ebay/Z80%20Playground%20v1.2%20PCB%20and%20components.jpeg "PCB v1.2"
+  [2]: xtras/hardware/screenshots/v1.2.1/PCB_and_3DView_RCBUS80r5cp2.png "PCB and 3D image"
+
+  [3]: xtras/hardware/screenshots/TTL_serial_board/Z80PG_TTL_board.png "Z80 Playground TTL serial board"
+  [4]: xtras/hardware/screenshots/TTL_serial_board/Red_FTDI_board.png "Red FTDI TTL serial board"
+  [5]: xtras/hardware/screenshots/TTL_serial_board/SCD_TTL_board_hi.jpg "TTL serial board as used by Small Computers Direct"
 
  
