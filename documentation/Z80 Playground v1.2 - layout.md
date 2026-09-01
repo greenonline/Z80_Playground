@@ -151,8 +151,8 @@ J6:
 
 J5 to J6:
 
- - Horizontal: 
- - Vertical: 
+ - Horizontal: 23.5 mm
+ - Vertical: Bottom 2 pins of 02x08 in line with two 3 pins of 02x03
 
 Note that the shorted Rx and GND pins on J5 are on the side of the 2x3 socket *towards the inside* of the daughter board:
 
@@ -170,7 +170,7 @@ Note: The 2×3 footprint used should be two 1×3 modules with a slight gap betwe
 
 > There are, however, two module variants, both of which look identical at first glance. The most obvious difference is a singe 1×3 header vs two 1×3 headers. The more critical difference though is the 2×8 pinout. The RC2014 module is designed to take the CH375 module with the 8 data lines, D0-D7 on the very outside pins, and the power and control pins on the inside. The variant with a single 1×3 header has the data lines on the inside pins and the power and control pins on the outside. This latter module will not work with this PCB.
 
-#### Pitch
+#### Trace pitch
 
 What pitch is being used in the Squires PCB. If one zooms in on the front of the board, [Z80 Playground v1.2 - unpopulated all front_1](../xtras/hardware/screenshots/v1.2/unpopulated/Z80%20Playground%20v1.2%20-%20unpopulated%20all%20front_1.png), shows 20-21 horizontal tracks within CPU outline:
 
