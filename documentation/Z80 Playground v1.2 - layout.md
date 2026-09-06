@@ -29,6 +29,7 @@ If I were to redo and start from scratch, the boards might be a bit more consist
      - Power connectors at top left
      - Place components, use autorouter, rearrange connectors until autoroute completes.
  - Layer: `Edge Cuts`
+ - A 02x40 pin header is 101.6 mm long/wide, so it just about fits, although courtyard does not
 
 ### Basic block diagram layout
 

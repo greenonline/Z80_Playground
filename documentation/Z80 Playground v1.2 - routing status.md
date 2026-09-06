@@ -1,6 +1,6 @@
 # Z80 Playground v1.2 - routing status
 
-Note: This is an old list of routing attempts. See [PCB Candidates](documentation/Z80%20Playground%20v1.2%20-%20PCB%20candidates.md) for a more up-to-date, and final, list
+Note: This is an historical list of routing attempts. See [PCB Candidates](documentation/Z80%20Playground%20v1.2%20-%20PCB%20candidates.md) for a more up-to-date, and final, list
 
 ---
 

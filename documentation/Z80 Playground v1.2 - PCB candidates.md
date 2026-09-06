@@ -2,53 +2,146 @@
 
  - RCBUS80r
    - 2 layer
-     - RCBUS80r5fz
+     - RT2: RCBUS80r5fz
        - 56 vias
        - XTALs both perfect
        - Reverse TTL - Annotated
        - Error/Warn: 1/7
-     - RCBUS80r5gz
+     - RT2: RCBUS80r5fz2
+       - 56 vias
+       - XTALs both perfect
+       - Reverse TTL - Annotated
+       - Error/Warn: 1/7
+     - RT2: RCBUS80r5fz4
+       - 55 vias
+       - XTALs both perfect
+       - Reverse TTL - Annotated
+       - Via removed to A8 on Bus pin 16
+       - Error/Warn: 1/7
+     - RT2: RCBUS80r5fz5 -> RCBUS80r5fz6
+       - 56 vias
+       - XTALs both perfect
+       - Reverse TTL - Annotated
+       - +1 via for ROM GND capacitor
+       - Error/Warn: 1/7
+     - RT2: RCBUS80r5fz7
+       - 55 vias
+       - XTALs both perfect
+       - Reverse TTL - Annotated
+       - -1 via IORQ pin on bus
+       - Error/Warn: 1/7
+     - RT2: RCBUS80r5fz8
+       - 54 vias
+       - XTALs both perfect
+       - Reverse TTL - Annotated
+       - -1 via D6 pin on bus
+       - Error/Warn: 1/7
+     - RT2: RCBUS80r5fz9
+       - 53 vias
+       - XTALs both perfect
+       - Reverse TTL - Annotated
+       - -1 via NMI pin on bus
+       - Error/Warn: 1/7
+     - RS2: RCBUS80r5gz
        - 56 vias
        - XTALs both perfect
        - Good TTL - Annotated
        - Error/Warn: 1/7
+     - RS2: RCBUS80r5gz4
+       - 55 vias
+       - XTALs both perfect
+       - Good TTL - Annotated
+       - Via removed to A8 on Bus pin 16
+       - Error/Warn: 1/7
+     - RS2: RCBUS80r5gz5 -> RCBUS80r5gz6
+       - 56 vias
+       - XTALs both perfect
+       - Good TTL - Annotated
+       - +1 via for ROM GND capacitor
+       - Error/Warn: 1/7
+     - RS2: RCBUS80r5gz7
+       - 55 vias
+       - XTALs both perfect
+       - Good TTL - Annotated
+       - -1 via IORQ pin on bus
+       - Error/Warn: 1/7
+     - RS2: RCBUS80r5gz8
+       - 54 vias
+       - XTALs both perfect
+       - Good TTL - Annotated
+       - -1 via D6 pin on bus
+       - Error/Warn: 1/7
+     - RS2: RCBUS80r5gz9
+       - 53 vias
+       - XTALs both perfect
+       - Good TTL - Annotated
+       - -1 via NMI pin on bus
+       - Error/Warn: 1/7
    - 4 layer
-     - RCBUS80r5cp2fixed3z
-       - 24 vias
+     - RT4: RCBUS80r5cp2fixed3z
+       - 25 vias
        - XTALs both perfect
        - Reverse TTL - Annotated
        - Error/Warn: 1/7
-     - RCBUS80r5cp2fixed4z
-       - 24 vias
+     - RS4: RCBUS80r5cp2fixed4z
+       - 25 vias
        - XTALs both perfect
        - Good TTL - Annotated
        - Error/Warn: 1/7
  - RCBUS40r
    - 2 layer
-     - RCBUS40r3iz
+     - RT2: RCBUS40r3iz
        - 55 vias
        - XTALs both perfect
        - Reverse TTL - Annotated
        - Error/Warn: 1/4
-     - RCBUS40r3jz
+     - RT2: RCBUS40r3iz6
+       - 54 vias
+       - XTALs both perfect
+       - Reverse TTL - Annotated
+       - All bypass caps good
+       - Error/Warn: 1/4
+     - RT2: RCBUS40r3iz7
+       - 53 vias
+       - XTALs both perfect
+       - Reverse TTL - Annotated
+       - All bypass caps good
+       - -1 via for GND U6
+       - Error/Warn: 1/4
+     - RS2: RCBUS40r3jz
        - 55 vias
        - XTALs both perfect
        - Good TTL - Annotated
+       - Error/Warn: 1/4
+     - RS2: RRCBUS40r3jz6
+       - 54 vias
+       - XTALs both perfect
+       - Good TTL - Annotated
+       - All bypass caps good
+       - Error/Warn: 1/4
+     - RS2: RRCBUS40r3jz6
+       - 53 vias
+       - XTALs both perfect
+       - Good TTL - Annotated
+       - All bypass caps good
+       - -1 via for GND U6
        - Error/Warn: 1/4
    - 4 layer
-     - RCBUS40r3ipz
+     - RT4: RCBUS40r3ipz2
        - No filled zones, why?
        - 21 vias
        - Reverse TTL - Annotated
+       - All bypass caps good
        - Error/Warn: 1/4
-     - RCBUS40r3ip2z
+     - RS4: RCBUS40r3ip2z2
        - No filled zones, why?
        - 21 vias
        - Good TTL - Annotated
+       - All bypass caps good
        - Error/Warn: 1/4
  - Squires
    - 2 layer
-     - aligned4b4z
+     - RT2: aligned4b4z2
        - 54 vias
        - XTALs both perfect
        - Bus connector could be moved up a little
@@ -56,40 +149,145 @@
        - Perfect!
        - Reverse TTL - Annotated
        - Error/Warn: 1/0
-     - aligned4b6z
+     - RT2: aligned4b4z4
+       - 55 vias
+       - XTALs both perfect
+       - Bus connector could be moved up a little
+       - 4 layer
+       - Perfect!
+       - Reverse TTL - Annotated
+       - Bypass caps done (RAM required +1 via)
+       - Error/Warn: 1/0
+     - RT2: aligned4b4z5
+       - 56 vias
+       - XTALs both perfect
+       - Bus connector could be moved up a little
+       - 4 layer
+       - Perfect!
+       - Reverse TTL - Annotated
+       - Bypass caps done (UART required +1 via)
+       - Error/Warn: 1/0
+     - RT2: aligned4b4z6
+       - 57 vias
+       - XTALs both perfect
+       - Bus connector could be moved up a little
+       - 4 layer
+       - Perfect!
+       - Reverse TTL - Annotated
+       - All bypass caps done (Z80 required +1 via)
+       - Error/Warn: 1/0
+     - RT2: aligned4b4z7
+       - 55 vias
+       - XTALs both perfect
+       - Bus connector could be moved up a little
+       - 4 layer
+       - Perfect!
+       - Reverse TTL - Annotated
+       - All bypass caps good
+       - Removed -2 via
+       - Error/Warn: 1/0
+     - RS2: aligned4b6z
        - 54 vias
        - Good TTL - Annotated
        - Error/Warn: 1/0
-     - aligned4b6z2
+     - RS2: aligned4b6z4
        - 55 vias
        - Good TTL - Annotated
        - Z80 caps good (required +1 via)
        - Error/Warn: 1/0
+     - RS2: aligned4b6z5
+       - 56 vias
+       - Good TTL - Annotated
+       - RAM caps good (required +1 via)
+       - Error/Warn: 1/0
+     - RS2: aligned4b6z6
+       - 57 vias
+       - Good TTL - Annotated
+       - All bypass caps good (UART required +1 via)
+       - Error/Warn: 1/0
+     - RS2: aligned4b6z7
+       - 55 vias
+       - Good TTL - Annotated
+       - All bypass caps good
+       - Removed -2 via
+       - Error/Warn: 1/0
+     - RS2: aligned4b6z8
+       - 54 vias
+       - Good TTL - Annotated
+       - All bypass caps good
+       - Removed -1 via RAM (A7)
+       - Error/Warn: 1/0
    - 4 layer
-     - aligned4b2paz
+     - RT4: aligned4b2paz
        - 22 vias
        - Perfect!
        - Reverse TTL - Annotated
        - Error/Warn: 1/0
-     - aligned4b2pcz
+     - RT4: aligned4b2paz2
+       - 21 vias
+       - Perfect!
+       - Reverse TTL - Annotated
+       - Error/Warn: 1/0
+     - RT4: aligned4b2paz3
+       - 20 vias
+       - Perfect!
+       - Reverse TTL - Annotated
+       - Error/Warn: 1/0
+     - RS4: aligned4b2pcz
        - 22 vias
+       - Perfect!
+       - Good TTL - Annotated
+       - Error/Warn: 1/0
+     - RS4: aligned4b2pcz2
+       - 21 vias
+       - Perfect!
+       - Good TTL - Annotated
+       - Error/Warn: 1/0
+     - RS4: aligned4b2pcz3
+       - 20 vias
        - Perfect!
        - Good TTL - Annotated
        - Error/Warn: 1/0
  - GOL
    - 2 layer
-     - GOL alignedcz
+     - RT2: GOL alignedcz
        - 48 vias
        - XTALs both perfect
        - Reverse TTL - Annotated
        - Error/Warn: 1/2
-     - GOL alignedez
+     - RT2: GOL alignedcz2-> alignedcz3
+       - 49 vias
+       - XTALs both perfect
+       - Reverse TTL - Annotated
+       - Extra via for ROM GND bypass cap
+       - Error/Warn: 1/2
+     - RT2: GOL alignedcz4
+       - 48 vias
+       - XTALs both perfect
+       - Reverse TTL - Annotated
+       - -1 via to U5 GND from U2 GND
+       - All bypass caps good (U11?)
+       - Error/Warn: 1/2
+     - RS2: GOL alignedez
        - 48 vias
        - XTALs both perfect
        - Good TTL - Annotated
        - Error/Warn: 1/2
+     - RS2: GOL alignedez2-> alignedez3
+       - 49 vias
+       - XTALs both perfect
+       - Good TTL - Annotated
+       - Extra via for ROM GND bypass cap
+       - Error/Warn: 1/2
+     - RS2: GOL alignedez4
+       - 48 vias
+       - XTALs both perfect
+       - Good TTL - Annotated
+       - -1 via to U5 GND from U2 GND
+       - All bypass caps good (U11?)
+       - Error/Warn: 1/2
    - 4 layer
-     - GOL align2pc2z 
+     - RT4: GOL align2pc2z 
        - 21 vias
        - Reverse TTL - Annotated
        - XTALs both perfect
@@ -97,7 +295,7 @@
          - otherwise a via will be needed
          - the edge connector isn't properly on the board!
        - Error/Warn: 1/2
-     - GOL align2pc3z 
+     - RS4: GOL align2pc3z 
        - 21 vias
        - Good TTL - Annotated
        - XTALs both perfect
@@ -125,5 +323,12 @@ Notes:
  
  
  
+ 
+### Bypass capacitor checks
+
+
+See also [Z80 Playground v1.2 - bypass capacitors](Z80%20Playground%20v1.2%20-%20bypass%20capacitors.md) 
+
+All Squires boards have acceptable bypass capacitors, now.
  
  
