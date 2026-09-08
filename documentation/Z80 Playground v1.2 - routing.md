@@ -1714,12 +1714,436 @@ Err/Warn: 1/7
 
 Cloned from aligned4b6z
 
-Added via to Z80 VCC Cap
+Added via to Z80 VCC Cap +1 = 55 vias
 
 The new Squires RS2 candidate, replaces aligned4b6z
 
+#### Squires aligned4b6z3
 
-#### Bypass capacitors checked
+Cloned from aligned4b6z2
+
+Moved C4 closer to U6 and routed between cap legs
+Added GND bypass cap to U6
+
+
+#### Squires aligned4b4z2
+
+Cloned from aligned4b4z
+
+Moved C4 closer to U6 and routed between cap legs
+Added GND bypass cap to U6
+
+#### Squires aligned4b4z3
+
+Cloned from aligned4b4z2
+
+Added GND bypass to U3
+
+New candidate for Squires RT2
+
+
+#### Squires aligned4b6z4
+
+Cloned from aligned4b6z3
+
+Added GND bypass to U3
+
+New candidate for Squires RS2
+
+#### Squires aligned4b4z4
+
+Cloned from aligned4b4z3
+
+Added GND bypass to U2, by via 54+1 = 55
+
+New candidate for Squires RT2
+
+#### Squires aligned4b6z5
+
+Cloned from aligned4b6z4
+
+Added GND bypass to U2, by via 55+1 = 56
+
+New candidate for Squires RS2
+
+#### Squires aligned4b6z6
+
+Cloned from aligned4b6z5
+
+Added GND bypass to U11 by via , 56 + 1 = 57
+
+New candidate for Squires RS2
+
+
+#### Squires aligned4b4z5
+
+Cloned from aligned4b4z4
+
+Added GND bypass to U11 by via , 55 + 1 = 56
+
+New candidate for Squires RT2
+
+#### Squires aligned4b4z6
+
+Cloned from aligned4b4z5
+
+Added missing GND Z80 by via, 66 + 1 = 57
+
+The same number of vias as RS2 now
+
+New candidate for Squires RT2
+
+
+#### Squires aligned4b2paz2
+
+Clone from aligned4b2paz
+
+Remove via to pin 6 of bus: 22 - 1 = 21
+
+New candidate for Squires RT4
+
+
+#### Squires aligned4b2pcz2
+
+Clone from aligned4b2pcz
+
+Remove via to pin 6 of bus: 22 - 1 = 21
+
+New candidate for Squires RS4
+
+#### Squires aligned4b2paz3
+
+Cloned from aligned4b2paz2
+
+Remove via to pin 16 CPU: 21 - 1 = 20
+
+New candidate for Squires RT4
+
+#### Squires aligned4b2pcz3
+
+Cloned from aligned4b2pcz2
+
+Remove via to pin 16 CPU: 21 - 1 = 20
+
+New candidate for Squires RS4
+
+
+#### Squires aligned4b4z7
+
+Cloned from aligned4b4z6
+
+Removed via to UART pin 12: 57 - 1 = 56
+Removed via to bus pin 6: 56 - 1 = 55
+
+
+#### Squires aligned4b6z7
+
+Cloned from aligned4b6z6
+
+Removed via to UART pin 12: 57 - 1 = 56
+Removed via to bus pin 6: 56 - 1 = 55
+
+
+#### RCBUS80r5fz2
+
+Cloned from RCBUS80r5fz
+
+U6, U7 and U8 GND caps
+
+#### RCBUS80r5gz2
+
+Cloned from RCBUS80r5gz
+
+U6, U7 and U8 GND caps
+
+#### RCBUS80r5gz3
+
+Cloned from RCBUS80r5gz2
+
+
+U2 GND cap
+
+
+New RS2 candidate
+
+
+#### RCBUS80r5fz3
+
+Cloned from RCBUS80r5fz2
+
+U2 GND cap
+New RT2 candidate
+
+#### RCBUS80r5gz4
+
+Cloned from RCBUS80r5gz3
+
+U1 GND cap
+
+Via removed to A8 on Bus pin 16 56 - 1 = 55
+New RS2 candidate
+
+#### RCBUS80r5fz4
+
+Cloned from RCBUS80r5fz3
+
+U1 GND cap
+
+Via removed to A8 on Bus pin 16 56 - 1 = 55
+
+New RT2 candidate
+
+
+#### RCBUS80r5fz5
+
+Cloned from RCBUS80r5fz4
+
+U3 GND cap using via, 55 + 1 = 56
+
+New RT2 candidate
+
+
+#### RCBUS80r5gz5
+
+Cloned from RCBUS80r5gz4
+
+U3 GND cap using via, 55 + 1 = 56
+
+New RS2 candidate
+
+#### RCBUS80r5fz6
+
+Cloned from RCBUS80r5fz5
+
+U11 GND cap using pads, no vias needed
+
+New RT2 candidate
+
+#### RCBUS80r5gz6
+
+Cloned from RCBUS80r5gz5
+
+U11 GND cap using pads, no vias needed
+
+New RS2 candidate
+
+
+#### RCBUS80r5gz7
+
+Cloned from RCBUS80r5gz6
+
+Remove via to NMI on bus, 56 - 1 = 55
+
+New RS2 candidate
+
+
+#### RCBUS80r5fz7
+
+Cloned from RCBUS80r5fz6
+
+Remove via to NMI on bus, 56 - 1 = 55
+
+New RT2 candidate
+
+
+
+#### RCBUS80r5fz8
+
+Cloned from RCBUS80r5fz7
+
+Remove via to D6 on bus, 55 - 1 = 54
+Is the trace too long?
+New RT2 candidate
+
+#### RCBUS80r5gz8
+
+Cloned from RCBUS80r5gz7
+
+Remove via to D6 on bus, 55 - 1 = 54
+Is the trace too long?
+New RS2 candidate
+
+
+#### RCBUS80r5gz9
+Cloned frorm RCBUS80r5gz8
+
+Remove via to NMI on bus, 54 - 1 = 53
+
+New RS2 candidate
+
+#### RCBUS80r5fz9
+
+Cloned from RCBUS80r5fz8
+
+Remove via to NMI on bus, 54 - 1 = 53
+
+New RS2 candidate
+
+#### RCBUS40r3jz2
+
+Cloned from RCBUS40r3jz
+
+Remove via to U8 GND, 55 - 1 = 54
+
+
+#### RCBUS40r3iz2
+
+Cloned from RCBUS40r3iz
+
+Remove via to U8 GND, 55 - 1 = 54
+
+#### RCBUS40r3jz3
+
+Cloned from RCBUS40r3jz2
+
+U7 GND cap
+
+
+#### RCBUS40r3iz3
+
+Cloned from RCBUS40r3iz2
+
+U7 GND cap
+
+
+#### RCBUS40r3jz4
+
+Cloned from RCBUS40r3jz3
+
+U3 GND cap
+
+#### RCBUS40r3iz4
+
+Cloned from RCBUS40r3iz3
+
+U3 GND cap
+
+
+#### RCBUS40r3iz5
+
+Cloned from RCBUS40r3iz4
+
+U11 GND cap
+
+
+#### RCBUS40r3jz5
+
+Cloned from RCBUS40r3jz4
+
+U11 GND cap
+
+
+
+#### RCBUS40r3iz6
+
+Cloned from RCBUS40r3iz5
+
+U1 GND cap, by re-routing
+
+
+#### RCBUS40r3jz6
+
+Cloned from RCBUS40r3jz5
+
+U1 GND cap, by re-routing
+
+
+#### RCBUS40r3ip2z2
+
+Cloned from RCBUS40r3ip2z
+
+Rerouting for U11 GND cap
+Long trace added for U3 GND cap
+
+### RCBUS40r3ipz2
+
+Cloned from RCBUS40r3ipz
+
+Rerouting for U11 GND cap
+Long trace added for U3 GND cap
+
+
+#### RCBUS40r3iz7
+
+Cloned from RCBUS40r3iz6
+
+U6 GND via removed, 55 - 1 = 54
+Had to shift U8 down one notch
+
+#### RCBUS40r3jz7
+
+Cloned from RCBUS40r3jz6
+U6 GND via removed, 55 - 1 = 54
+Had to shift U8 down one notch
+
+#### GOL alignedez2
+
+Cloned from alignedez
+
+U3 GND cap, via added 48 + 1 = 49
+U1 GND cap by re-routing
+U2 GND cap by very simple rerouting
+
+#### GOL alignedcz2
+
+Cloned from alignedcz
+
+U3 GND cap, via added 48 + 1 = 49
+U1 GND cap by re-routing
+U2 GND cap by very simple rerouting
+
+#### GOL alignedcz3
+
+Cloned from alignedcz2
+
+U8 GND cap by routing
+
+ - GOL RT2 U11 GND cap is already done, long trace via many U11 pads
+   - More direct would require re-routing and a via, or more, probably
+
+Removed unrequired (?) GND traces to C12 from U1 and U3
+
+#### GOL alignedez3
+
+Cloned from alignedez2
+U8 GND cap by routing
+
+ - GOL RS2 U11 GND cap is already done, long trace via many U11 pads
+   - More direct would require re-routing and a via, or more, probably
+
+Removed unrequired (?) GND traces to C12 from U1 and U3
+
+
+#### GOL alignedcz4
+
+Cloned from alignedcz3
+
+Removed via by re-routing 49 - 1 = 48
+-1 via to U5 GND from U2 GND
+
+#### alignedez4
+Cloned from alignedez3
+Removed via by re-routing 49 - 1 = 48
+-1 via to U5 GND from U2 GND
+
+
+#### Squires aligned4b6z8 
+
+Cloned from aligned4b6z7
+
+Removed via from RAM A7 by rerouting, 55 -1 = 54
+
+
+#### Squires aligned4b4z8
+
+Cloned from aligned4b4z7
+
+Removed via from RAM A7 by rerouting, 55 -1 = 54
+
+
+
+
+### Bypass capacitors checked
 
 See [Z80 Playground v1.2 - bypass capacitors](Z80%20Playground%20v1.2%20-%20bypass%20capacitors.md).
 
