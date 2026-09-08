@@ -237,21 +237,21 @@ See also [Scott's Z80SBC Part-1: 4-layer PCBs with Eagle and JLCPCB](https://www
 
 While not strictly required for a simple 8 MHz Z80 board, it *has* made routing a lot simpler, halved the number of vias and eased the use of bypass capacitors due to the lack of GND and VCC traces everywhere.
 
-## Routing status
+### Routing status
 
 See [Z80 Playground v1.2 - routing status](documentation/Z80%20Playground%20v1.2%20-%20routing%20status.md)
 
-## Parts list
+### Parts list
 
 Please refer to [Z80 Playground v1.2 - parts list](documentation/Z80%20Playground%20v1.2%20-%20parts%20list.md).
 
-## Additional "homebrew" notes
+### Additional "homebrew" notes
 
 See [Homebrew](documentation/Homebrew/Homebrew.md) for some rough auxiliary notes about homebrew retro SBC systems.
 
 [Or put on separate repo?]
 
-## Important note about CH376S module
+### Important note about CH376S module
 
 Note: The 2×3 footprint used should be two 1×3 modules with a slight gap between them. From [CH375 USB Storage](https://rc2014.co.uk/modules/ch375-usb-storage/). Also, 
 
@@ -270,66 +270,21 @@ Bottom 2 pins of 02x08 in line with two 3 pins of 02x03
 02x03 is 10.5 mm from left outside edge, and 30.5 mm from right outside edge, 22 mm from top edge and ~1 mm from bottom edge
 
 
-## Serial/power module
+### Serial/power module
 
-Dimensions (red FTDI): 18 x 36 mm
+It is important to select the correct variant of the Z80 Playground board, depending upon which TTL serial board you intent to use.
 
-Not sure that I like the idea of possible shorts – Use captan tape for protection and sticky foam pad for spacing.
+See [Z80 Playground v1.2 - serial/power module](Z80%20Playground%20v1.2%20-%20serial-power%20module.md)
 
-Silkscreen on the front
-
-```none 
- TX
- RX
- VCC
- RTS
- GND
- 
- TTL Serial
-```
-
-It should be noted that this pin order is for the strange serial module, with the board component side up, as shown in [Flow Control for UART Serial communication between Z80 Playground and a PC](https://www.youtube.com/watch?v=RFxSKGnuisE) at [8:56](https://www.youtube.com/watch?v=RFxSKGnuisE&t=536):
-
-[![Z80 Playground TTL serial board][3]][3]
-
-```none
-DTR RX TX VCC R/C GND (component side up, from left)
-```
-
-However, for the more usual cloned red FTDI module, with the board component side up, the connnections are in the reverse order..!
-
-[![Red FTDI TTL serial board][4]][4]
-
-```none
- GND  RTS  VCC   RX   TX
-```
-
-Of course, one could flip the TTL serial board over in order to realign the pins in the correct order, but then the blinken lights would be obscurred, as they would be facing the undersie of the motherboard. It all depends upon whether you believe that the correct orientation for a *daughter board, mounted beneath the motherboard*<sup>*</sup>, should have its components facing down, or up. In other words, should the underside of the completed unit show only PCB undersides, or, more inconsistantly, the motherboard underside and the TTL serial board's front side? In my mind, the latter is not dissimilar to serving a quiche upside down on a plate.
-
-Nevertheless, one thing should be clear, these TTL boards with the DTR line exposed are actually *intended for uploading sketches to Arduinos*. For full-handshaking, the TTL serial board should have CTS and RTS available, and not DTR.
-
-The more correct TTL serial board used by Small Commputers Central is:
-
-[![TTL serial board as used by Small Computers Direct][5]][5]
-
-```none
-RTS RX TX 5V CTS GND (component side up, from left)
-```
-
-Compare this to a red FTDI board: `GND RTS VCC RX TX`!!! (This might be correct, but reversed for both CTS/RTS n TX/RX, if RTS is CTS <- TODO: Check this!)
-
- - If different, then it should really use the correct serial board, instead of the Arduino RESET_DTR/upload board (i.e. the red FTDI should not be used, or have connectors provided for).
-   - Do this in a PRO version of the board, or playground Z80
-     - Should retain original Z80Playground replica status as someone may need, or depend upon, the original style TTL boards, as originally intended by Squires
-       - but could just re-route and add another sub variant, as was done for T/S sub variant, so C/T/S, with C being the new CTS/RTS board
-         - but which way up and down of the CTS board is also important, as it was for T/S, so not C/T/S but rather T/S, as before, and C/R for CTS  (component side up) and reversed (component side down)?
-
-#### Footnote
-
-<sup>*</sup> IMHO, the underside is the worst possible orientation for a daughter board. Daughter boards should really mount to the front of a board. However, in this limited-real-estate case, it is understandable why it was done in this manner. The motherboard's own LEDs would be covered by a front mounting daughter board, if the TTL connector were to remain in the same location.
 
 
 ### Front side annotations
+
+Placement: 
+
+ - Bottom right?
+ - Top left?
+ - Underside (stay clear of daughter boards)
 
 The board's identifier consists of two parts:
 
@@ -357,8 +312,9 @@ Board variant code:
    - R/F - reverse or front mounted bus
    - T/S - Common FTDI, or Squires' original, TTL orientation
    - 2/4 - 2 or 4 layer board 
+   - C/N - CTS is exposed, or not
     
-Note: No front mounted bus boards have been published, due to excessive number of vias arising through routing, so the `R` is effectively redundant.
+Note: No front mounted bus boards have been published, due to excessive number of vias arising through routing, so the `R` is effectively redundant, seeing as *all* of the published boards have reverse mounted buses. Thus, the `F` actually *is* redundant.
 
 Date, Project, version, board variant code:
 
@@ -371,7 +327,13 @@ So, for example, for Squires board, with reversed bus, TTL orientation, 4 layer:
 ```none
 Aug 2026, Z80 Playground v1.2.1 (SQUIRESRT4)
 ```
+#### Github URL
 
+Placement:
+
+ - Bottom left? 
+ - Or across the board in big 8bitstack.co.yk style?
+   - Yes!!!
 
 #### Squires/GOL bus pins
 
@@ -432,13 +394,13 @@ Text Height/Width: 0.5 mm
 
 (Most of these have actually been done, just not marked as such)
 
- - Rename XTAL to X1 and X2 instead of Y1 and Y2?
+ - Rename XTAL to X1 and X2 instead of Y1 and Y2? **DONE!**
    - X1 and X2 renamed Y1 and Y2, as KiCAD auto named
- - Rename Headers and Jumpers? H1 or J1? P1 or J1?
+ - Rename Headers and Jumpers? H1 or J1? P1 or J1? **DONE!**
    - P1 and P2 renamed J1 and J2, as they are jumpers
    - H1 and H2 are actually headers, renamed from KiCAD default of J1 and J2
    - J5 and J6 are not jumpers, but connectors to the CH376S board
- - Add ZIF for EEPROM?
+ - Add ZIF for EEPROM? **DONE!**
    - It is smaller without ZIF
    - ZIF is ugly?
    - ZIF is unnecessary for an unmodified board, i.e. fixed ROM
@@ -587,7 +549,7 @@ Text Height/Width: 0.5 mm
    - Maybe not, as the symbol editor complains
  - Bring out CTS for RCBUS80
    - Maybe othe variants later
- - RCBUS variants could route CTS?
+ - RCBUS variants could route CTS? - **DONE!**
    - RCBUS80r5cp2fixed4z
    - RCBUS80r5cp2fixed3z
    - RCBUS80r5gz
@@ -599,6 +561,33 @@ Text Height/Width: 0.5 mm
    - SQUIRES aligned4b6z 
    - SQUIRES aligned4b4z 
      - but could just re-route and add another sub variant, as was done for T/S sub variant, so C/R, with C being the new CTS/RTS board (component side up), and R the reversed (component side down)
+ - Add black and white PDF, PNG for the two PCB sides of 2-layer
+ - Need a checklist f things to check
+   - But it is everything! Check everything!
+ - Need to have silkscreen and component markings "template to group and paste on each type of board (for 2- and 4 layer, the T/S should have the same markings, apart from the serial port markings, obviously)
+   - Get screenshots of the T, and make the S the same (apart from the serial port markings, obviously)
+ - Silkscreen: Put board type/version on bottom right of board 
+ - Silkscreen: Put URL on board
+ - Reduce number of variants? :
+   - If TTL board was mounted vertically then less of an issue
+     - But which side, or leave it to user?
+   - Specify only works with Cousins' TTL board?
+     - No, as original board used wierdo and must be compatible
+       - Best option is the current one, support all TTL boards
+ - Quote: "Harder to reverse-engineer someone else's work than to start afresh and create a new PCB layout."
+ - Featured at top of Github page: RCBUS40/80 support CTS
+ - Can't put URL on front bottom, no room due to bus
+ - U10 differs in size, Make consistent
+ - Group silkscreen elements into a template that can be pasted between boards
+ - Take screenshot of one silkscreen and make the others the same, manually
+ - Personally, physically create only 4-layer Squires RS4 (as original was also 4-layer), and 2-layer RCBUS80 RT2 (for it's simplicity and reduced cost).
+ - Do a RCBUS80 with the bus shifted up one; and two and HL3 and HL4 shift up one., as a test  - **DONE!** pGd01 (bus+1 only), pGd02 (bus+2 and holes+1), pGd10 (holes+2) - meh...
+ - I should route an RCBUS80 RT2 manually, to see if I can do better than the autorouter..!
+ - Should VCC on the TTL connector be jumpered, in case board is attached to a bus? Conflict with computer power supply?
+ - 1MOhm res parallel with UART XTAL, according to [16550 datasheet](https://www.ti.com/lit/ds/symlink/tl16c550c.pdf) 
+ - Manually route Pro
+ - Manually add a CTS line to an RCBUS80 RT2 clone, to see if via is any less: RCBUS80r5fz9 -> RCBUS80r5fz9a - **DONE!**
+ - PCB Candidate table, not list
 
 
 
@@ -616,6 +605,15 @@ Ensure:
  - Silkscreen TTL serial pins (forward) 
  - Silkscreen TTL serial pins (and reversed) 
 
+Put:
+
+ - Title on PCB sheet of nearly complete layouts: 
+   - `Z80 Playground v1.2 (Squires RT2 - aligned4b4z6 - reversed connector, std. TTL, 2-layer)`
+   - `Z80 Playground v1.2 (MJ/GOL RT2 - alignedcz - reversed connector, std. TTL, 2-layer)`
+   - `Z80 Playground v1.2 (MJ/GOL RT4 - aligned2pc2z - reversed connector, std. TTL, 4-layer)`
+   - `Z80 Playground v1.2 (MJ/GOL RS4 - aligned2pc3z - reversed connector, Squires TTL, 4-layer`
+   - `Z80 Playground v1.2 (MJ/GOL RS2 - alignedez2 - reversed connector, Squires TTL, 2-layer`
+ - Silkscreen info box for underside
 
 
 ## Best board designs
@@ -625,6 +623,7 @@ See [PCB Candidates](documentation/Z80%20Playground%20v1.2%20-%20PCB%20candidate
  - RCBUS80r
    - RCBUS80r5cp2fixed3
      - 24 vias
+     - 4 layer
      - DRC OK
  - RCBUS40r
    - 
@@ -634,17 +633,34 @@ See [PCB Candidates](documentation/Z80%20Playground%20v1.2%20-%20PCB%20candidate
   - Z80 Playground
     - a replica
   - playgroundZ80
-    - a PRO version wih the improvements:
-      - capacitors?
-      - TTL pin order?
-      - CTS?
-      - Closer XTAL to UART
-      - CPU XTAL not on edge of board?
-      - SMD pre-mounted bypass 1 µF caps
-      - what else?
+    - a PRO version with improvements, see **Pro board feature**.
   - Z80 PlaygroundRC
     - a replica but with RCBUS40/80
   
+# A new start... a new hope
+
+## Pro board features
+
+A PRO version with the improvements:
+
+ - capacitors?
+ - TTL pin order?
+ - CTS? <---- THIS!!!
+ - Closer XTAL to UART
+ - CPU XTAL not on edge of board?
+ - SMD pre-mounted bypass 1 µF caps
+ - Also reannotates components 
+ - bypass capacitor's IDs match their IC's ID (i.e. C5 -> U5)   
+ - Make a proto PRO version for fun: Crystal close to UART, etc.
+   - RCBUSPro only supports cousins CTS TTL board, underside, which orientation?
+ - what else?
+ - Bigger ROM?
+ - Paged RAM?
+ - BP80 only
+ - bypass capacitors next to ground pin, not VCC
+ - 1MOhm res parallel with UART XTAL
+
+HL3 and HL4 have been shifted up one notch. Hould shift one more to give space for bus silkscreeen, but would need to shift U6 and U8 again!
 
 <!-- Images -->
 
@@ -655,4 +671,3 @@ See [PCB Candidates](documentation/Z80%20Playground%20v1.2%20-%20PCB%20candidate
   [4]: xtras/hardware/screenshots/TTL_serial_board/Red_FTDI_board.png "Red FTDI TTL serial board"
   [5]: xtras/hardware/screenshots/TTL_serial_board/SCD_TTL_board_hi.jpg "TTL serial board as used by Small Computers Direct"
 
- 
