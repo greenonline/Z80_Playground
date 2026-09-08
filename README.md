@@ -618,15 +618,7 @@ Put:
 
 ## Best board designs
 
-See [PCB Candidates](documentation/Z80%20Playground%20v1.2%20-%20PCB%20candidates.md)
-
- - RCBUS80r
-   - RCBUS80r5cp2fixed3
-     - 24 vias
-     - 4 layer
-     - DRC OK
- - RCBUS40r
-   - 
+See [PCB Candidates](documentation/Z80%20Playground%20v1.2%20-%20PCB%20candidates.md)  
 
 ## Main board variants
  
@@ -643,22 +635,22 @@ See [PCB Candidates](documentation/Z80%20Playground%20v1.2%20-%20PCB%20candidate
 
 A PRO version with the improvements:
 
- - capacitors?
- - TTL pin order?
+ - bypass capacitor placement (next to GND)
+ - SMD pre-mounted bypass 1 µF capacitorss
+ - bypass capacitor's IDs match their IC's ID (i.e. C5 -> U5)   
+ - TTL pin order
  - CTS? <---- THIS!!!
  - Closer XTAL to UART
- - CPU XTAL not on edge of board?
- - SMD pre-mounted bypass 1 µF caps
+ - CPU XTAL not on edge of board
  - Also reannotates components 
- - bypass capacitor's IDs match their IC's ID (i.e. C5 -> U5)   
  - Make a proto PRO version for fun: Crystal close to UART, etc.
    - RCBUSPro only supports cousins CTS TTL board, underside, which orientation?
- - what else?
  - Bigger ROM?
  - Paged RAM?
  - BP80 only
  - bypass capacitors next to ground pin, not VCC
- - 1MOhm res parallel with UART XTAL
+ - 1 M&Omega; res parallel with UART XTAL
+ - what else?
 
 HL3 and HL4 have been shifted up one notch. Hould shift one more to give space for bus silkscreeen, but would need to shift U6 and U8 again!
 
