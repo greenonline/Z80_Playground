@@ -7,7 +7,7 @@ Or [playgroundZ80](https://github.com/greenonline/playgroundZ80)!!!
 
 ## Preamble
 
-John Squires, of the now defunct [8bitstack.co.uk](https://8bitstack.co.uk), and the YouTube channel, [John Squires](https://www.youtube.com/@CircuitBreaker256), created a very nifty Z80 SBC, called *Z80 Playground*, that could run CP/M and Tiny BASIC, amongst other things. 
+John Squires, of the now defunct [8bitstack.co.uk](https://8bitstack.co.uk), and the YouTube channel, [John Squires](https://www.youtube.com/@CircuitBreaker256), created a very nifty Z80 SBC, with 32 kB of ROM and 64 kB of RAM, called *Z80 Playground*, that could run CP/M and Tiny BASIC, amongst other things. 
 
 Whilst it is now pretty difficult to find much info out about its design, he did mention that an earlier iteration upon breadboard, was based upon the *Four IC Z80 SBC* – in the videos, he refers to similarity of the breadboard version to the "4 IC Z80" design – which is, most probably, this project, [A 4\$, 4ICs, Z80 homemade computer on breadboard](https://hackaday.io/project/19000-a-4-4ics-z80-homemade-computer-on-breadboard/). 
 
@@ -137,9 +137,9 @@ Some links to videos on John Squires' YouTube channel:
 ### ICS
 
  - Z80
- - 61512
+ - 61512  (64 kB)
  - 16550
- - 28C256
+ - 28C256 (32 kB)
  - 74HC14
  - 74HC02
  - 74HC32 x 2
@@ -175,10 +175,6 @@ Source links:
  - [More links, z80ccp](https://web.archive.org/web/20210508135102/http://8bitstack.co.uk/)
  - [Even more links, sd.com, z80ccp, core_jump, 2048](https://web.archive.org/web/20211020202250/http://8bitstack.co.uk/)
  
-### Footprints used
-
-See [Z80 Playground v1.2 - footprints](documentation/Z80%20Playground%20v1.2%20-%20footprints.md) for notes on the component footprints used for the Z80 Playground v1.2 layout.
-
 ### KiCAD 6 quirks
 
 Not really quirks, but changes, or extra tasks, that I found were required, in order to create the schematic in KiCAD 6.
@@ -196,6 +192,10 @@ As a 74HC32 was not present on KiCAD 6, I had to use a 74LS32 instead – same p
 ### Layout
 
 Please refer to [Z80 Playground v1.2 - layout](documentation/Z80%20Playground%20v1.2%20-%20layout.md).
+
+### Footprints used
+
+See [Z80 Playground v1.2 - footprints](documentation/Z80%20Playground%20v1.2%20-%20footprints.md) for notes on the component footprints used for the Z80 Playground v1.2 layout.
 
 ### Routing
 
@@ -253,6 +253,8 @@ See [Homebrew](documentation/Homebrew/Homebrew.md) for some rough auxiliary note
 
 ### Important note about CH376S module
 
+Address: `0x10` (16) (A4 only), and *every* `0x10` thereafter.
+
 Note: The 2×3 footprint used should be two 1×3 modules with a slight gap between them. From [CH375 USB Storage](https://rc2014.co.uk/modules/ch375-usb-storage/). Also, 
 
 > There are, however, two module variants, both of which look identical at first glance. The most obvious difference is a singe 1×3 header vs two 1×3 headers. The more critical difference though is the 2×8 pinout. The RC2014 module is designed to take the CH375 module with the 8 data lines, D0-D7 on the very outside pins, and the power and control pins on the inside. The variant with a single 1×3 header has the data lines on the inside pins and the power and control pins on the outside. This latter module will not work with this PCB.
@@ -261,7 +263,7 @@ Dimensions: 27.5 x 48 mm
 
 02x08 from 02x03: 23.5 mm
 
-Seperation of 01x03 from 01x03: ~0.5 mm
+Separation of 01x03 from 01x03: ~0.5 mm
 
 Bottom 2 pins of 02x08 in line with two 3 pins of 02x03
 
@@ -276,119 +278,205 @@ It is important to select the correct variant of the Z80 Playground board, depen
 
 See [Z80 Playground v1.2 - serial/power module](Z80%20Playground%20v1.2%20-%20serial-power%20module.md)
 
+Baud rate: 6800
 
+v1.1 connections: `DTR TX RX VCC CTS GND` from [Z80 Playground v1.1 is my Single Board Computer for Assembly Language, Basic and CP/M](https://www.youtube.com/watch?v=y9HNbJzdbpE) at [2:13](https://www.youtube.com/watch?v=y9HNbJzdbpE&t=133)
 
-### Front side annotations
+### Types of board
 
-Placement: 
+Before we get into the board identifier, it would be worth explaining the boards:
 
- - Bottom right?
- - Top left?
- - Underside (stay clear of daughter boards)
+There are two main "families", depending upon the bus used:
 
-The board's identifier consists of two parts:
+ - The Squires bus variant
+ - The RCBUS variant
 
- - Project version
- - Board variant code
+These are subdivided into another two types:
 
-The version number pertains more to the schematic, and the board variant code pertains more to the PCB layout.
+ - The Squires original:
+   - The Squires original
+   - The MJ/GOL_ variant:
+     - Uppercase markings
+     - Flat resistors
+ - The RCBUS variant:
+   - RCBUS40
+   - RCBUS80
 
-The version number of 1.2.1 was chosen to reflect the fact that while the schematic diagram is *essentially the same as the Squires version 1.2*, there may be differences in the schematic that I am unaware of. 
+Each of these four board types all share a very similar layout (component locations may shift slightly between boards), only the bus is the *main* difference.
 
-This is because the files pertaining to that design no longer exist,and so this is, unavoidably so, a different version as it has been recreated as best possible, given the limited documentation (as well as the obvious routing differences on the PCB). However, the routing differences, of the subsequent board variantions, are not reflected in the version number, but instead by a six letter description of the base PCB layout followed by a three letter code for the three minor variations of that layout.
+Then there are <strike>six</strike> seven sub-variants, which offer different options:
 
-All base PCB layout variant codes are the same length (6 characters):
-
-```none
-SQUIRES
-MJ_GOL_
-RCBUS40
-RCBUS80
-```
-
-Board variant code: 
-
-   - SQUIRES/MJ_GOL_/RCBUS40/RCBUS80 - Base PCB layout variation and bus
-   - R/F - reverse or front mounted bus
-   - T/S - Common FTDI, or Squires' original, TTL orientation
-   - 2/4 - 2 or 4 layer board 
-   - C/N - CTS is exposed, or not
+   - R/F - **R**everse or **F**ront mounted bus (Alternatively: **R**everse or **F**orward)
+   - T/S - Common FTDI **T**TL, or **S**quires' original, serial board orientation
+   - 2/4 - **2** or **4** layer board 
+   - C/N - **C**TS is exposed, or **N**ot
+   - U/P - VCC is jumpered, or not (**U**npluggable/**P**owered)
+   - P/N - **P**ositive or **N**egative edge triggered NMI (not RCBUS40)
+   - F/S - **F**ixed or **S**witchable RAM (RCBUS40 and RCBUS80 only; The Squires and MJ/GOL boards will not support external memory boards)
     
 Note: No front mounted bus boards have been published, due to excessive number of vias arising through routing, so the `R` is effectively redundant, seeing as *all* of the published boards have reverse mounted buses. Thus, the `F` actually *is* redundant.
 
-Date, Project, version, board variant code:
-
-```none
-Aug 2026, Z80 Playground v1.2.1 ([SQUIRES|MJ_GOL_|RCBUS40|RCBUS80][R|F][T|S][2|4])
-```
-
-So, for example, for Squires board, with reversed bus, TTL orientation, 4 layer:
-
-```none
-Aug 2026, Z80 Playground v1.2.1 (SQUIRESRT4)
-```
-#### Github URL
-
-Placement:
-
- - Bottom left? 
- - Or across the board in big 8bitstack.co.yk style?
-   - Yes!!!
-
-#### Squires/GOL bus pins
-
-```none
-VCC 0v /re /wa /bk /bq /1 nm /rd /wr /mr /io a15 a14 a13 a12 a11 a10 a9 a8 a7 a6 a5 a4 a3 a2 a1 a0 d7 d6 d5 d4 d3 d2 d1 d0
-```
-
-Text Height/Width: 0.5 mm
-
-#### RCBUS40 and RCBUS80 bus pins
-
-```none
-A15 A14 A13 A12 A11 A10 A9 A8 A7 A6 A5A A4 A3 A2 A1 A0 GND +5V M1 RST CLK INT MRQ IOQ D0 D1 D2 D3 D4 D5 D6 D7 TX RX NU NU NU NU
-```
-
-Text Height/Width: 0.5 mm
-
-Note: The 80 pin connector only has the usual 40 pins silkscreened, and next to the wrong row as well! However, there is no space to place correctly, unless place on the rear side?
-
-BP80:
-
-```none
-GND  +5v /RFSH  PAGE CLK2 /BUSAK  /HALT /BUSRQ /WAIT /NMI D8 D9 D10 D11 D12 D13 D14 D15 TX2 RX2 USER5 USER6 USER7 USER8
-```
 
 
-Unofficial Backplane-80 Pin-outs
+### Front and rear side annotations
 
-```none
-#41 #42 #43 #44 #45 #46 #47 #48 A23 A22 A21 A20 A19 A18 A17 A16 GND  +5v /RFSH  PAGE CLK2 /BUSAK  /HALT /BUSRQ /WAIT /NMI D8 D9 D10 D11 D12 D13 D14 D15 TX2 RX2 USR5 USR6 USR7 USR8
-```
+See [Z80 Playground v1.2 - Front and rear side annotations](Z80%20Playground%20v1.2%20-%20Front%20and%20rear%20side%20annotations.md)
 
 
-#### Jumpers
+### Changing address of UART
 
-```none
-Switched          16k
+Original addressing: `0x08`, repeating every 8!!! A3 goes direct to CS0 on UART, no decoding
 
-Always on         32k
+TODO: Add ability to modify address?
 
-ROM select        ROM size
+ - Make address selectable for UART?
+   - Maybe both A3 and A5 (or A4) instead of just A3
+   - Maybe either A3 or A5 (or A4) instead of just A3
+   - Would need additional logic gate or wired-AND
+   - Maybe for Pro version
 
-(P2)              (P1)
-```
+#### Better decoding
 
-Text Height/Width: 0.5 mm
+Could combine /M1 and /IORQ to /CS2 – using OR and NOR/NOT, as per /CSUSB – freeing CS1 for an address line, but that would change the address, unless an invertor was used.
 
-#### Squires/GOL Z80 pins
+Better to free /CS2 for A3 and A4, by moving /M1 and /IORQ to CS1 via two NOR gates: 
 
-```none
-a10 a9 a8 a7 a6 a5 a4 a3 a2 a1 a0 gnd /r /1 /rt /br /w /bq /wr /rd
-a11 a12 a13 a14 a15 clk d4 d3 d5 d6 5v d2 d7 d0 d1 /in /n /h /mr /ir
-```
+ - /M1 to NOR/NOT and /IORQ to NOR to CS1 
+ 
+[![UART M1 IORQ][7]][7]
 
-Text Height/Width: 0.5 mm
+At the minimum decoding A3 and A4 using a NOR and OR:
+
+ - A3 high to (NOR/NOT) and A4 low to OR and to /CS2
+
+[![UART A3 A4][8]][8]
+
+This reduces repeated addresses to 8-15, 40-57, 72-89, 104-121, 136-153, 168-185, 212-229
+
+However, if having to add an IC or two for the NOR and OR, then it would be better to add a dual quad input OR (744072 exists???), or a quad dual input OR (7432) in tree formation. 
+
+TODO: Connect to what and where?
+
+ - Connect to NOT A3 and a NOR (or, if using two OR and a NOR for A4-A7), then A3 and an AND)
+
+#### Best decoding
+
+Use quad input OR for A4-A7 to LOW. 
+
+Note: Dual quad input OR (744072) may not exist, so three gates from a quad dual input OR (7432) in tree formation for active LOW, or two OR ending with a NOR, for active HIGH.
+
+ - Connect to NOT A3 and a NOR (or, if using two OR and a NOR for A4-A7), then A3 and an AND)
+
+[![UART address decode active HIGH][9]][9]
+
+[![UART address decode active LOW][10]][10]
+
+
+TODO: Schematic Image???
+
+This reduces repeated addresses to 8 - 15
+
+#### Ideal addressing
+
+Have jumpers for 4 address pins (or 4 DIP switches) to select HIGH or LOW for A4-A7 (via switchable NOT)
+
+TODO: Still need to deal with A0-A2...
+
+#### SMB addressing
+
+Use a 74HCT138 3 to 8 line decoder.
+
+### Disabling the UART
+
+ - UART decoding? 
+ - Ability to disable?
+ - Remove from socket? Not ideal.
+ - Maybe for Pro version
+ - Fuller addressing should take precedence
+
+### Changing address of CH375
+
+Original addressing: `0x10`, repeating every 16!!! A0 goes direct ot CH375, plus decoding with A4.
+
+ - Make address selectable for CH375?
+   - Maybe both A4 and A5 (or A3) instead of just A4
+   - Maybe either A4 or A5 (or A3) instead of just A4
+   - Would need additional logic gate or wired-AND
+   - Maybe for Pro version
+
+Note: Why was U8A (NOR) used as an invertor when there is a spare invertor? Maybe it was due to locally of the NOR as opposed to the NOT gate which is right across the board – same issue as I had with the negative edge NMI.
+
+#### Best decoding
+
+Use quad input OR for A3, A5-A7 to LOW
+
+Note: Dual quad input OR (744072) may not exist, so three gates from a quad dual input OR (7432) in tree formation for active LOW, or two OR ending with a NOR, for active HIGH.
+
+ - Connect to NOT A4 and a NOR (or, if using two OR and a NOR for A4-A7), then A4 and an AND)
+
+TODO: Schematic Image???
+
+This reduces repeated addresses to 16 - 23. Although due to A0, then the four repeated base addresses would be:
+
+ - 16
+ - 18
+ - 20
+ - 22
+
+#### Ideal addressing
+
+Have jumpers for 4 address pins (or 4 DIP switches) to select HIGH or LOW for A3, A5-A7 (via switchable NOT)
+
+TODO: Still need to deal with A1 and A2...
+
+#### SMB addressing
+
+Use a 74HCT138 3 to 8 line decoder.
+
+
+### Disabling the USB CH375
+
+Although easy to implement, it is not *really* required as the daughter board can just be removed - Fuller addressing should take precedence
+
+
+ - Make CH375 disabled
+   - You can just unplug it!
+   - In case of conflicts with other boards on bus, or other storage board is used.
+   - USB is disabled: If input to U6B is held high, so both inputs to U8D is held LOW
+     - Jumper to GND or A4: *both* U8D inputs 
+       - Another variant: U/N (USB/Not)
+       - This is pretty essential for compatibility for RCBUS
+     - Note: Can not use /M1 and U8A in the same manner as A4, because M1 flips, and would need to stay 
+   - Jumper to connect to U6B output or to pull high
+   - Maybe for Pro version
+
+[![Disable USB][6]][6]
+
+### Disabling the RAM
+
+See [Z80 Playground v1.2 - Disabling RAM](Z80%20Playground%20v1.2%20-%20Disabling%20RAM.md)
+
+
+### `externalNMI` (`EXT_NMI`) not used
+
+Very late in the design process, I realised that I had connected the incorrect NMI signal (`NMI`) to the bus, instead of the "external" NMI line (`EXT_NMI`/`externalNMI`). This had to be rectified.
+
+Despite being an *inconvenience*, it did help in cleaning up some previously unspotted issues, as well as reducing the number of vias in some boards, although increasing them in others.
+
+See [Z80 Playground v1.2 - Fixing the externalNMI debacle](Z80%20Playground%20v1.2%20-%20Fixing%20the%20externalNMI%20debacle.md) for details.
+
+### Have two varieties of NMI triggering for RCBUS
+
+ - Positive edge
+   - required routing correction fix
+ - Negative edge
+   - required two diodes and a pull-up, or a mix of positive and negative logic involving the NOR gate, and an aditional NOT gate.
+
+### Inverting the NMI (for RCBUS) - negative edge trigger
+
+See [Z80 Playground v1.2 - Providing a negative edge triggered NMI](Z80%20Playground%20v1.2%20-%20Providing%20a%20negative%20edge%20triggered%20NMI.md) for the board implmentations.
+
+See [Z80 Playground v1.2 - Inverting the NMI (for RCBUS) - negative edge trigger](Z80%20Playground%20v1.2%20-%20Inverting%20the%20NMI%20(for%20RCBUS)%20-%20negative%20edge%20trigger.md) for the design.
 
 ## TODO
 
@@ -468,16 +556,16 @@ Text Height/Width: 0.5 mm
  - Make OMRON button variant.
  - Check HL5 on all PCBs with holes.
    - The original placement was ok, no need to move halfway down
-   - Move all halfway down hole PCBs ina separate directory, as they are redundant and confusing, and cluttering.
- - Need a better naming conventation, it is currently all over the place
+   - Move all halfway down hole PCBs in a separate directory, as they are redundant and confusing, and cluttering.
+ - Need a better naming convention, it is currently all over the place
  - Add TTL Serial silkscreen (original has this)
  - TTL Serial connector is the wrong way around on Squires, and probably all.
    - My orientation might actually be better:
-     - The orientaton of the serial board is matching the orientation of the mother board as the bottom is also facing the bottom, rather than having bare electronics facing down, as in the Squires original.
+     - The orientation of the serial board is matching the orientation of the mother board as the bottom is also facing the bottom, rather than having bare electronics facing down, as in the Squires original.
      - Easier to route, to boot! One less via!
      - Although, it would obscure any "blinken LEDs" on the top side of the serial board
  - The DTR from the serial board is not routed. Is that a problem? In the video [Z80 playground v1.2 - The Z80 Single Board Computer - How to install CP/M programs and run them
-](https://www.youtube.com/watch?v=MaolTlk7XKM) at [1:10](https://www.youtube.com/watch?v=MaolTlk7XKM&t=70), it can be seen that there is a DTR pin on the serial board, and that there "might" be a trace coming fromthe connnector forthat pin, although it is unclear whether it is an joining track. Although DTR is not marked on the front silkscreen for the pins, nor is it in the schematic. TODO: Where on the UART would it go? Which pin? Pin 33, and it goes to the "user" LED.
+](https://www.youtube.com/watch?v=MaolTlk7XKM) at [1:10](https://www.youtube.com/watch?v=MaolTlk7XKM&t=70), it can be seen that there is a DTR pin on the serial board, and that there "might" be a trace coming from the connector for that pin, although it is unclear whether it is an joining track. Although DTR is not marked on the front silkscreen for the pins, nor is it in the schematic. TODO: Where on the UART would it go? Which pin? Pin 33, and it goes to the "user" LED.
  - Add pins silkscreen for CPU (original has this) - DONE!
  - Add pins silkscreen for bus (original has this) - DONE!
  - Add silkscreen version
@@ -494,7 +582,7 @@ Text Height/Width: 0.5 mm
    - Isn't ROMon left floating, if /romonj is selected?
      - No. ROMon is an output
  - Silkscreen U10 & outline of CH376S card - DONE!
-   - GOL has difffering placement from Squires, and RCBUS40 and RCBUS80 board.
+   - GOL has differing placement from Squires, and RCBUS40 and RCBUS80 board.
  - Silkscreen RCBUS, at least pins 1 and 40 - DONE!
  - Put reverse bus labels on underside - DONE!
    - [Flip words](https://phrasefix.com/tools/flip-words/) 
@@ -506,15 +594,15 @@ Text Height/Width: 0.5 mm
  - Have variant explanation in each board's README
  - Have variant added in each board's PCB sheet in KiCAD, but not the schematic (which should be 1.2.1)
  - Have 1.2.1 put in every schematic diagram
- - Ensure bycapss caps on ll 4 layr boards, and as best possible on 2 layer (lsit the bad that ill need exernal cap added
+ - Ensure bypass caps on all 4 layer boards, and as best possible on 2 layer (list the bad boards that will need external cap added)
  - Put Unofficial Backplane-80 Pin-outs, from [RC2014](https://smallcomputercentral.com/rc2014-bus/specification-rc2014-bus/) on RCBUS80 silkscreen? 
    - No need, extended BP80 pins not wired up.
  - Document the strings used (including spaces) for the pins' labels.
  - Should 8bitstack.co.uk silkscreen be applied?
    - No, as the website is dead
-   - Yes, as it maintians authetic feel
-   - No, as not having it makes for an easy differentiation that this is a reverse engineeered job.
- - RCBUS variants could route DTR?
+   - Yes, as it maintains authentic feel
+   - No, as not having it makes for an easy differentiation that this is a reverse engineered job.
+ - RCBUS variants could route DTR? **DONE!** -> Not doing!
    - RCBUS80r5cp2fixed4z can, with jumper
    - RCBUS80r5cp2fixed3z can, with jumper
    - RCBUS80r5gz can, with jumper
@@ -539,7 +627,7 @@ Text Height/Width: 0.5 mm
              - Should retain original Z80Playground replica status as someone may need, or depend upon, the original style TTL boards, as originally intended by Squires
                - but could just re-route and add another sub variant, as was done for T/S sub variant, so C/T/S, with C being the new CTS/RTS board
                  - but which way up and down of the CTS board is also important, as it was for T/S, so not C/T/S but rather T/S, as before, and C/R for CTS  (component side up) and reversed (component side down)?
- - Do bypass capacitor check and make a table/document <--- This!!!
+ - Do bypass capacitor check and make a table/document <--- This!!! **DONE!**
    - Add to candidate table
    - RCBUS40r3ip2z needs a via to add GND to UART
    - If vias are needed then so be it, especially on the lower via count boards, numbering in the 20s.
@@ -548,7 +636,7 @@ Text Height/Width: 0.5 mm
  - Remove the needless 61512 files from every board: `Memory_RAM_PC61512.kicad_sym` and `Memory_RAM_UM61512.kicad_sym` and `Memory_RAM_61512.bak` and `Memory_RAM_PC61512.bak`
    - Maybe not, as the symbol editor complains
  - Bring out CTS for RCBUS80
-   - Maybe othe variants later
+   - Maybe other variants later
  - RCBUS variants could route CTS? - **DONE!**
    - RCBUS80r5cp2fixed4z
    - RCBUS80r5cp2fixed3z
@@ -588,8 +676,105 @@ Text Height/Width: 0.5 mm
  - Manually route Pro
  - Manually add a CTS line to an RCBUS80 RT2 clone, to see if via is any less: RCBUS80r5fz9 -> RCBUS80r5fz9a - **DONE!**
  - PCB Candidate table, not list
+ - Jumper the VCC pin to the serial TTL board? As per the Z180 CPU board, [Z80 Retrocomputing 18 – Z180 CPU Board for RC2014](https://www.smbaker.com/z80-retrocomputing-18-z180-cpu-board-for-rc2014) - **DONE!**
+   - This is kind of essential, isn't it? To avoid power conflicts, if plugging in to a (*powered*) backplane
+   - Is there room?
+   - All variants except Squires?
+     - Only RCBUS variants, as MJGOL_ and Squires have no bus
+     - DONE! On *all* variant and boards, with CTS
+     - DONE! Should do for non-CTS, as well?
+   - Add a new sub-variant (which will be the default) `U/P` - Unpowered/Powered.
+ - Drop in resistors for the serial TTL board? As per the Z180 CPU board, [Z80 Retrocomputing 18 – Z180 CPU Board for RC2014](https://www.smbaker.com/z80-retrocomputing-18-z180-cpu-board-for-rc2014)
+   - Unlikely that there is room
+   - With a jumper? Or solder spots?
+   - Connected to what?
+   - What are they for?
+     - For protection?
+       - [Why use a series resistor between Arduino RX and ESP8266 TX?](https://electronics.stackexchange.com/questions/431868/why-use-a-series-resistor-between-arduino-rx-and-esp8266-tx)
+       - [Properties of Pins Configured as OUTPUT](https://docs.arduino.cc/learn/microcontrollers/digital-pins/)
+     - For ringing?
+ - Pull-up resistors for NMI, INT, BUSRQ, WAIT, DMA? As per the Z180 CPU board, [Z80 Retrocomputing 18 – Z180 CPU Board for RC2014](https://www.smbaker.com/z80-retrocomputing-18-z180-cpu-board-for-rc2014) **DONE!** see **Pull-ups** below.
+   - Unlikely that there is room
+   - Why?
+   - Are the necessary?
+   - Should they be on the backplane instead of per board?
+   - TODO: Check [RCBUS specification](https://smallcomputercentral.com/rcbus/)
+     - `/INT` should have a pull-up resistor - do for RCBUS variants
+   - Already pulled up! INT, BUSRQ and WAIT
+   - [Z80 RC2014 schematic](https://8b8bf43264c2f150841a.b-cdn.net/wp-content/uploads/2017/04/Z80-CPU-Rev-1_3.pdf) shows: INT, NMI, BUSRQ and WAIT pulled up
+   - Just need to add NMI
+   - [Question about pull-up resistors for the INT, NMI, BUSRQ, and WAIT pins.](https://www.reddit.com/r/Z80/comments/175h7yn/question_about_pullup_resistors_for_the_int_nmi/)
+ - Jumpers for BUS pins: BUSRQ, BUSACK, HALT, WAIT, Rx, Tx (or additional address lines)? As per the Z180 CPU board, [Z80 Retrocomputing 18 – Z180 CPU Board for RC2014](https://www.smbaker.com/z80-retrocomputing-18-z180-cpu-board-for-rc2014)
+   - Unlikely that there is room
+   - Are they necessary?
+ - `PAGE` pin on RCBUS 80 or 64, see [RCBUS specification](https://smallcomputercentral.com/rcbus/)
+ - Does the positive edge triggered /externalNMI need to be changed for RCBUS? 
+   - Yes, of course! See section **Inverting the NMI (for RCBUS) - negative edge trigger**
+ - No debounce on NMI switch
+ - Make a table of variants and which are available (previously all were available, but now not RCBUS for positive edge triggered, as totally incompatible with RCBUS!)
+ - The CPU pin labels would be much better if individually placed  vertically – either away from or, if space, toward the centre of the Z80 – and grouped
+ - The bus pins would be much better if individually placed
+   - Squires
+   - MJ/GOL_
+   - RCBUS40
+   - RCBUS80 
+ - Change all data and address lines to lower case on Squires only
+ - Ensure all data and address lines to upper case on non-Squires board - **DONE!**
+ - Open source hardware silkscreen logo [13:05](https://www.youtube.com/watch?v=AQTJlVj3B8E)
+ - Why are TX, Rx, IEI and IEO not connected on the bus of RCBUS40? 
+   - Have jumpers to connect to bus?
+ - TODO: Update vias in PCB candidate via/err/warn table since the NMI issue
+ - Add "EXT_NMI not used on RCBUS40 bus" note on schematics of RCBUS40 - **DONE!**
+ - Placement of the jumper to serial power is inconsistent
+ - Remove `aligned` and `fixed` from the variant names, as they probably mean the same thing, and it is ancient history. SO long as a note is made of the name change then the chain of history is preserved. replace with `a` or `f`, just to retain a marker of the past?
+ - What TTL family? It *should* be HCT, I believe.
+   - Use LS symbols and rename HCT?
+ - Add ability to disable ROM and RAM on board, so that an external 512K can be used. **BONE!**
+   - Yet another variant: S/F (**S**witched, **F**ixed)
+     - Add jumper to disable RAM, to VCC on CE
+     - ROM is already jumpered, up with the two three pin jumpers. add a new jumper.
+   - Only for RCBUS80 and RCBUS40, as Squires Bus has no boards.
+   - Make Pro version have 512K ROM and RAM
+ - Add Squires schematic to this readme
+ - Make address selectable for CH375?
+   - Maybe both A4 and A5 (or A3) instead of just A4
+   - Maybe either A4 or A5 (or A3) instead of just A4
+   - Would need additional logic gate or wired-AND
+   - Maybe for Pro version
+ - Add ability to disable CH375 **DONE!**
+   - You can just unplug it!
+   - In case of conflicts with other boards on bus, or other storage board is used.
+   - USB is disabled: If input to U6B is held high, so both inputs to U8D is held LOW
+     - Jumper to GND or A4: *both* U8D inputs 
+       - Another variant: U/N (USB/Not)
+       - This is pretty essential for compatability for RCBUS
+     - Note: Can not use /M1 and U8A in the same manner as A4, because M1 flips, and would need to stay 
+   - Jumper to connect to U6B output or to pull high
+   - Maybe for Pro version
+ - Disabling the RAM could be done similarly by jumpering both inputs to U8C to /WANTROM or GND, thereby saving on the additional OR gate (U6C?)
+ - On Easy Z80, but missing on ZPG:
+   - Power jack? Ironically, Z80 Playground v1.1 did have a 5 V DC power jack
+     - Not needed, extra bulk, power from USB or BUS
+   - RESET MAX693
+   - PAGE_EN?
+ - Make USB IO address configurable, in order to avoid any potential conflicts? What is the USB IO address? `0x10`, only using A4
+ - Check serial (FTDI, squires, SCS) boards connection pin order again
+ - Group silkscreen for copy and paste - some adjustments will be required probably, on a per board basis
+ - Put the Github URL, vertically orientated, along the side of the PCB to avoid the bus **DONE!**
+ - Make feature table **DONE!**
+   - It may seem obvious, from the variant code, but just make it explicit.
+ - Tidy schematic sheets main page:
+   - Make equi-sized rectangles
+   - Add big labels?
+ - UART decoding? Address: `0x08`, repeating every 8!!! Ability to disable?
+ - Check all footprints for size.
 
 
+## Todo: Final checks
+
+ - Footprints
+ - Schematic equality
+ - Go through the TODO list!
 
 ## To do: Things to check on all boards
 
@@ -615,6 +800,11 @@ Put:
    - `Z80 Playground v1.2 (MJ/GOL RS2 - alignedez2 - reversed connector, Squires TTL, 2-layer`
  - Silkscreen info box for underside
 
+## Running RomWBW
+
+Would Z80 Playground support RomWBW, or rather, does RomWBW support the Z80 Playground and the USB reader?
+
+See [Z80 Playground v1.2 - Running RomWBW](documentation/Z80%20Playground%20v1.2%20-%20Running%20RomWBW)
 
 ## Best board designs
 
@@ -636,23 +826,53 @@ See [PCB Candidates](documentation/Z80%20Playground%20v1.2%20-%20PCB%20candidate
 A PRO version with the improvements:
 
  - bypass capacitor placement (next to GND)
- - SMD pre-mounted bypass 1 µF capacitorss
+ - SMD pre-mounted bypass 1 µF capacitors
  - bypass capacitor's IDs match their IC's ID (i.e. C5 -> U5)   
  - TTL pin order
  - CTS? <---- THIS!!!
  - Closer XTAL to UART
  - CPU XTAL not on edge of board
- - Also reannotates components 
+ - Also re-annotates components 
  - Make a proto PRO version for fun: Crystal close to UART, etc.
    - RCBUSPro only supports cousins CTS TTL board, underside, which orientation?
+   - DONE, and failed to route..!
  - Bigger ROM?
  - Paged RAM?
  - BP80 only
  - bypass capacitors next to ground pin, not VCC
  - 1 M&Omega; res parallel with UART XTAL
  - what else?
+   - Banking
+   - Can disable RAM and ROM, if not 512kB and need external board
+     - Add jumper to disable RAM, to VCC on CE
+     - ROM is already jumpered, up with the two three pin jumpers. add a new jumper.
+   - 7408 AND for NMI?
+   - 512 kB RAM
+   - 512 kB FLASH
+   - RomWBW compatibility
+ - Make address selectable for CH375?
+ - On Easy Z80 but missing on ZPG
+   - Power jack?
+   - RESET MAX693
+   - PAGE_EN?
+ - Better (i.e. full) address decoding of IO: 
+   - Currently repeating at `0x10` intervals
+   - USB, add 8 input NAND, or two 4 input NAND (7420) to replace `U8d`, to map USB to `0xF0` instead of `0x10`. Or use a dual 4 input NOR (7425) and an invertor on A4 to map `0x10` properly
+     - Code written for this board would still work on original board, but it would break all original code, which would need tweaking the BDOS.
+ - Better (i.e. full) address decoding of UART
+   - Currently repeating at `0x08` intervals
+ - Redo decoding using NAND (only?)
 
-HL3 and HL4 have been shifted up one notch. Hould shift one more to give space for bus silkscreeen, but would need to shift U6 and U8 again!
+Also, features added to the basics:
+
+ - CTS
+ - Power jumper on TTL
+ - Negative edge NMI
+ - disable RAM
+ - disable USB
+ - disable UART?
+
+Note: HL3 and HL4 have been shifted up one notch (or more), from the Z80 Playground boards holes layout. Should shift one more to give space for bus silk screen, but would need to shift U6 and U8 again!
 
 <!-- Images -->
 
@@ -662,4 +882,9 @@ HL3 and HL4 have been shifted up one notch. Hould shift one more to give space f
   [3]: xtras/hardware/screenshots/TTL_serial_board/Z80PG_TTL_board.png "Z80 Playground TTL serial board"
   [4]: xtras/hardware/screenshots/TTL_serial_board/Red_FTDI_board.png "Red FTDI TTL serial board"
   [5]: xtras/hardware/screenshots/TTL_serial_board/SCD_TTL_board_hi.jpg "TTL serial board as used by Small Computers Direct"
+  [6]: xtras/hardware/screenshots/RomWBW_compatibility/Z80%20Playground%20-%20USB%20Disable.png "Disabling USB logic"
+  [7]: xtras/hardware/screenshots/RomWBW_compatibility/Z80%20Playground%20-%20UART_IORQ_M1.png "UART IORQ M1"
+  [8]: xtras/hardware/screenshots/RomWBW_compatibility/Z80%20Playground%20-%20UART_A3_A4.png "UART A3 A4"
+  [9]: xtras/hardware/screenshots/RomWBW_compatibility/Z80%20Playground%20-%20UART_Address_decode_active_HIGH.png "UART address decode active HIGH"
+  [10]: xtras/hardware/screenshots/RomWBW_compatibility/Z80%20Playground%20-%20UART_Address_decode_active_LOW.png "UART address decode active LOW"
 
