@@ -2,7 +2,9 @@
 
 ## Preamble
 
-Too tight to buy a TL-866? Just use an Arduino Mega 2560, without any other chips required.
+Too tight to buy a TL-866? Just use an Arduino Mega 2560, without any other chips being required.
+
+The AT28C256 is (for the most part) a purely 5V device, regardless of the strange 12V issues listed here: [Programming parallel EEPROM AT28C256 with Arduino..](https://www.edaboard.com/threads/programming-parallel-eeprom-at28c256-with-arduino.214138/)
 
 ## Links
 

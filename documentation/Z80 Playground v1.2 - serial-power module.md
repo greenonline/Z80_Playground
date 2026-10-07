@@ -52,7 +52,23 @@ Compare this to a red FTDI board: `GND RTS VCC RX TX`!!! (This might be correct,
        - but could just re-route and add another sub variant, as was done for T/S sub variant, so C/T/S, with C being the new CTS/RTS board
          - but which way up and down of the CTS board is also important, as it was for T/S, so not C/T/S but rather T/S, as before, and C/R for CTS  (component side up) and reversed (component side down)?
 
+As a contract, the TTL Serial connector used for [Z80 Retrocomputing 18 – Z180 CPU Board for RC2014](https://www.smbaker.com/z80-retrocomputing-18-z180-cpu-board-for-rc2014) at [8:40](https://www.smbaker.com/z80-retrocomputing-18-z180-cpu-board-for-rc2014&t=520), is:
+
+```none
+?
+TX
+RX
+VCC
+RTS
+GND
+```
+
 #### Footnote
 
 <sup>*</sup> IMHO, the underside is the worst possible orientation for a daughter board. Daughter boards should really mount to the front of a board. However, in this limited-real-estate case, it is understandable why it was done in this manner. The motherboard's own LEDs would be covered by a front mounting daughter board, if the TTL connector were to remain in the same location.
 
+<!-- Images -->
+
+  [3]: ../xtras/hardware/screenshots/TTL_serial_board/Z80PG_TTL_board.png "Z80 Playground TTL serial board"
+  [4]: ../xtras/hardware/screenshots/TTL_serial_board/Red_FTDI_board.png "Red FTDI TTL serial board"
+  [5]: ../xtras/hardware/screenshots/TTL_serial_board/SCD_TTL_board_hi.jpg "TTL serial board as used by Small Computers Direct"
