@@ -474,9 +474,9 @@ See [Z80 Playground v1.2 - Fixing the externalNMI debacle](Z80%20Playground%20v1
 
 ### Inverting the NMI (for RCBUS) - negative edge trigger
 
-See [Z80 Playground v1.2 - Providing a negative edge triggered NMI](Z80%20Playground%20v1.2%20-%20Providing%20a%20negative%20edge%20triggered%20NMI.md) for the board implmentations.
+See [Z80 Playground v1.2 - Providing a negative edge triggered NMI](documentation/Z80%20Playground%20v1.2%20-%20Providing%20a%20negative%20edge%20triggered%20NMI.md) for the board implmentations.
 
-See [Z80 Playground v1.2 - Inverting the NMI (for RCBUS) - negative edge trigger](Z80%20Playground%20v1.2%20-%20Inverting%20the%20NMI%20(for%20RCBUS)%20-%20negative%20edge%20trigger.md) for the design.
+See [Z80 Playground v1.2 - Inverting the NMI (for RCBUS) - negative edge trigger](documentation/Z80%20Playground%20v1.2%20-%20Inverting%20the%20NMI%20(for%20RCBUS)%20-%20negative%20edge%20trigger.md) for the design.
 
 ## TODO
 
