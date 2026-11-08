@@ -58,7 +58,7 @@ Fix: RCBUS80r5gz9bp3u (CUNSS)
 
 #### RCBUS40
 
-Note: NO CUNS variant exists for RCNBUS40, as the NMI is not routed to the bus pins.
+Note: NO CUNS variant exists for RCBUS40, as the NMI is not routed to the bus pins.
 
 Z80_Playground (RCBUS40 RT4CUPS) - (RCBUS40r3ipz2b3) - 21>20v - DRC_OK (CTS) (JMP)
 
