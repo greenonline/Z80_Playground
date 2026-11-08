@@ -125,6 +125,18 @@ a11 a12 a13 a14 a15 clk d4 d3 d5 d6 5v d2 d7 d0 d1 /in /n /h /mr /ir
 
 Text Height/Width: 0.5 mm
 
+#### Perpendicular labels for Z80
+
+Full uppercase name, with `~{}` notation
+
+Text Height/Width: 0.5 mm, thickness 0.125 mm
+
+On both front and rear sides. Most useful on the front side.s
+
+#### Perpendicular labels for UART, ROM, RAM and TTL ICs
+
+These are only on the rear side – mainly due to lack of space on the top side. Not as essential as the Z80 pin labels.
+
 ### Logos
 
 #### "Z80 Playground"
@@ -297,7 +309,9 @@ I ended up making a lot of logos:
  
 However, there was a mark on the original IC logo PNG screenshot, maybe of the KiCad cursor.
 
-New file: IC_logo.svg
+New file: IC_logo.svg 
+
+Note filename change: `IC_Z...` *not* `ICZ...`
 
 New coords of corners:
 
@@ -317,8 +331,16 @@ New coords of indented corners + 10:
 
 Note that the co-ords are much lower. This results in the text being oriented correctly, but much too small. Not clear why resolution is lower (import default resolution?) – except for Z180PG which is resized perfectly 
 
-However, (**Object>Transform...**) scaling up by 375%, both width and height, fixes it (400% made it oversized for the IC surface) (Use 375% more or less, maybe use more than 375%)
+However, (**Object>Transform...**) scaling up by 375%, both width and height, fixes it (400% made the Z180PG logo oversized for the IC surface) 
 
+Use 375% more or less, maybe use more than 375% (the `IC_Z***_logo2_400.svg` files are 400%) (`IC_Z***_logo2.svg` is the oriented but not resized): 
+
+ - For ZPG logo: 385% is good, as is 395%, and 400% *just about* fits, looks very good.
+ - Z80PG, 400% also *just about* fits. Not sure whether the tiny gap between letters and edge of IC will be visible, or will merge, at lower 0.1 scale, when reduced by 90%, for placement on the silkscreen.
+
+By comparison, The original (markered) logos were a little broader (taller across the IC), but the lack of a distinct margin around the lettering is about the same. Maybe worth reducing to 390%?
+
+Revisiting/reviewing the 375% version of the "Z80 Playground" IC, the border is much more distinct and looks better than 400%. After saving a range of scales from 375% to 400% in 5% increments, ***385%*** (or maybe 390% – no!) seems a happy compromise, for "Z80 Playground" IC.
 
 #### Reversing the logos
 

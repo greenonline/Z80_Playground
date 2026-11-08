@@ -8,7 +8,8 @@ There would be a need to disable the on-board 64 kB, and use an external board w
 
 ## Links
 
- - meh
+ - [Z80 Playground v1.2 - Adding RAM disable](Z80%20Playground%20v1.2%20-%20Adding%20RAM%20disable%20revisited.md)
+ - [Z80 Playground v1.2 - Adding RAM disable revisited](Z80%20Playground%20v1.2%20-%20Adding%20RAM%20disable.md)
 
 
 ## Videos
@@ -37,11 +38,11 @@ with one input (`RAMEN`) jumpered to 5V to disable RAM, and jumpered to GND to e
 
 Alternatively, disabling the RAM could be done by jumpering both inputs to U8C to GND, or to /WANTROM to enable – thereby saving on the additional OR gate (U6C).
 
-[![Disabling RAM logic more simpler][3]][3]
+[![Disabling RAM logic - simpler][3]][3]
 
 <!-- Images -->
 
   [1]: ../xtras/hardware/screenshots/RomWBW_compatibility/Z80%20Playground%20-%20RAM%20select.png "Original RAM select logic"
   [2]: ../xtras/hardware/screenshots/RomWBW_compatibility/Z80%20Playground%20-%20RAM%20Disable.png "Disabling RAM logic"
-  [3]: ../xtras/hardware/screenshots/RomWBW_compatibility/Z80%20Playground%20-%20RAM%20Disable%20Simple.png "Disabling RAM logic more simpler"
+  [3]: ../xtras/hardware/screenshots/RomWBW_compatibility/Z80%20Playground%20-%20RAM%20Disable%20Simple.png "Disabling RAM logic - simpler"
 

@@ -1,0 +1,448 @@
+# Z80 Playground v1.2 - TODO
+
+## TODO
+
+(Most of these have actually been done, just not marked as such)
+
+ - Rename XTAL to X1 and X2 instead of Y1 and Y2? **DONE!**
+   - X1 and X2 renamed Y1 and Y2, as KiCAD auto named
+ - Rename Headers and Jumpers? H1 or J1? P1 or J1? **DONE!**
+   - P1 and P2 renamed J1 and J2, as they are jumpers
+   - H1 and H2 are actually headers, renamed from KiCAD default of J1 and J2
+   - J5 and J6 are not jumpers, but connectors to the CH376S board
+ - Add ZIF for EEPROM? **DONE!**
+   - It is smaller without ZIF
+   - ZIF is ugly?
+   - ZIF is unnecessary for an unmodified board, i.e. fixed ROM
+   - ZIF is useful for "playing about" – reduces wear, damage, etc..
+ - The OR gates in the original schematic look awful and are inconsistent with the NOR gates, which *are* correctly depicted.
+ - Modify symbol title 72LS32 -> 74HC32?
+ - Why is C1 10µF but C2 is 1µF?
+ - Change J5 from `Conn_02x03_Odd_Even`
+ - Change J6 from `Conn_02x08_Odd_Even`
+ - Change J5 and J6 to H5 and H6? As they are headers?
+ - RCBUS should use/provide the extended 80 pin variant.
+ - Should version number not be 1.2, confusing? Maybe 1.2.0.1, 1.2.0.2, 1.2.0.3, 1.2.0.4, or  1.2.0.1s, 1.2.0.1g, 1.2.0.1r,  or  1.2.0.1squires, 1.2.0.1gol, 1.2.0.1rcbus. etc. **DONE!** v1.2.1 & board and variant, and revision code.
+ - Should I try to manually trace the Squires PCB tracks? 
+ - The decoupling capacitors are not autorouted to their ICs correctly – might need to manually do that first!
+ - Flip RC2014 bus **DONE!**
+ - Align CH376S connector **DONE!**
+ - Check all overlaps
+ - Flip lower left two capacitors on Squires - **DONE!**
+ - Orientation of H6 and H5? VCC should be lower left.
+ - Top row of 02x03 level with bottom row of 02x08
+ - Create a Squires to RC2014 adapter?
+ - Check if some RCBUS connectors are reversed
+ - Swap J7 and J8, check all boards..!!! 
+   - GOLr is bad. - **DONE!** aligned2
+   - Squiresr is bad - **DONE!** aligned2
+ - GOL: C8 upside down? Shouldn't all electrolytic capacitors face the same way? - **DONE!** aligned2
+ - Move J1 and J2 together? - No, not in original design, so leave it
+ - Bypass caps - bodge wires? **DONE!**
+ - Moving switches higher (like GOL) gives more room for RAM traces? **DONE!**
+ - Move R8C1C2R15 closer together? **DONE!**
+ - Drill 4 holes - **DONE!**
+   - The holes should really be in the same place on all boards, to provide consistent mounting points
+   - Use a "group" and copy between boards for consistency
+ - Outline of PCB - **DONE!**
+ - Add a note about forward and reversed bus connectors
+ - RCBUS only has 39 pin connector!!! Doesn't matter though as the schematic and PCB layout is only "for show" – use the RCBUS80 board just partial pins instead.
+ - Must change/increment version number from v1.2
+ - Should there be notes on the RCBUS routing, in the standard Z80 Playground repo? Belongs to the playgroundZ80 repo. Have two separate or lump all together? Better to have separate, else too busy and confusing – too many board variants!
+ - Squiresr: C8 is too close to U11: Move right
+ - Squiresr: Align J1 and J2 - **DONE!** aligned2
+ - Fill VCC and GND planes on front and rear respectively? Is that a good idea? Are you creating a capacitor out of the PCB? Shouldn't all areas by GND? Did he use a four-layer board?
+   - [Can you have a ground plane and a VCC plane right next to each other when designing a PCB?](https://electronics.stackexchange.com/questions/715575/can-you-have-a-ground-plane-and-a-vcc-plane-right-next-to-each-other-when-design)
+   - [What are the drawbacks to a Vcc (positive voltage) plane](https://electronics.stackexchange.com/questions/13493/what-are-the-drawbacks-to-a-vcc-positive-voltage-plane)
+   -  [Best Practices for Implementing Power and Ground Planes in PCB Design](https://www.allpcb.com/allelectrohub/best-practices-for-implementing-power-and-ground-planes-in-pcb-design)
+ - Should the VCC and GND planes be internal?
+ - Rename forward to front, and reverse to rear?
+ - Move serial port down? Dimensions of serial board? 35-38 mm
+ - Fix all silk screen markings - **DONE!**
+ - Round off board corners?
+ - Change REF to HL for holes.
+ - Major worries:
+   - Hole 1 need to be below the CH376S module!
+     - Add HL5, there should be space. Shift C11 down if need be
+   - Crystal should be next to UART really, even though not in original.
+   - Crystal should be next to Z80 really, even though not in original.
+     - However, the Crystal feeds U7, close by so it is probably ok.
+   - Crystal should not be by edge of board, even though it is in original.
+   - Bypass caps to both GND and VCC
+ - C9 incorrect orientation!!! Check others
+   - No it isn't, it is perfect, as Z80 has VCC on the left.
+ - Properly renumber components
+   - For PRO version only?
+ - Add marker for CH376S on front of board
+ - Hide the connector's silkscreen - **DONE!**
+ - Make OMRON button variant.
+ - Check HL5 on all PCBs with holes.
+   - The original placement was ok, no need to move halfway down
+   - Move all halfway down hole PCBs in a separate directory, as they are redundant and confusing, and cluttering.
+ - Need a better naming convention, it is currently all over the place
+ - Add TTL Serial silkscreen (original has this)
+ - TTL Serial connector is the wrong way around on Squires, and probably all.
+   - My orientation might actually be better:
+     - The orientation of the serial board is matching the orientation of the mother board as the bottom is also facing the bottom, rather than having bare electronics facing down, as in the Squires original.
+     - Easier to route, to boot! One less via!
+     - Although, it would obscure any "blinken LEDs" on the top side of the serial board
+ - The DTR from the serial board is not routed. Is that a problem? In the video [Z80 playground v1.2 - The Z80 Single Board Computer - How to install CP/M programs and run them
+](https://www.youtube.com/watch?v=MaolTlk7XKM) at [1:10](https://www.youtube.com/watch?v=MaolTlk7XKM&t=70), it can be seen that there is a DTR pin on the serial board, and that there "might" be a trace coming from the connector for that pin, although it is unclear whether it is an adjoining track. Although DTR is not marked on the front silkscreen for the pins, nor is it in the schematic. TODO: Where on the UART would it go? Which pin? Pin 33, and it goes to the "user" LED.
+ - Add pins silkscreen for CPU (original has this) - **DONE!**
+ - Add pins silkscreen for bus (original has this) - **DONE!**
+ - Add silkscreen version
+ - Add silkscreen variant
+   - Variant code: 
+     - R/F - reverse or front mounted bus
+     - T/S - Common FTDI, or Squires' original, TTL orientation
+     - 2/4 - 2 or 4 layer board 
+ - Add silkscreen date
+ - Silkscreen TTL serial pins (forward)  - **DONE!**
+ - Silkscreen TTL serial pins (and reversed)  - **DONE!**
+ - Silkscreen J1 and J2  - **DONE!**
+ - The J1 and J2 are wrong - GND needs to be in the middle (pin 2), not on pin 3 as per schematic v1.0. Also, check which pins are top (pin 1) and bottom (pin 3). Presumably j goes on the bottom? So swap pins 2 and 3?
+   - Isn't ROMon left floating, if /romonj is selected?
+     - No. ROMon is an output
+ - Silkscreen U10 & outline of CH376S card - **DONE!**
+   - GOL has differing placement from Squires, and RCBUS40 and RCBUS80 board.
+ - Silkscreen RCBUS, at least pins 1 and 40 - **DONE!**
+ - Put reverse bus labels on underside - **DONE!**
+   - [Flip words](https://phrasefix.com/tools/flip-words/) 
+ - Put two rows of reverse bus labels on underside of RCBUS80, correctly placed
+ - Put reverse CPU labels on underside - **DONE!**
+ - Have variant added in box on underside (as well as the front)
+ - Have variant explanation in box on underside
+ - Have variant added in each board's README
+ - Have variant explanation in each board's README
+ - Have variant added in each board's PCB sheet in KiCAD, but not the schematic (which should be 1.2.1)
+ - Have 1.2.1 put in every schematic diagram
+ - Ensure bypass caps on all 4 layer boards, and as best possible on 2 layer (list the bad boards that will need external cap added)
+ - Put Unofficial Backplane-80 Pin-outs, from [RC2014](https://smallcomputercentral.com/rc2014-bus/specification-rc2014-bus/) on RCBUS80 silkscreen? 
+   - No need, extended BP80 pins not wired up.
+ - Document the strings used (including spaces) for the pins' labels.
+ - Should 8bitstack.co.uk silkscreen be applied? **DONE!** -> Not doing!
+   - No, as the website is dead
+   - Yes, as it maintains authentic feel
+   - No, as not having it makes for an easy differentiation that this is a reverse engineered job.
+ - RCBUS variants could route DTR? **DONE!** -> Not doing!
+   - RCBUS80r5cp2fixed4z can, with jumper
+   - RCBUS80r5cp2fixed3z can, with jumper
+   - RCBUS80r5gz can, with jumper
+   - RCBUS80r5fz can, with some rerouting of VCC, with jumper
+   - RCBUS40r3jz can not, not without a via, maybe with jumper
+   - RCBUS40r3iz can not, not without a via, maybe with jumper
+   - RCBUS40r3ipz can, with jumper
+   - RCBUS40r3ip2z can, with jumper
+   - SQUIRES aligned4b6z could with rerouting of blue line, maybe not jumper
+   - SQUIRES aligned4b4z could with rerouting of blue line, maybe not jumper
+   - No, as DTR has been repurposed for reseting Arduinos.
+     - Extracting CTS would be much more useful for the host to slow down the Z80 playground, should the host be a slower machine, i.e. another slower CP/M machine
+       - Yes! This! ^^^^^^^^
+       - The SmallComputers RC2014 serial boards come with a TTL serial board that has both RTS *and* CTS, not RTS and DTR
+         - RTS RX TX 5V CTS GND (component side up, from left)
+         - TODO: compare with usual FDTI TODO Check this:
+           - GND RTS VCC RX TX!!! (This might be correct, but reversed for both CTS/RTS n TX/RX, if RTS is CTS <- TODO: Check this!)
+           - TX RX VCC RTS GND (component side up, from left)
+         - TODO: compare with Squires FDTI TODO Check this:
+         - If different, then it should really use the correct serial board, instead of the Arduino RESET_DTR/upload board (i.e. the red FTDI should not be used, or have connectors provided for).
+           - Do this in a PRO version of the board, or playground Z80
+             - Should retain original Z80Playground replica status as someone may need, or depend upon, the original style TTL boards, as originally intended by Squires
+               - but could just re-route and add another sub variant, as was done for T/S sub variant, so C/T/S, with C being the new CTS/RTS board
+                 - but which way up and down of the CTS board is also important, as it was for T/S, so not C/T/S but rather T/S, as before, and C/R for CTS  (component side up) and reversed (component side down)?
+ - Do bypass capacitor check and make a table/document <--- This!!! **DONE!**
+   - Add to candidate table
+   - RCBUS40r3ip2z needs a via to add GND to UART
+   - If vias are needed then so be it, especially on the lower via count boards, numbering in the 20s.
+ - Distance of TTL serial? Check and make table
+ - Move up the edge bus on RCBUS80, and MJ/GOL_? Reduce warnings to zero?
+ - Remove the needless 61512 files from every board: `Memory_RAM_PC61512.kicad_sym` and `Memory_RAM_UM61512.kicad_sym` and `Memory_RAM_61512.bak` and `Memory_RAM_PC61512.bak`
+   - Maybe not, as the symbol editor complains
+ - Bring out CTS for RCBUS80
+   - Maybe other variants later
+ - RCBUS variants could route CTS? - **DONE!**
+   - RCBUS80r5cp2fixed4z
+   - RCBUS80r5cp2fixed3z
+   - RCBUS80r5gz
+   - RCBUS80r5fz
+   - RCBUS40r3jz
+   - RCBUS40r3iz
+   - RCBUS40r3ipz
+   - RCBUS40r3ip2z
+   - SQUIRES aligned4b6z 
+   - SQUIRES aligned4b4z 
+     - but could just re-route and add another sub variant, as was done for T/S sub variant, so C/R, with C being the new CTS/RTS board (component side up), and R the reversed (component side down)
+ - Add black and white PDF, PNG for the two PCB sides of 2-layer
+ - Need a checklist f things to check
+   - But it is everything! Check everything!
+ - Need to have silkscreen and component markings "template to group and paste on each type of board (for 2- and 4 layer, the T/S should have the same markings, apart from the serial port markings, obviously)
+   - Get screenshots of the T, and make the S the same (apart from the serial port markings, obviously)
+ - Silkscreen: Put board type/version on bottom right of board 
+ - Silkscreen: Put URL on board
+ - Reduce number of variants? :
+   - If TTL board was mounted vertically then less of an issue
+     - But which side, or leave it to user?
+   - Specify only works with Cousins' TTL board?
+     - No, as original board used wierdo and must be compatible
+       - Best option is the current one, support all TTL boards
+ - Quote: "Harder to reverse-engineer someone else's work than to start afresh and create a new PCB layout."
+ - Featured at top of Github page: RCBUS40/80 support CTS
+ - Can't put URL on front bottom, no room due to bus
+ - U10 differs in size, Make consistent
+ - Group silkscreen elements into a template that can be pasted between boards
+ - Take screenshot of one silkscreen and make the others the same, manually
+ - Personally, physically create only 4-layer Squires RS4 (as original was also 4-layer), and 2-layer RCBUS80 RT2 (for it's simplicity and reduced cost).
+ - Do a RCBUS80 with the bus shifted up one; and two and HL3 and HL4 shift up one., as a test  - **DONE!** pGd01 (bus+1 only), pGd02 (bus+2 and holes+1), pGd10 (holes+2) - meh...
+ - I should route an RCBUS80 RT2 manually, to see if I can do better than the autorouter..!
+ - Should VCC on the TTL connector be jumpered, in case board is attached to a bus? Conflict with computer power supply?
+ - 1MOhm res parallel with UART XTAL, according to [16550 datasheet](https://www.ti.com/lit/ds/symlink/tl16c550c.pdf) 
+ - Manually route Pro
+ - Manually add a CTS line to an RCBUS80 RT2 clone, to see if via is any less: RCBUS80r5fz9 -> RCBUS80r5fz9a - **DONE!**
+ - PCB Candidate table, not list
+ - Jumper the VCC pin to the serial TTL board? As per the Z180 CPU board, [Z80 Retrocomputing 18 – Z180 CPU Board for RC2014](https://www.smbaker.com/z80-retrocomputing-18-z180-cpu-board-for-rc2014) - **DONE!**
+   - This is kind of essential, isn't it? To avoid power conflicts, if plugging in to a (*powered*) backplane
+   - Is there room?
+   - All variants except Squires?
+     - Only RCBUS variants, as MJGOL_ and Squires have no bus
+     - **DONE!** On *all* variant and boards, with CTS
+     - **DONE!** Should do for non-CTS, as well?
+   - Add a new sub-variant (which will be the default) `U/P` - Unpowered/Powered.
+ - Drop in resistors for the serial TTL board? As per the Z180 CPU board, [Z80 Retrocomputing 18 – Z180 CPU Board for RC2014](https://www.smbaker.com/z80-retrocomputing-18-z180-cpu-board-for-rc2014)
+   - Unlikely that there is room
+   - With a jumper? Or solder spots?
+   - Connected to what?
+   - What are they for?
+     - For protection?
+       - [Why use a series resistor between Arduino RX and ESP8266 TX?](https://electronics.stackexchange.com/questions/431868/why-use-a-series-resistor-between-arduino-rx-and-esp8266-tx)
+       - [Properties of Pins Configured as OUTPUT](https://docs.arduino.cc/learn/microcontrollers/digital-pins/)
+     - For ringing?
+ - Pull-up resistors for NMI, INT, BUSRQ, WAIT, DMA? As per the Z180 CPU board, [Z80 Retrocomputing 18 – Z180 CPU Board for RC2014](https://www.smbaker.com/z80-retrocomputing-18-z180-cpu-board-for-rc2014) **DONE!** see **Pull-ups** below.
+   - Unlikely that there is room
+   - Why?
+   - Are the necessary?
+   - Should they be on the backplane instead of per board?
+   - TODO: Check [RCBUS specification](https://smallcomputercentral.com/rcbus/)
+     - `/INT` should have a pull-up resistor - do for RCBUS variants
+   - Already pulled up! INT, BUSRQ and WAIT
+   - [Z80 RC2014 schematic](https://8b8bf43264c2f150841a.b-cdn.net/wp-content/uploads/2017/04/Z80-CPU-Rev-1_3.pdf) shows: INT, NMI, BUSRQ and WAIT pulled up
+   - Just need to add NMI
+   - [Question about pull-up resistors for the INT, NMI, BUSRQ, and WAIT pins.](https://www.reddit.com/r/Z80/comments/175h7yn/question_about_pullup_resistors_for_the_int_nmi/)
+ - Jumpers for BUS pins: BUSRQ, BUSACK, HALT, WAIT, Rx, Tx (or additional address lines)? As per the Z180 CPU board, [Z80 Retrocomputing 18 – Z180 CPU Board for RC2014](https://www.smbaker.com/z80-retrocomputing-18-z180-cpu-board-for-rc2014)
+   - Unlikely that there is room
+   - Are they necessary?
+ - `PAGE` pin on RCBUS 80 or 64, see [RCBUS specification](https://smallcomputercentral.com/rcbus/)
+ - Does the positive edge triggered /externalNMI need to be changed for RCBUS? **DONE!** P/N variant
+   - Yes, of course! See section **Inverting the NMI (for RCBUS) - negative edge trigger**
+ - No debounce on NMI switch
+ - Make a table of variants and which are available (previously all were available, but now not RCBUS for positive edge triggered, as totally incompatible with RCBUS!)
+ - The CPU pin labels would be much better if individually placed  vertically – either away from or, if space, toward the centre of the Z80 – and grouped
+ - The bus pins would be much better if individually placed
+   - Squires
+   - MJ/GOL_
+   - RCBUS40
+   - RCBUS80 
+ - Change all data and address lines to lower case on Squires only
+ - Ensure all data and address lines to upper case on non-Squires board - **DONE!**
+ - Open source hardware silkscreen logo [13:05](https://www.youtube.com/watch?v=AQTJlVj3B8E) **DONE!**
+ - Why are TX, Rx, IEI and IEO not connected on the bus of RCBUS40? 
+   - Have jumpers to connect to bus?
+ - TODO: Update vias in PCB candidate via/err/warn table since the NMI issue **DONE?**
+ - Add "EXT_NMI not used on RCBUS40 bus" note on schematics of RCBUS40 - **DONE!**
+ - Placement of the jumper to serial power is inconsistent
+ - Remove `aligned` and `fixed` from the variant names, as they probably mean the same thing, and it is ancient history. SO long as a note is made of the name change then the chain of history is preserved. replace with `a` or `f`, just to retain a marker of the past?
+ - What TTL family? It *should* be HCT, I believe.
+   - Use LS symbols and rename HCT?
+ - Add ability to disable ROM and RAM on board, so that an external 512K can be used. **BONE!**
+   - Yet another variant: S/F (**S**witched, **F**ixed)
+     - Add jumper to disable RAM, to VCC on CE
+     - ROM is already jumpered, up with the two three pin jumpers. add a new jumper.
+   - Only for RCBUS80 and RCBUS40, as Squires Bus has no boards.
+   - Make Pro version have 512K ROM and RAM
+ - Add Squires schematic to this readme
+ - Make address selectable for UART?
+ - Make address selectable for CH375?
+   - Maybe both A4 and A5 (or A3) instead of just A4
+   - Maybe either A4 or A5 (or A3) instead of just A4
+   - Would need additional logic gate or wired-AND
+   - Maybe for Pro version
+ - Add ability to disable CH375 **DONE!**
+   - You can just unplug it!
+   - In case of conflicts with other boards on bus, or other storage board is used.
+   - USB is disabled: If input to U6B is held high, so both inputs to U8D is held LOW
+     - Jumper to GND or A4: *both* U8D inputs 
+       - Another variant: U/N (USB/Not)
+       - This is pretty essential for compatibility for RCBUS
+     - Note: Can not use /M1 and U8A in the same manner as A4, because M1 flips, and would need to stay 
+   - Jumper to connect to U6B output or to pull high
+   - Maybe for Pro version
+ - Disabling the RAM could be done similarly by jumpering both inputs to U8C to /WANTROM or GND, thereby saving on the additional OR gate (U6C?)
+ - On Easy Z80, but missing on ZPG:
+   - Power jack? Ironically, Z80 Playground v1.1 did have a 5 V DC power jack
+     - Not needed, extra bulk, power from USB or BUS
+   - RESET MAX693
+   - PAGE_EN?
+ - Make USB IO address configurable, in order to avoid any potential conflicts? What is the USB IO address? `0x10`, only using A4
+ - Make UART IO address configurable, in order to avoid any potential conflicts? What is the UART IO address? `0x08`, only using A3
+ - Check serial (FTDI, squires, SCS) boards connection pin order again
+ - Group silkscreen for copy and paste - some adjustments will be required probably, on a per board basis
+ - Put the Github URL, vertically orientated, along the side of the PCB to avoid the bus **DONE!**
+ - Make feature table **DONE!**
+   - It may seem obvious, from the variant code, but just make it explicit.
+ - Tidy schematic sheets main page: **DONE!**
+   - Make equi-sized rectangles
+   - Add big labels? - Nope, can't be bothered
+ - USB decoding? Address: `0x10`, repeating every 16!!! Ability to disable?
+ - UART decoding? Address: `0x08`, repeating every 8!!! Ability to disable?
+ - Check all footprints for size.
+ - Definitely need to reversion PCB silkscreen to v1.2.1 as this is ***not*** the same as v1.2 exactly – only variant `RS4NPPF` *is* – **DONE!**
+ - Definitely need to reversion schematic labels to v1.2.1 as this is ***not*** the same as v1.2 exactly – only variant `RS4NPPF` *is* – **DONE!**
+ - Definitely need to reversion sub-schematic labels to v1.2.1 as this is ***not*** the same as v1.2 exactly – only variant `RS4NPPF` *is* – **DONE!**
+ - Definitely need to reversion PCB labels to v1.2.1 as this is ***not*** the same as v1.2 exactly – only variant `RS4NPPF` *is* – **DONE!**
+ - Use the IC_ZPG logo on all, except:
+   - `RS4NPPF` which either has an additional, or instead of the IC_ZPG logo, IC_Z80_Playground logo to signify its originality
+ - It *would* be good to have: **DONE!**
+   - a jumper for USB disable CUNSSS
+   - a jumper for UART disable CUNSS
+   - the gate-saving version of RAM disable
+     - This can be another CUNS or CUPS version. **Change this first before any further changes**, or additional variants, such as the U/N for the USB *and* UART.
+       - As a starting point, which is easier to modify, CUNS or CUPS? Both already have the long trace and jumper in place.
+       - What about CUNF or CUPF? Maybe better to do a new fresh routing?
+ - Should the RCBUS schematic go in the Connections sheet to reduce the number of sheets? **DONE!** No!
+ - Remove `untitled.kicad_sch` and `Z80_Playground_Sheets_sch.kicad_sch` (dead schematics) **DONE!**
+ - IEI/IEO routing **DONE!** section above
+   - On the Z80 PIO board, [SC103 – Z80 PIO module (RC2014)](https://smallcomputercentral.com/rcbus/sc100-series/sc103-z80-pio-module-rc2014/#user-guide), IEI and IEO are jumpered to RCBUS38 and RCBUS39
+ - IO bus conflicts **DONE!** section above
+ - Individual perpendicular pin notation on Z80 **DONE!**
+ - Individual perpendicular pin notation on bus  **DONE!** Not doing that! Except for RCBUS40
+ - Individual perpendicular pin notation on UART?
+   - Little or no space on left side on top side
+   - No point in having legend *under the IC*, on top side
+   - Will reduce space for reverse silkscreen
+   - Gives 36 additional warnings -> 38 in total for GOL
+     - Need to remove some of the front pin labels, or move the CH375 outline
+   - Maybe a bridge too far?
+   - Underside only, within the bounds of the IC is good.
+ - Individual perpendicular pin notation on RAM? **DONE!**
+ - Individual perpendicular pin notation on ROM? **DONE!**
+ - Individual perpendicular pin notation on TTL logic ICs? **DONE!**
+   - Leaves no space at all for rear legend!!! Except... between Z80 pins and the power LED area
+   - Designed on: `GOL RS2CPPF`
+ - Silkscreen pin annotations should (also) be on front, to be most useful **DONE????**
+   - Is there space
+     - Not really, unless some front pins are left unlabelled
+   - On back side: Inside IC area
+ - Is the reverse bus Squires actually the same as the Squires? Or should it be forward/front bus? TODO: Check this!!! **DONE!**
+   - This could make everything pointless!!!
+   - Yes, luckily the bus is in the correct orientation. .. so wtf is the F bus for????
+ - Does having the bus on the reverse make for the board being face down? TODO: Check this!!!  **DONE!**
+   - This could make everything pointless!!!
+   - No, everything is fortuitously correctly oriented! Phew, what a relief!
+ - Was a 4 layer front bus board attempted to route?? Or was it only 2 layer?
+   - I don't think that the 4 layer was used/employed/considered until *after* the TTL/Squires serial board evolution, which was after the front and rear mounted bus routing
+   - So... no, it was not.
+ - Why lower case for Z80 pin labels on RCBUS80, 40 and GOL?  **DONE!**
+ - Why lower case on GOL bus pins? **DONE!**
+ - Should use full horizontal names on GOL bus?  **DONE!**
+ - Should use full horizontal names on RCBUS80 bus? **DONE!**
+ - Should use full perpendicular names on RCBUS40 bus? **DONE!**
+ - Should left justify Squires bus text **DONE!** Maybe not, it looks fine as it is, why spoil it, and make extra work?
+ - Fix MJ/GOL_ 7400 width to 7.62 mm  **DONE!** 
+ - What layer on PCB for sheet title? User comments?
+ - On GOL, why are the legs of C2 so close together, no gap for track between?
+   - Because the pin gap is only 2 mm, the smallest of all fo them. This is probably incorrect.
+ - Should buy all of the components and measure pin gaps, dimensions, etc., before finalising the PCB layout.
+ - Need to rename everything, add `FF` to end of variants' names
+   - In PCB candidate tables too **DONE!**
+   - In PCB feature tables too **DONE!**
+   - In `CUNSSF` too, one `F` only **DONE!**
+   - Maybe only the RCBUS boards need this? **DONE!**
+     - No, all boards: for consistency, and feature (or lack thereof) description
+   - RCBUS40 **DONE!**
+   - RCBUS80 **DONE!**
+   - Squires **DONE!**
+   - MJ/GOL_ **DONE!**
+ - Update new vias, and code name in PCB candidate table for CUNSSS and CUNSSF **DONE!**
+ - Update new code name (and any new vias) in PCB candidate table for MJ/GOL_ boards TTL IC width fix
+ - Put `100 nF` silkscreen marking together, for C4 and C15 (U6 and U8 bypass caps) between the two if possible
+ - ODS/XL Spreadsheet(s), of BOM, board matrix and other various tables???
+ - PDF(s), of BOM, board matrix and other various tables
+ - Linkable table to directory of board files
+ - BOM markdown table
+ - Schematic PDFs
+ - Schematic PNGs
+ - PCB layers PDFs
+ - PCB layers PNGs
+ - "I don't know why anyone would want a sub variant but seeing as they were all created en route to the fully featured RCBUS40_CUPSSS/RCBUS80_CUNSSS, I have made them also available..."
+ - "Another quote", what was it?
+ - Why RCBUS 4-layer not filling zones?
+ - RCBUS40 - if PCB board width increased, by a third of a mm, from 101.6mm to (101.7778 mm) 101.9302 mm then the warnings abut silkscreen go away
+   - Maybe the same for RCBUS80?? TODO: Check this!!!
+ - Why no NUN variants? i.e. NUNPFFF?
+   - Because it is a pain to implement negative edged NMI?
+   - And probably pointless as it would only go to an external button on the case – no peripheral would use it, for what purpose?
+ - There is more room on the RCBUS40 board, below the bus
+ - Will the RCBUS40 board fit on to a backplane, due to the pins being recessed?
+ - Can OneROM replace the 28C256
+   - Probably, see [28c256?](https://github.com/piersfinlayson/one-rom/discussions/168)
+   - Removes requirement for TL866 or equivalent EPROM programmer
+ - Ensure Squires NPPFFF is silkscreen perfect (components etc.)
+ - Make version with OMRON buttons
+   - Add OMROM to all boards at the same time.
+   - 12 x 7.3 mm
+   - `Button_Switch_THT:SW_PUSH-12mm`
+     - huge! and pins seem too close together
+       - not enough room!
+     - or same `Button_Switch_THT:SW_PUSH-12mm_Wuerth-430476085716`
+       - huge!
+         - not enough room!
+   - or `Button_Switch_THT:SW_TH_Tactile_Omron_B3F-10xx`
+     - nice size
+     - or same `Button_Switch_THT:SW_PUSH_6mm`
+       - nice size
+       - Much more doable: `RT4CUNSSSO`, reduced -2 vias!
+   - Make dual footprint, of `Button_Switch_SMD:SW_SPST_CK_RS282G05A3` and `Button_Switch_THT:SW_PUSH_6mm`
+     - `Button_Switch_SMD:SW_SPST_CK_RS282G05A3_OMRON6`
+     - Project library: `DualSMD_OMRON_Library:SW_SPST_CK_RS282G05A3_PUSH_6mm`
+     - Create new library
+     - Create new footprint
+     - Paste in `Button_Switch_SMD:SW_SPST_CK_RS282G05A3`
+     - Paste in `Button_Switch_THT:SW_PUSH_6mm`
+     - Rotate 90° anti-clock
+     - Center
+     - Remove any silkscreen lines over solder pads
+     - The REF*** has to match the THT or SMD setting, but pads can be either SMD or THT
+ - Debouncing circuit? See [Setting the time on my breadboard clock: Breadboard clock part 5](https://www.youtube.com/watch?v=ou2RFTK86eA) at [9:31](https://www.youtube.com/watch?v=ou2RFTK86eA&t=571)
+   - At least the 47k pull up, and 47k and 0.1 µF to GND
+ - RCBUS40 and 80 folder names inconsistent
+ - Add dual buttons to all MJ/GOL_ boards
+
+## To do: Final checks
+
+ - Footprints
+ - Schematic equivalence
+ - Go through the TODO list!
+
+## To do: Things to check on all boards
+
+Ensure:
+
+ - ROM to the left
+ - RAM not totally to the right
+ - Crystals are shifted left (not down) and close to caps
+ - U5 is on the right edge
+ - HL 5 is correct and not overlapping.
+ - Silkscreen vertical connectors
+ - C7 is close to U7
+ - Silkscreen TTL serial pins (forward) 
+ - Silkscreen TTL serial pins (and reversed) 
+
+Put:
+
+ - Title on PCB sheet of nearly complete layouts: 
+   - `Z80 Playground v1.2 (Squires RT2 - aligned4b4z6 - reversed connector, std. TTL, 2-layer)`
+   - `Z80 Playground v1.2 (MJ/GOL RT2 - alignedcz - reversed connector, std. TTL, 2-layer)`
+   - `Z80 Playground v1.2 (MJ/GOL RT4 - aligned2pc2z - reversed connector, std. TTL, 4-layer)`
+   - `Z80 Playground v1.2 (MJ/GOL RS4 - aligned2pc3z - reversed connector, Squires TTL, 4-layer`
+   - `Z80 Playground v1.2 (MJ/GOL RS2 - alignedez2 - reversed connector, Squires TTL, 2-layer`
+ - Silkscreen info box for underside
+
+

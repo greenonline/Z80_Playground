@@ -991,7 +991,7 @@ But Squire and MJ/GOL now need a pre-fix, seeing that the prior prefix `aligned`
 
 ### Notes on the variants
 
-The variant is a four character code, i.e. `RT2C`, denoting features:
+The variant is a nine character code, i.e. `RT2CUPFFF`, denoting features:
 
  - R/F - reverse or front mounted bus (only reverse mounted available)
  - S/T - orientation of the TTL serial port (use the `T` variant for the red FTDI TTL serial board, see [Z80 Playground v1.2 - serial/power module](Z80%20Playground%20v1.2%20-%20serial-power%20module.md) for more details. Note: it is important to chose the correct variant)
@@ -1000,7 +1000,174 @@ The variant is a four character code, i.e. `RT2C`, denoting features:
  - U/P - Serial VCC is jumpered or not (Unpowered/Powered)
  - P/N - Positive or negative edge triggered NMI
  - F/S - Fixed or switchable RAM
- 
+ - F/S - Fixed or switchable UART
+ - F/S - Fixed or switchable USB
+
+### Final table
+
+Fully Extended table
+
+
+| Board | Variant   | Vias | Err | Warn | Candidate                |
+|-------|-----------|------|-----|------|--------------------------|
+|       |           |      |     |      |                          |
+|Squires| RS2NPPFFF | 54   |  1  |   0  | aligned4b6z8n            |
+|Squires| RS2NPN    | -    |  -  |   -  | N/A                      |
+|Squires| RS2NUPFFF | 54   |  1  |   0  | aligned4b6z8jn           |
+|Squires| RS2NUN    | -    |  -  |   -  | N/A                      |
+|Squires| RS2CPPFFF | 54   |  1  |   0  | aligned4b6z8an           |
+|Squires| RS2CPN    | -    |  -  |   -  | N/A                      |
+|Squires| RS2CUPFFF | 54   |  1  |   0  | aligned4b6z8bn           |
+|Squires| RS2CUN    | -    |  -  |   -  | N/A                      |
+|Squires| RT2NPPFFF | 54   |  1  |   0  | aligned4b4z8n            |
+|Squires| RT2NPN    | -    |  -  |   -  | N/A                      |
+|Squires| RT2NUPFFF | 54   |  1  |   0  | aligned4b4z8jn           |
+|Squires| RT2NUN    | -    |  -  |   -  | N/A                      |
+|Squires| RT2CPPFFF | 55   |  1  |   0  | aligned4b4z8an           |
+|Squires| RT2CPN    | -    |  -  |   -  | N/A                      |
+|Squires| RT2CUPFFF | 55   |  1  |   0  | aligned4b4z8bn           |
+|Squires| RT2CUN    | -    |  -  |   -  | N/A                      |
+|Squires| RS4NPPFFF | 20   |  1  |   0  | aligned4b2pcz3n          |
+|Squires| RS4NPN    | -    |  -  |   -  | N/A                      |
+|Squires| RS4NUPFFF | 20   |  1  |   0  | aligned4b2pcz3jn         |
+|Squires| RS4NUN    | -    |  -  |   -  | N/A                      |
+|Squires| RS4CPPFFF | 20   |  1  |   0  | aligned4b2pcz3an         |
+|Squires| RS4CPN    | -    |  -  |   -  | N/A                      |
+|Squires| RS4CUPFFF | 20   |  1  |   0  | aligned4b2pcz3bn         |
+|Squires| RS4CUN    | -    |  -  |   -  | N/A                      |
+|Squires| RT4NPPFFF | 20   |  1  |   0  | aligned4b2paz3n          |
+|Squires| RT4NPN    | -    |  -  |   -  | N/A                      |
+|Squires| RT4NUPFFF | 20   |  1  |   0  | aligned4b2paz3jn         |
+|Squires| RT4NUN    | -    |  -  |   -  | N/A                      |
+|Squires| RT4CPPFFF | 20   |  1  |   0  | aligned4b2paz3an         |
+|Squires| RT4CPN    | -    |  -  |   -  | N/A                      |
+|Squires| RT4CUPFFF | 20   |  1  |   0  | aligned4b2paz3bn         |
+|Squires| RT4CUN    | -    |  -  |   -  | N/A                      |
+|       |           |      |     |      |                          |
+|MJ/GOL | RS2NPPFFF | 48   |  1  |   2  | alignedez4nf             |
+|MJ/GOL | RS2NPN    | -    |  -  |   -  | N/A                      |
+|MJ/GOL | RS2NUPFFF | 48   |  1  |   2  | alignedez4jnf            |
+|MJ/GOL | RS2NUN    | -    |  -  |   -  | N/A                      |
+|MJ/GOL | RS2CPPFFF | 49   |  1  |   2  | alignedez4anf            |
+|MJ/GOL | RS2CPN    | -    |  -  |   -  | N/A                      |
+|MJ/GOL | RS2CUPFFF | 49   |  1  |   2  | alignedez4bnf            |
+|MJ/GOL | RS2CUN    | -    |  -  |   -  | N/A                      |
+|MJ/GOL | RT2NPPFFF | 48   |  1  |   2  | alignedcz4nf             |
+|MJ/GOL | RT2NPN    | -    |  -  |   -  | N/A                      |
+|MJ/GOL | RT2NUPFFF | 48   |  1  |   2  | alignedcz4jnf            |
+|MJ/GOL | RT2NUN    | -    |  -  |   -  | N/A                      |
+|MJ/GOL | RT2CPPFFF | 49   |  1  |   2  | alignedcz4anf            |
+|MJ/GOL | RT2CPN    | -    |  -  |   -  | N/A                      |
+|MJ/GOL | RT2CUPFFF | 49   |  1  |   2  | alignedcz4bnf            |
+|MJ/GOL | RT2CUN    | -    |  -  |   -  | N/A                      |
+|MJ/GOL | RS4NPPFFF | 21   |  1  |   2  | aligned2pc3znf           |
+|MJ/GOL | RS4NPN    | -    |  -  |   -  | N/A                      |
+|MJ/GOL | RS4NUPFFF | 21   |  1  |   2  | aligned2pc3znjf          |
+|MJ/GOL | RS4NUN    | -    |  -  |   -  | N/A                      |
+|MJ/GOL | RS4CPPFFF | 21   |  1  |   2  | aligned2pc3zanf          |
+|MJ/GOL | RS4CPN    | -    |  -  |   -  | N/A                      |
+|MJ/GOL | RS4CUPFFF | 21   |  1  |   2  | aligned2pc3zbnf          |
+|MJ/GOL | RS4CUN    | -    |  -  |   -  | N/A                      |
+|MJ/GOL | RT4NPPFFF | 21   |  1  |   2  | aligned2pc2znf           |
+|MJ/GOL | RT4NPN    | -    |  -  |   -  | N/A                      |
+|MJ/GOL | RT4NUPFFF | 21   |  1  |   2  | aligned2pc2zjnf          |
+|MJ/GOL | RT4NUN    | -    |  -  |   -  | N/A                      |
+|MJ/GOL | RT4CPPFFF | 21   |  1  |   2  | aligned2pc2zanf          |
+|MJ/GOL | RT4CPN    | -    |  -  |   -  | N/A                      |
+|MJ/GOL | RT4CUPFFF | 21   |  1  |   2  | aligned2pc2zbnf          |
+|MJ/GOL | RT4CUN    | -    |  -  |   -  | N/A                      |
+|       |           |      |     |      |                          |
+|RCBUS40| RS2NPPFFF | 53   |  1  |   4  | RCBUS40r3jz7             |
+|RCBUS40| RS2NPN    | -    |  -  |   -  | N/A                      |
+|RCBUS40| RS2NUPFFF | 53   |  1  |   4  | RCBUS40r3jz7j            |
+|RCBUS40| RS2NUN    | -    |  -  |   -  | N/A                      |
+|RCBUS40| RS2CPPFFF | 54   |  1  |   4  | RCBUS40r3jz7a            |
+|RCBUS40| RS2CPN    | -    |  -  |   -  | N/A                      |
+|RCBUS40| RS2CUPFFF | 54   |  1  |   4  | RCBUS40r3jz7b            |
+|RCBUS40| RS2CUPSFF | 53   |  1  |   4  | RCBUS40r3jz7b3           |
+|RCBUS40| RS2CUPSSF | 55   |  1  |   4  | RCBUS40r3jz7b3u          |
+|RCBUS40| RS2CUPSSS | 56   |  1  |   4  | RCBUS40r3jz7b3us         |
+|RCBUS40| RS2CUNFFF | -    |  -  |   -  | N/A                      |
+|RCBUS40| RT2NPPFFF | 53   |  1  |   4  | RCBUS40r3iz7             |
+|RCBUS40| RT2NPN    | -    |  -  |   -  | N/A                      |
+|RCBUS40| RT2NUPFFF | 53   |  1  |   4  | RCBUS40r3iz7j            |
+|RCBUS40| RT2NUN    | -    |  -  |   -  | N/A                      |
+|RCBUS40| RT2CPPFFF | 54   |  1  |   4  | RCBUS40r3iz7a            |
+|RCBUS40| RT2CPN    | -    |  -  |   -  | N/A                      |
+|RCBUS40| RT2CUPFFF | 54   |  1  |   4  | RCBUS40r3iz7b            |
+|RCBUS40| RT2CUPSFF | 53   |  1  |   4  | RCBUS40r3iz7b3           |
+|RCBUS40| RT2CUPSSF | 55   |  1  |   4  | RCBUS40r3iz7b3u          |
+|RCBUS40| RT2CUPSSS | 56   |  1  |   4  | RCBUS40r3iz7b3us         |
+|RCBUS40| RT2CUNFFF | -    |  -  |   -  | N/A                      |
+|RCBUS40| RS4NPPFFF | 20   |  1  |   4  | RCBUS40r3ip2z2           |
+|RCBUS40| RS4NPN    | -    |  -  |   -  | N/A                      |
+|RCBUS40| RS4NUPFFF | 20   |  1  |   4  | RCBUS40r3ip2z2j          |
+|RCBUS40| RS4NUN    | -    |  -  |   -  | N/A                      |
+|RCBUS40| RS4CPPFFF | 20   |  1  |   4  | RCBUS40r3ip2z2a          |
+|RCBUS40| RS4CPN    | -    |  -  |   -  | N/A                      |
+|RCBUS40| RS4CUPFFF | 20   |  1  |   4  | RCBUS40r3ip2z2b          |
+|RCBUS40| RS4CUPSFF | 20   |  1  |   4  | RCBUS40r3ip2z2b3         |
+|RCBUS40| RS4CUPSSF | 20   |  1  |   4  | RCBUS40r3ip2z2b3u        |
+|RCBUS40| RS4CUPSSS | 20   |  1  |   4  | RCBUS40r3ip2z2b3us       |
+|RCBUS40| RS4CUNFFF | -    |  -  |   -  | N/A                      |
+|RCBUS40| RT4NPPFFF | 20   |  1  |   4  | RCBUS40r3ipz2            |
+|RCBUS40| RT4NPN    | -    |  -  |   -  | N/A                      |
+|RCBUS40| RT4NUPFFF | 20   |  1  |   4  | RCBUS40r3ipz2j           |
+|RCBUS40| RT4NUN    | -    |  -  |   -  | N/A                      |
+|RCBUS40| RT4CPPFFF | 20   |  1  |   4  | RCBUS40r3ipz2a           |
+|RCBUS40| RT4CPN    | -    |  -  |   -  | N/A                      |
+|RCBUS40| RT4CUPFFF | 20   |  1  |   4  | RCBUS40r3ipz2b           |
+|RCBUS40| RT4CUPSFF | 20   |  1  |   4  | RCBUS40r3ipz2b3          |
+|RCBUS40| RT4CUPSSF | 20   |  1  |   4  | RCBUS40r3ipz2b3u         |
+|RCBUS40| RT4CUPSSS | 20   |  1  |   4  | RCBUS40r3ipz2b3us        |
+|RCBUS40| RT4CUNFFF | -    |  -  |   -  |                          |
+|       |           |      |     |      |                          |
+|RCBUS80| RS2NPPFFF | 55   |  1  |   7  | RCBUS80r5gz9n            |
+|RCBUS80| RS2NPN    | -    |  -  |   -  | N/A                      |
+|RCBUS80| RS2NUPFFF | 55   |  1  |   7  | RCBUS80r5gz9jn           |
+|RCBUS80| RS2NUN    | -    |  -  |   -  | N/A                      |
+|RCBUS80| RS2CPPFFF | 56   |  1  |   7  | RCBUS80r5gz9an           |
+|RCBUS80| RS2CPN    | -    |  -  |   -  | N/A                      |
+|RCBUS80| RS2CUPFFF | 56   |  1  |   7  | RCBUS80r5gz9bn           |
+|RCBUS80| RS2CUNFFF | 61   |  1  |   7  | RCBUS80r5gz9bp           |
+|RCBUS80| RS2CUNSFF | 61   |  1  |   7  | RCBUS80r5gz9bp3          |
+|RCBUS80| RS2CUNSSF | 63   |  1  |   7  | RCBUS80r5gz9bp3u         |
+|RCBUS80| RS2CUNSSS | 65   |  1  |   7  | RCBUS80r5gz9bp3us        |
+|RCBUS80| RT2NPPFFF | 55   |  1  |   7  | RCBUS80r5fz9n            |
+|RCBUS80| RT2NPN    | -    |  -  |   -  | N/A                      |
+|RCBUS80| RT2NUPFFF | 55   |  1  |   7  | RCBUS80r5fz9jn           |
+|RCBUS80| RT2NUN    | -    |  -  |   -  | N/A                      |
+|RCBUS80| RT2CPPFFF | 56   |  1  |   7  | RCBUS80r5fz9an           |
+|RCBUS80| RT2CPN    | -    |  -  |   -  | N/A                      |
+|RCBUS80| RT2CUPFFF | 56   |  1  |   7  | RCBUS80r5fz9bn           |
+|RCBUS80| RT2CUNFFF | 61   |  1  |   7  | RCBUS80r5fz9bp           |
+|RCBUS80| RT2CUNSFF | 61   |  1  |   7  | RCBUS80r5fz9bp3          |
+|RCBUS80| RT2CUNSSF | 63   |  1  |   7  | RCBUS80r5fz9bp3u         |
+|RCBUS80| RT2CUNSSS | 65   |  1  |   7  | RCBUS80r5fz9bp3us        |
+|RCBUS80| RS4NPPFFF | 24   |  1  |   7  | RCBUS80r5cp2fixed4zn     |
+|RCBUS80| RS4NPN    | -    |  -  |   -  | N/A                      |
+|RCBUS80| RS4NUPFFF | 24   |  1  |   7  | RCBUS80r5cp2fixed4zjn    |
+|RCBUS80| RS4NUN    | -    |  -  |   -  | N/A                      |
+|RCBUS80| RS4CPPFFF | 24   |  1  |   7  | RCBUS80r5cp2fixed4zan    |
+|RCBUS80| RS4CPN    | -    |  -  |   -  | N/A                      |
+|RCBUS80| RS4CUPFFF | 24   |  1  |   7  | RCBUS80r5cp2fixed4zbn    |
+|RCBUS80| RS4CUNFFF | 24   |  1  |   7  | RCBUS80r5cp2fixed4zbm    |
+|RCBUS80| RS4CUNSFF | 24   |  1  |   7  | RCBUS80r5cp2fixed4zbm3   |
+|RCBUS80| RS4CUNSSF | 24   |  1  |   7  | RCBUS80r5cp2fixed4zbm3u  |
+|RCBUS80| RS4CUNSSS | 24   |  1  |   7  | RCBUS80r5cp2fixed4zbm3us |
+|RCBUS80| RT4NPPFFF | 24   |  1  |   7  | RCBUS80r5cp2fixed3zn     |
+|RCBUS80| RT4NPN    | -    |  -  |   -  | N/A                      |
+|RCBUS80| RT4NUPFFF | 24   |  1  |   7  | RCBUS80r5cp2fixed3zjn    |
+|RCBUS80| RT4NUN    | -    |  -  |   -  | N/A                      |
+|RCBUS80| RT4CPPFFF | -    |  1  |   7  | RCBUS80r5cp2fixed3zan    |
+|RCBUS80| RT4CPN    | -    |  -  |   -  | N/A                      |
+|RCBUS80| RT4CUPFFF | 24   |  1  |   7  | RCBUS80r5cp2fixed3zbn    |
+|RCBUS80| RT4CUNFFF | 24   |  1  |   7  | RCBUS80r5cp2fixed3zbo    |
+|RCBUS80| RT4CUNSFF | 24   |  1  |   7  | RCBUS80r5cp2fixed3zbo3   |
+|RCBUS80| RT4CUNSSF | 24   |  1  |   7  | RCBUS80r5cp2fixed3zbo3u  |
+|RCBUS80| RT4CUNSSS | 24   |  1  |   7  | RCBUS80r5cp2fixed3zbo3us |
+|       |           |      |     |      |                          |
+
 ## Templates (do not use)
 
 ```
@@ -1041,7 +1208,7 @@ The variant is a four character code, i.e. `RT2C`, denoting features:
 |RCBUS80| RT4C   |      |     |      |
 ```
 
-Extended table template
+Extended table template (out of date, see fully extended below)
 
 ```none
 | Board | Variant| Vias | Err | Warn | Candidate |
@@ -1179,6 +1346,170 @@ Extended table template
 |RCBUS80| RT4CUP | -    |  1  |   7  |           |
 |RCBUS80| RT4CUN | -    |  1  |   7  |           |
 |       |        |      |     |      |           |
+```
+ 
+Fully Extended table template
+
+```none
+| Board | Variant   | Vias | Err | Warn | Candidate                |
+|-------|-----------|------|-----|------|--------------------------|
+|       |           |      |     |      |                          |
+|Squires| RS2NPPFFF | -    |  1  |   0  |                          |
+|Squires| RS2NPN    | -    |  -  |   -  |                          |
+|Squires| RS2NUPFFF | -    |  1  |   0  |                          |
+|Squires| RS2NUN    | -    |  -  |   -  |                          |
+|Squires| RS2CPPFFF | -    |  1  |   0  |                          |
+|Squires| RS2CPN    | -    |  -  |   -  |                          |
+|Squires| RS2CUPFFF | -    |  1  |   0  |                          |
+|Squires| RS2CUN    | -    |  -  |   -  |                          |
+|Squires| RT2NPPFFF | -    |  1  |   0  |                          |
+|Squires| RT2NPN    | -    |  -  |   -  |                          |
+|Squires| RT2NUPFFF | -    |  1  |   0  |                          |
+|Squires| RT2NUN    | -    |  -  |   -  |                          |
+|Squires| RT2CPPFFF | -    |  1  |   0  |                          |
+|Squires| RT2CPN    | -    |  -  |   -  |                          |
+|Squires| RT2CUPFFF | -    |  1  |   0  |                          |
+|Squires| RT2CUN    | -    |  -  |   -  |                          |
+|Squires| RS4NPPFFF | -    |  1  |   0  |                          |
+|Squires| RS4NPN    | -    |  -  |   -  |                          |
+|Squires| RS4NUPFFF | -    |  1  |   0  |                          |
+|Squires| RS4NUN    | -    |  -  |   -  |                          |
+|Squires| RS4CPPFFF | -    |  1  |   0  |                          |
+|Squires| RS4CPN    | -    |  -  |   -  |                          |
+|Squires| RS4CUPFFF | -    |  1  |   0  |                          |
+|Squires| RS4CUN    | -    |  -  |   -  |                          |
+|Squires| RT4NPPFFF | -    |  1  |   0  |                          |
+|Squires| RT4NPN    | -    |  -  |   -  |                          |
+|Squires| RT4NUPFFF | -    |  1  |   0  |                          |
+|Squires| RT4NUN    | -    |  -  |   -  |                          |
+|Squires| RT4CPPFFF | -    |  1  |   0  |                          |
+|Squires| RT4CPN    | -    |  -  |   -  |                          |
+|Squires| RT4CUPFFF | -    |  1  |   0  |                          |
+|Squires| RT4CUN    | -    |  -  |   -  |                          |
+|       |           |      |     |      |                          |
+|MJ/GOL | RS2NPPFFF | -    |  1  |   2  |                          |
+|MJ/GOL | RS2NPN    | -    |  -  |   -  |                          |
+|MJ/GOL | RS2NUPFFF | -    |  1  |   2  |                          |
+|MJ/GOL | RS2NUN    | -    |  -  |   -  |                          |
+|MJ/GOL | RS2CPPFFF | -    |  1  |   2  |                          |
+|MJ/GOL | RS2CPN    | -    |  -  |   -  |                          |
+|MJ/GOL | RS2CUPFFF | -    |  1  |   2  |                          |
+|MJ/GOL | RS2CUN    | -    |  -  |   -  |                          |
+|MJ/GOL | RT2NPPFFF | -    |  1  |   2  |                          |
+|MJ/GOL | RT2NPN    | -    |  -  |   -  |                          |
+|MJ/GOL | RT2NUPFFF | -    |  1  |   2  |                          |
+|MJ/GOL | RT2NUN    | -    |  -  |   -  |                          |
+|MJ/GOL | RT2CPPFFF | -    |  1  |   2  |                          |
+|MJ/GOL | RT2CPN    | -    |  -  |   -  |                          |
+|MJ/GOL | RT2CUPFFF | -    |  1  |   2  |                          |
+|MJ/GOL | RT2CUN    | -    |  -  |   -  |                          |
+|MJ/GOL | RS4NPPFFF | -    |  1  |   2  |                          |
+|MJ/GOL | RS4NPN    | -    |  -  |   -  |                          |
+|MJ/GOL | RS4NUPFFF | -    |  1  |   2  |                          |
+|MJ/GOL | RS4NUN    | -    |  -  |   -  |                          |
+|MJ/GOL | RS4CPPFFF | -    |  1  |   2  |                          |
+|MJ/GOL | RS4CPN    | -    |  -  |   -  |                          |
+|MJ/GOL | RS4CUPFFF | -    |  1  |   2  |                          |
+|MJ/GOL | RS4CUN    | -    |  -  |   -  |                          |
+|MJ/GOL | RT4NPPFFF | -    |  1  |   2  |                          |
+|MJ/GOL | RT4NPN    | -    |  -  |   -  |                          |
+|MJ/GOL | RT4NUPFFF | -    |  1  |   2  |                          |
+|MJ/GOL | RT4NUN    | -    |  -  |   -  |                          |
+|MJ/GOL | RT4CPPFFF | -    |  1  |   2  |                          |
+|MJ/GOL | RT4CPN    | -    |  -  |   -  |                          |
+|MJ/GOL | RT4CUPFFF | -    |  1  |   2  |                          |
+|MJ/GOL | RT4CUN    | -    |  -  |   -  |                          |
+|       |           |      |     |      |                          |
+|RCBUS40| RS2NPPFFF | -    |  1  |   4  |                          |
+|RCBUS40| RS2NPN    | -    |  -  |   -  |                          |
+|RCBUS40| RS2NUPFFF | -    |  1  |   4  |                          |
+|RCBUS40| RS2NUN    | -    |  -  |   -  |                          |
+|RCBUS40| RS2CPPFFF | -    |  1  |   4  |                          |
+|RCBUS40| RS2CPN    | -    |  -  |   -  |                          |
+|RCBUS40| RS2CUPFFF | -    |  1  |   4  |                          |
+|RCBUS40| RS2CUPSFF | -    |  1  |   4  |                          |
+|RCBUS40| RS2CUPSSF | -    |  1  |   4  |                          |
+|RCBUS40| RS2CUPSSS | -    |  1  |   4  |                          |
+|RCBUS40| RS2CUNFFF | -    |  -  |   -  |                          |
+|RCBUS40| RT2NPPFFF | -    |  1  |   4  |                          |
+|RCBUS40| RT2NPN    | -    |  -  |   -  |                          |
+|RCBUS40| RT2NUPFFF | -    |  1  |   4  |                          |
+|RCBUS40| RT2NUN    | -    |  -  |   -  |                          |
+|RCBUS40| RT2CPPFFF | -    |  1  |   4  |                          |
+|RCBUS40| RT2CPN    | -    |  -  |   -  |                          |
+|RCBUS40| RT2CUPFFF | -    |  1  |   4  |                          |
+|RCBUS40| RT2CUPSFF | -    |  1  |   4  |                          |
+|RCBUS40| RT2CUPSSF | -    |  1  |   4  |                          |
+|RCBUS40| RT2CUPSSS | -    |  1  |   4  |                          |
+|RCBUS40| RT2CUNFFF | -    |  -  |   -  |                          |
+|RCBUS40| RS4NPPFFF | -    |  1  |   4  |                          |
+|RCBUS40| RS4NPN    | -    |  -  |   -  |                          |
+|RCBUS40| RS4NUPFFF | -    |  1  |   4  |                          |
+|RCBUS40| RS4NUN    | -    |  -  |   -  |                          |
+|RCBUS40| RS4CPPFFF | -    |  1  |   4  |                          |
+|RCBUS40| RS4CPN    | -    |  -  |   -  |                          |
+|RCBUS40| RS4CUPFFF | -    |  1  |   4  |                          |
+|RCBUS40| RS4CUPSFF | -    |  1  |   4  |                          |
+|RCBUS40| RS4CUPSSF | -    |  1  |   4  |                          |
+|RCBUS40| RS4CUPSSS | -    |  1  |   4  |                          |
+|RCBUS40| RS4CUNFFF | -    |  -  |   -  |                          |
+|RCBUS40| RT4NPPFFF | -    |  1  |   4  |                          |
+|RCBUS40| RT4NPN    | -    |  -  |   -  |                          |
+|RCBUS40| RT4NUPFFF | -    |  1  |   4  |                          |
+|RCBUS40| RT4NUN    | -    |  -  |   -  |                          |
+|RCBUS40| RT4CPPFFF | -    |  1  |   4  |                          |
+|RCBUS40| RT4CPN    | -    |  -  |   -  |                          |
+|RCBUS40| RT4CUPFFF | -    |  1  |   4  |                          |
+|RCBUS40| RT4CUPSFF | -    |  1  |   4  |                          |
+|RCBUS40| RT4CUPSSF | -    |  1  |   4  |                          |
+|RCBUS40| RT4CUPSSS | -    |  1  |   4  |                          |
+|RCBUS40| RT4CUNFFF | -    |  -  |   -  |                          |
+|       |           |      |     |      |                          |
+|RCBUS80| RS2NPPFFF | -    |  1  |   7  |                          |
+|RCBUS80| RS2NPN    | -    |  -  |   -  |                          |
+|RCBUS80| RS2NUPFFF | -    |  1  |   7  |                          |
+|RCBUS80| RS2NUN    | -    |  -  |   -  |                          |
+|RCBUS80| RS2CPPFFF | -    |  1  |   7  |                          |
+|RCBUS80| RS2CPN    | -    |  -  |   -  |                          |
+|RCBUS80| RS2CUPFFF | -    |  1  |   7  |                          |
+|RCBUS80| RS2CUNFFF | -    |  1  |   7  |                          |
+|RCBUS80| RS2CUNSFF | -    |  1  |   7  |                          |
+|RCBUS80| RS2CUNSSF | -    |  1  |   7  |                          |
+|RCBUS80| RS2CUNSSS | -    |  1  |   7  |                          |
+|RCBUS80| RT2NPPFFF | -    |  1  |   7  |                          |
+|RCBUS80| RT2NPN    | -    |  -  |   -  |                          |
+|RCBUS80| RT2NUPFFF | -    |  1  |   7  |                          |
+|RCBUS80| RT2NUN    | -    |  -  |   -  |                          |
+|RCBUS80| RT2CPPFFF | -    |  1  |   7  |                          |
+|RCBUS80| RT2CPN    | -    |  -  |   -  |                          |
+|RCBUS80| RT2CUPFFF | -    |  1  |   7  |                          |
+|RCBUS80| RT2CUNFFF | -    |  1  |   7  |                          |
+|RCBUS80| RT2CUNSFF | -    |  1  |   7  |                          |
+|RCBUS80| RT2CUNSSF | -    |  1  |   7  |                          |
+|RCBUS80| RT2CUNSSS | -    |  1  |   7  |                          |
+|RCBUS80| RS4NPPFFF | -    |  1  |   7  |                          |
+|RCBUS80| RS4NPN    | -    |  -  |   -  |                          |
+|RCBUS80| RS4NUPFFF | -    |  1  |   7  |                          |
+|RCBUS80| RS4NUN    | -    |  -  |   -  |                          |
+|RCBUS80| RS4CPPFFF | -    |  1  |   7  |                          |
+|RCBUS80| RS4CPN    | -    |  -  |   -  |                          |
+|RCBUS80| RS4CUPFFF | -    |  1  |   7  |                          |
+|RCBUS80| RS4CUNFFF | -    |  1  |   7  |                          |
+|RCBUS80| RS4CUNSFF | -    |  1  |   7  |                          |
+|RCBUS80| RS4CUNSSF | -    |  1  |   7  |                          |
+|RCBUS80| RS4CUNSSS | -    |  1  |   7  |                          |
+|RCBUS80| RT4NPPFFF | -    |  1  |   7  |                          |
+|RCBUS80| RT4NPN    | -    |  -  |   -  |                          |
+|RCBUS80| RT4NUPFFF | -    |  1  |   7  |                          |
+|RCBUS80| RT4NUN    | -    |  -  |   -  |                          |
+|RCBUS80| RT4CPPFFF | -    |  1  |   7  |                          |
+|RCBUS80| RT4CPN    | -    |  -  |   -  |                          |
+|RCBUS80| RT4CUPFFF | -    |  1  |   7  |                          |
+|RCBUS80| RT4CUNFFF | -    |  1  |   7  |                          |
+|RCBUS80| RT4CUNSFF | -    |  1  |   7  |                          |
+|RCBUS80| RT4CUNSSF | -    |  1  |   7  |                          |
+|RCBUS80| RT4CUNSSS | -    |  1  |   7  |                          |
+|       |           |      |     |      |                          |
 ```
  
 ## Notes

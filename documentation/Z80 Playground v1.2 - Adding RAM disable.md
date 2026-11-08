@@ -86,7 +86,7 @@ Fix: RCBUS40r3iz7b2 (RT2CUPS)
 
 Horrible long circuitous trace on /RAM_EN, difficult to connect to. This is much more difficult than the RCBUS80 variant. 
 
-Managed it, without any vias, but more circuitous trces added.
+Managed it, without any vias, but more circuitous traces added.
 
 Z80_Playground (RCBUS40 RS2CUP) -  (RCBUS40r3jz7b) - 54v - DRC_OK (CTS) (JMP)
 
@@ -94,13 +94,25 @@ Fix: RCBUS40r3jz7b2 (RS2CUPS)
 
 Horrible long circuitous trace on /RAM_EN, difficult to connect to. This is much more difficult than the RCBUS80 variant. TODO: Finish
 
-Managed it, without any vias, but more circuitous trces added.
+Managed it, without any vias, but more circuitous traces added.
 
 
 ## Conclusion
 
-All done! Thankfully just a couple of boards had to be done. It is unlikey that anymore changes can be done, or features added as the boards are getting pretty full now. 
+All done! Thankfully just a couple of boards had to be done. It is unlikely that anymore changes can be done, or features added as the boards are getting pretty full now. 
 
 I am surprised that I've managed to cram in: CTS; Power jumper; Negative-edge triggered NMI, and; this RAM disable upgrade.
 
-Even though the negative edge trigger added an excesive amount of vias to the RS2 and RT2 variants of the RCBUS80 board, seeing as this RAm disable fix did not any any additional vias, the two combined fixes should be taken as a win.
+Even though the negative edge trigger added an excessive amount of vias to the RS2 and RT2 variants of the RCBUS80 board, seeing as this RAM disable fix did not any any additional vias, the two combined fixes should be taken as a win.
+
+## Change
+
+There is an alternative method, which does not require the use of an additional gate, but instead a 3 pin jumper to /WANT_ROM or GND to both inputs of the NOR U8C, see [Z80 Playground v1.2 - Disabling RAM.md](Z80%20Playground%20-%20Disabling%20RAM.md)
+
+[![Disabling RAM logic - simpler][3]][3]
+
+See [Z80 Playground v1.2 - Adding RAM disable revisited](Z80%20Playground%20v1.2%20-%20Adding%20RAM%20disable%20revisited.md)
+
+<!-- Images -->
+
+  [3]: ../xtras/hardware/screenshots/RomWBW_compatibility/Z80%20Playground%20-%20RAM%20Disable%20Simple.png "Disabling RAM logic - simpler"
