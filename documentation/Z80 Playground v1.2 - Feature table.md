@@ -2,6 +2,25 @@
 
 Note: Not all of these board and variant combinations exist, that is to say that some combinations of features are not available (yet)
 
+## Legend
+
+(Taken from the README)
+
+   - R/F - **R**everse or **F**ront mounted bus (Alternatively: **R**everse or **F**orward)
+   - T/S - Common FTDI **T**TL, or **S**quires' original, serial board orientation
+   - 2/4 - **2** or **4** layer board 
+   - C/N - **C**TS is exposed, or **N**ot
+   - U/P - VCC is jumpered, or not (**U**npluggable/**P**owered)
+   - P/N - **P**ositive or **N**egative edge triggered NMI (not RCBUS40)
+   - F/S - **F**ixed or **S**witchable RAM (RCBUS40 and RCBUS80 only; The Squires and MJ/GOL boards will not support external memory boards)
+   - F/S **F**ixed or **S**witchable USB
+     - Originally: U/N - **U**SB or **N**ot
+   - F/S **F**ixed or **S**witchable UART
+     - Originally: U/N - **U**ART or **N**ot
+   - C/D/O - Switch type: **C**&K SMD, **D**ual, or **O**mron thru-hole 
+    
+Note: No front mounted bus boards have been published, due to excessive number of vias arising through routing, so the first  `R` is effectively meaningless, seeing as *all* of the published boards have reverse mounted buses. Thus, the (first) `F` actually *is* redundant, but it has been retained to serve purely as a reminder of the bus orientation that was (once) implemented.
+
 
 
 ## Full table
