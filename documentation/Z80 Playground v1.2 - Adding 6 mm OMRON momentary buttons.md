@@ -1,5 +1,9 @@
 # Z80 Playground v1.2 - Adding 6 mm OMRON momentary buttons
 
+## See also
+
+ - [Z80 Playground v1.2 - Switches](Z80%20Playground%20v1.2%20-%20Switches.md)
+
 ## Notes
 
  - Make version with OMRON buttons
