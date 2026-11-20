@@ -1,154 +1,179 @@
 # Z80 Playground v1.2 - Feature table
 
-Not all of these board exist, that is to say that some combinations of features are not available (yet)
+Note: Not all of these board and variant combinations exist, that is to say that some combinations of features are not available (yet)
 
-
-| Board | Variant | Reverse | Squires/TTL | #layers | CTS | Serial power |  ± edge  | RAM switch |
-|-------|---------|---------|-------------|---------|-----|--------|----------|------------|
-|       |         |         |             |         |     |        |          |            |
-|Squires| RS2NPPF |   Yes   |  Squires    |   2     | No  | Fixed  | Positive |    No      |
-|Squires| RS2NPNF |   Yes   |  Squires    |   2     | No  | Fixed  | Negative |    No      |
-|Squires| RS2NUPF |   Yes   |  Squires    |   2     | No  | Jumper | Positive |    No      |
-|Squires| RS2NUNF |   Yes   |  Squires    |   2     | No  | Jumper | Negative |    No      |
-|Squires| RS2CPPF |   Yes   |  Squires    |   2     | Yes | Fixed  | Positive |    No      |
-|Squires| RS2CPNF |   Yes   |  Squires    |   2     | Yes | Fixed  | Negative |    No      |
-|Squires| RS2CUPF |   Yes   |  Squires    |   2     | Yes | Jumper | Positive |    No      |
-|Squires| RS2CUNF |   Yes   |  Squires    |   2     | Yes | Jumper | Negative |    No      |
-|Squires| RT2NPPF |   Yes   |  TTL        |   2     | No  | Fixed  | Positive |    No      |
-|Squires| RT2NPNF |   Yes   |  TTL        |   2     | No  | Fixed  | Negative |    No      |
-|Squires| RT2NUPF |   Yes   |  TTL        |   2     | No  | Jumper | Positive |    No      |
-|Squires| RT2NUNF |   Yes   |  TTL        |   2     | No  | Jumper | Negative |    No      |
-|Squires| RT2CPPF |   Yes   |  TTL        |   2     | Yes | Fixed  | Positive |    No      |
-|Squires| RT2CPNF |   Yes   |  TTL        |   2     | Yes | Fixed  | Negative |    No      |
-|Squires| RT2CUPF |   Yes   |  TTL        |   2     | Yes | Jumper | Positive |    No      |
-|Squires| RT2CUNF |   Yes   |  TTL        |   2     | Yes | Jumper | Negative |    No      |
-|Squires| RS4NPPF |   Yes   |  Squires    |   4     | No  | Fixed  | Positive |    No      |
-|Squires| RS4NPNF |   Yes   |  Squires    |   4     | No  | Fixed  | Negative |    No      |
-|Squires| RS4NUPF |   Yes   |  Squires    |   4     | No  | Jumper | Positive |    No      |
-|Squires| RS4NUNF |   Yes   |  Squires    |   4     | No  | Jumper | Negative |    No      |
-|Squires| RS4CPPF |   Yes   |  Squires    |   4     | Yes | Fixed  | Positive |    No      |
-|Squires| RS4CPNF |   Yes   |  Squires    |   4     | Yes | Fixed  | Negative |    No      |
-|Squires| RS4CUPF |   Yes   |  Squires    |   4     | Yes | Jumper | Positive |    No      |
-|Squires| RS4CUNF |   Yes   |  Squires    |   4     | Yes | Jumper | Negative |    No      |
-|Squires| RT4NPPF |   Yes   |  TTL        |   4     | No  | Fixed  | Positive |    No      |
-|Squires| RT4NPNF |   Yes   |  TTL        |   4     | No  | Fixed  | Negative |    No      |
-|Squires| RT4NUPF |   Yes   |  TTL        |   4     | No  | Jumper | Positive |    No      |
-|Squires| RT4NUNF |   Yes   |  TTL        |   4     | No  | Jumper | Negative |    No      |
-|Squires| RT4CPPF |   Yes   |  TTL        |   4     | Yes | Fixed  | Positive |    No      |
-|Squires| RT4CPNF |   Yes   |  TTL        |   4     | Yes | Fixed  | Negative |    No      |
-|Squires| RT4CUPF |   Yes   |  TTL        |   4     | Yes | Jumper | Positive |    No      |
-|Squires| RT4CUNF |   Yes   |  TTL        |   4     | Yes | Jumper | Negative |    No      |
-|       |         |         |             |         |     |        |          |            |
-|MJ/GOL | RS2NPPF |   Yes   |  Squires    |   2     | No  | Fixed  | Positive |    No      |
-|MJ/GOL | RS2NPNF |   Yes   |  Squires    |   2     | No  | Fixed  | Negative |    No      |
-|MJ/GOL | RS2NUPF |   Yes   |  Squires    |   2     | No  | Jumper | Positive |    No      |
-|MJ/GOL | RS2NUNF |   Yes   |  Squires    |   2     | No  | Jumper | Negative |    No      |
-|MJ/GOL | RS2CPPF |   Yes   |  Squires    |   2     | Yes | Fixed  | Positive |    No      |
-|MJ/GOL | RS2CPNF |   Yes   |  Squires    |   2     | Yes | Fixed  | Negative |    No      |
-|MJ/GOL | RS2CUPF |   Yes   |  Squires    |   2     | Yes | Jumper | Positive |    No      |
-|MJ/GOL | RS2CUNF |   Yes   |  Squires    |   2     | Yes | Jumper | Negative |    No      |
-|MJ/GOL | RT2NPPF |   Yes   |  TTL        |   2     | No  | Fixed  | Positive |    No      |
-|MJ/GOL | RT2NPNF |   Yes   |  TTL        |   2     | No  | Fixed  | Negative |    No      |
-|MJ/GOL | RT2NUPF |   Yes   |  TTL        |   2     | No  | Jumper | Positive |    No      |
-|MJ/GOL | RT2NUNF |   Yes   |  TTL        |   2     | No  | Jumper | Negative |    No      |
-|MJ/GOL | RT2CPPF |   Yes   |  TTL        |   2     | Yes | Fixed  | Positive |    No      |
-|MJ/GOL | RT2CPNF |   Yes   |  TTL        |   2     | Yes | Fixed  | Negative |    No      |
-|MJ/GOL | RT2CUPF |   Yes   |  TTL        |   2     | Yes | Jumper | Positive |    No      |
-|MJ/GOL | RT2CUNF |   Yes   |  TTL        |   2     | Yes | Jumper | Negative |    No      |
-|MJ/GOL | RS4NPPF |   Yes   |  Squires    |   4     | No  | Fixed  | Positive |    No      |
-|MJ/GOL | RS4NPNF |   Yes   |  Squires    |   4     | No  | Fixed  | Negative |    No      |
-|MJ/GOL | RS4NUPF |   Yes   |  Squires    |   4     | No  | Jumper | Positive |    No      |
-|MJ/GOL | RS4NUNF |   Yes   |  Squires    |   4     | No  | Jumper | Negative |    No      |
-|MJ/GOL | RS4CPPF |   Yes   |  Squires    |   4     | Yes | Fixed  | Positive |    No      |
-|MJ/GOL | RS4CPNF |   Yes   |  Squires    |   4     | Yes | Fixed  | Negative |    No      |
-|MJ/GOL | RS4CUPF |   Yes   |  Squires    |   4     | Yes | Jumper | Positive |    No      |
-|MJ/GOL | RS4CUNF |   Yes   |  Squires    |   4     | Yes | Jumper | Negative |    No      |
-|MJ/GOL | RT4NPPF |   Yes   |  TTL        |   4     | No  | Fixed  | Positive |    No      |
-|MJ/GOL | RT4NPNF |   Yes   |  TTL        |   4     | No  | Fixed  | Negative |    No      |
-|MJ/GOL | RT4NUPF |   Yes   |  TTL        |   4     | No  | Jumper | Positive |    No      |
-|MJ/GOL | RT4NUNF |   Yes   |  TTL        |   4     | No  | Jumper | Negative |    No      |
-|MJ/GOL | RT4CPPF |   Yes   |  TTL        |   4     | Yes | Fixed  | Positive |    No      |
-|MJ/GOL | RT4CPNF |   Yes   |  TTL        |   4     | Yes | Fixed  | Negative |    No      |
-|MJ/GOL | RT4CUPF |   Yes   |  TTL        |   4     | Yes | Jumper | Positive |    No      |
-|MJ/GOL | RT4CUNF |   Yes   |  TTL        |   4     | Yes | Jumper | Negative |    No      |
-|       |         |         |             |         |     |        |          |            |
-|RCBUS40| RS2NPPF |   Yes   |  Squires    |   2     | No  | Fixed  | Positive |    No      |
-|RCBUS40| RS2NPNF |   Yes   |  Squires    |   2     | No  | Fixed  | Negative |    No      |
-|RCBUS40| RS2NUPF |   Yes   |  Squires    |   2     | No  | Jumper | Positive |    No      |
-|RCBUS40| RS2NUNF |   Yes   |  Squires    |   2     | No  | Jumper | Negative |    No      |
-|RCBUS40| RS2CPPF |   Yes   |  Squires    |   2     | Yes | Fixed  | Positive |    No      |
-|RCBUS40| RS2CPNF |   Yes   |  Squires    |   2     | Yes | Fixed  | Negative |    No      |
-|RCBUS40| RS2CUPF |   Yes   |  Squires    |   2     | Yes | Jumper | Positive |    No      |
-|RCBUS40| RS2CUPS |   Yes   |  Squires    |   2     | Yes | Jumper | Positive |    Yes     |
-|RCBUS40| RS2CUNF |   Yes   |  Squires    |   2     | Yes | Jumper | Negative |    No      |
-|RCBUS40| RT2NPPF |   Yes   |  TTL        |   2     | No  | Fixed  | Positive |    No      |
-|RCBUS40| RT2NPNF |   Yes   |  TTL        |   2     | No  | Fixed  | Negative |    No      |
-|RCBUS40| RT2NUPF |   Yes   |  TTL        |   2     | No  | Jumper | Positive |    No      |
-|RCBUS40| RT2NUNF |   Yes   |  TTL        |   2     | No  | Jumper | Negative |    No      |
-|RCBUS40| RT2CPPF |   Yes   |  TTL        |   2     | Yes | Fixed  | Positive |    No      |
-|RCBUS40| RT2CPNF |   Yes   |  TTL        |   2     | Yes | Fixed  | Negative |    No      |
-|RCBUS40| RT2CUPF |   Yes   |  TTL        |   2     | Yes | Jumper | Positive |    No      |
-|RCBUS40| RT2CUPS |   Yes   |  TTL        |   2     | Yes | Jumper | Positive |    Yes     |
-|RCBUS40| RT2CUNF |   Yes   |  TTL        |   2     | Yes | Jumper | Negative |    No      |
-|RCBUS40| RS4NPPF |   Yes   |  Squires    |   4     | No  | Fixed  | Positive |    No      |
-|RCBUS40| RS4NPNF |   Yes   |  Squires    |   4     | No  | Fixed  | Negative |    No      |
-|RCBUS40| RS4NUPF |   Yes   |  Squires    |   4     | No  | Jumper | Positive |    No      |
-|RCBUS40| RS4NUNF |   Yes   |  Squires    |   4     | No  | Jumper | Negative |    No      |
-|RCBUS40| RS4CPPF |   Yes   |  Squires    |   4     | Yes | Fixed  | Positive |    No      |
-|RCBUS40| RS4CPNF |   Yes   |  Squires    |   4     | Yes | Fixed  | Negative |    No      |
-|RCBUS40| RS4CUPF |   Yes   |  Squires    |   4     | Yes | Jumper | Positive |    No      |
-|RCBUS40| RS4CUPS |   Yes   |  Squires    |   4     | Yes | Jumper | Positive |    Yes     |
-|RCBUS40| RS4CUNF |   Yes   |  Squires    |   4     | Yes | Jumper | Negative |    No      |
-|RCBUS40| RT4NPPF |   Yes   |  TTL        |   4     | No  | Fixed  | Positive |    No      |
-|RCBUS40| RT4NPNF |   Yes   |  TTL        |   4     | No  | Fixed  | Negative |    No      |
-|RCBUS40| RT4NUPF |   Yes   |  TTL        |   4     | No  | Jumper | Positive |    No      |
-|RCBUS40| RT4NUNF |   Yes   |  TTL        |   4     | No  | Jumper | Negative |    No      |
-|RCBUS40| RT4CPPF |   Yes   |  TTL        |   4     | Yes | Fixed  | Positive |    No      |
-|RCBUS40| RT4CPNF |   Yes   |  TTL        |   4     | Yes | Fixed  | Negative |    No      |
-|RCBUS40| RT4CUPF |   Yes   |  TTL        |   4     | Yes | Jumper | Positive |    No      |
-|RCBUS40| RT4CUPS |   Yes   |  TTL        |   4     | Yes | Jumper | Positive |    Yes     |
-|RCBUS40| RT4CUNF |   Yes   |  TTL        |   4     | Yes | Jumper | Negative |    No      |
-|       |         |         |             |         |     |        |          |            |
-|RCBUS80| RS2NPPF |   Yes   |  Squires    |   2     | No  | Fixed  | Positive |    No      |
-|RCBUS80| RS2NPNF |   Yes   |  Squires    |   2     | No  | Fixed  | Negative |    No      |
-|RCBUS80| RS2NUPF |   Yes   |  Squires    |   2     | No  | Jumper | Positive |    No      |
-|RCBUS80| RS2NUNF |   Yes   |  Squires    |   2     | No  | Jumper | Negative |    No      |
-|RCBUS80| RS2CPPF |   Yes   |  Squires    |   2     | Yes | Fixed  | Positive |    No      |
-|RCBUS80| RS2CPNF |   Yes   |  Squires    |   2     | Yes | Fixed  | Negative |    No      |
-|RCBUS80| RS2CUPF |   Yes   |  Squires    |   2     | Yes | Jumper | Positive |    No      |
-|RCBUS80| RS2CUNF |   Yes   |  Squires    |   2     | Yes | Jumper | Negative |    No      |
-|RCBUS80| RS2CUNS |   Yes   |  Squires    |   2     | Yes | Jumper | Negative |    Yes     |
-|RCBUS80| RT2NPPF |   Yes   |  TTL        |   2     | No  | Fixed  | Positive |    No      |
-|RCBUS80| RT2NPNF |   Yes   |  TTL        |   2     | No  | Fixed  | Negative |    No      |
-|RCBUS80| RT2NUPF |   Yes   |  TTL        |   2     | No  | Jumper | Positive |    No      |
-|RCBUS80| RT2NUNF |   Yes   |  TTL        |   2     | No  | Jumper | Negative |    No      |
-|RCBUS80| RT2CPPF |   Yes   |  TTL        |   2     | Yes | Fixed  | Positive |    No      |
-|RCBUS80| RT2CPNF |   Yes   |  TTL        |   2     | Yes | Fixed  | Negative |    No      |
-|RCBUS80| RT2CUPF |   Yes   |  TTL        |   2     | Yes | Jumper | Positive |    No      |
-|RCBUS80| RT2CUNF |   Yes   |  TTL        |   2     | Yes | Jumper | Negative |    No      |
-|RCBUS80| RT2CUNS |   Yes   |  TTL        |   2     | Yes | Jumper | Negative |    Yes     |
-|RCBUS80| RS4NPPF |   Yes   |  Squires    |   4     | No  | Fixed  | Positive |    No      |
-|RCBUS80| RS4NPNF |   Yes   |  Squires    |   4     | No  | Fixed  | Negative |    No      |
-|RCBUS80| RS4NUPF |   Yes   |  Squires    |   4     | No  | Jumper | Positive |    No      |
-|RCBUS80| RS4NUNF |   Yes   |  Squires    |   4     | No  | Jumper | Negative |    No      |
-|RCBUS80| RS4CPPF |   Yes   |  Squires    |   4     | Yes | Fixed  | Positive |    No      |
-|RCBUS80| RS4CPNF |   Yes   |  Squires    |   4     | Yes | Fixed  | Negative |    No      |
-|RCBUS80| RS4CUPF |   Yes   |  Squires    |   4     | Yes | Jumper | Positive |    No      |
-|RCBUS80| RS4CUNF |   Yes   |  Squires    |   4     | Yes | Jumper | Negative |    No      |
-|RCBUS80| RS4CUNS |   Yes   |  Squires    |   4     | Yes | Jumper | Negative |    Yes     |
-|RCBUS80| RT4NPPF |   Yes   |  TTL        |   4     | No  | Fixed  | Positive |    No      |
-|RCBUS80| RT4NPNF |   Yes   |  TTL        |   4     | No  | Fixed  | Negative |    No      |
-|RCBUS80| RT4NUPF |   Yes   |  TTL        |   4     | No  | Jumper | Positive |    No      |
-|RCBUS80| RT4NUNF |   Yes   |  TTL        |   4     | No  | Jumper | Negative |    No      |
-|RCBUS80| RT4CPPF |   Yes   |  TTL        |   4     | Yes | Fixed  | Positive |    No      |
-|RCBUS80| RT4CPNF |   Yes   |  TTL        |   4     | Yes | Fixed  | Negative |    No      |
-|RCBUS80| RT4CUPF |   Yes   |  TTL        |   4     | Yes | Jumper | Positive |    No      |
-|RCBUS80| RT4CUNF |   Yes   |  TTL        |   4     | Yes | Jumper | Negative |    No      |
-|RCBUS80| RT4CUNS |   Yes   |  TTL        |   4     | Yes | Jumper | Negative |    Yes     |
-|       |         |         |             |         |     |        |          |            |
 
 
 ## Full table
+
+Including button variants
+
+Note: Omron and Dual button variants are still to be added
+
+| Board | Variant    | Reverse | Squires/TTL | #layers | CTS | Serial pwr |  ± edge  | RAM switch | UART switch | USB switch |   Buttons  |
+|-------|------------|---------|-------------|---------|-----|------------|----------|------------|-------------|------------|------------|
+|       |            |         |             |         |     |            |          |            |             |            |            |
+|Squires| RS2NPPFFFC |   Yes   |  Squires    |   2     | No  | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RS2NPNFFFC |   Yes   |  Squires    |   2     | No  | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RS2NUPFFFC |   Yes   |  Squires    |   2     | No  | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RS2NUNFFFC |   Yes   |  Squires    |   2     | No  | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RS2CPPFFFC |   Yes   |  Squires    |   2     | Yes | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RS2CPNFFFC |   Yes   |  Squires    |   2     | Yes | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RS2CUPFFFC |   Yes   |  Squires    |   2     | Yes | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RS2CUNFFFC |   Yes   |  Squires    |   2     | Yes | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RT2NPPFFFC |   Yes   |  TTL        |   2     | No  | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RT2NPNFFFC |   Yes   |  TTL        |   2     | No  | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RT2NUPFFFC |   Yes   |  TTL        |   2     | No  | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RT2NUNFFFC |   Yes   |  TTL        |   2     | No  | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RT2CPPFFFC |   Yes   |  TTL        |   2     | Yes | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RT2CPNFFFC |   Yes   |  TTL        |   2     | Yes | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RT2CUPFFFC |   Yes   |  TTL        |   2     | Yes | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RT2CUNFFFC |   Yes   |  TTL        |   2     | Yes | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RS4NPPFFFC |   Yes   |  Squires    |   4     | No  | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RS4NPNFFFC |   Yes   |  Squires    |   4     | No  | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RS4NUPFFFC |   Yes   |  Squires    |   4     | No  | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RS4NUNFFFC |   Yes   |  Squires    |   4     | No  | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RS4CPPFFFC |   Yes   |  Squires    |   4     | Yes | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RS4CPNFFFC |   Yes   |  Squires    |   4     | Yes | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RS4CUPFFFC |   Yes   |  Squires    |   4     | Yes | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RS4CUNFFFC |   Yes   |  Squires    |   4     | Yes | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RT4NPPFFFC |   Yes   |  TTL        |   4     | No  | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RT4NPNFFFC |   Yes   |  TTL        |   4     | No  | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RT4NUPFFFC |   Yes   |  TTL        |   4     | No  | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RT4NUNFFFC |   Yes   |  TTL        |   4     | No  | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RT4CPPFFFC |   Yes   |  TTL        |   4     | Yes | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RT4CPNFFFC |   Yes   |  TTL        |   4     | Yes | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RT4CUPFFFC |   Yes   |  TTL        |   4     | Yes | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|Squires| RT4CUNFFFC |   Yes   |  TTL        |   4     | Yes | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|       |            |         |             |         |     |            |          |            |             |            |            |
+|MJ/GOL | RS2NPPFFFC |   Yes   |  Squires    |   2     | No  | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RS2NPNFFFC |   Yes   |  Squires    |   2     | No  | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RS2NUPFFFC |   Yes   |  Squires    |   2     | No  | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RS2NUNFFFC |   Yes   |  Squires    |   2     | No  | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RS2CPPFFFC |   Yes   |  Squires    |   2     | Yes | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RS2CPNFFFC |   Yes   |  Squires    |   2     | Yes | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RS2CUPFFFC |   Yes   |  Squires    |   2     | Yes | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RS2CUNFFFC |   Yes   |  Squires    |   2     | Yes | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RT2NPPFFFC |   Yes   |  TTL        |   2     | No  | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RT2NPNFFFC |   Yes   |  TTL        |   2     | No  | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RT2NUPFFFC |   Yes   |  TTL        |   2     | No  | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RT2NUNFFFC |   Yes   |  TTL        |   2     | No  | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RT2CPPFFFC |   Yes   |  TTL        |   2     | Yes | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RT2CPNFFFC |   Yes   |  TTL        |   2     | Yes | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RT2CUPFFFC |   Yes   |  TTL        |   2     | Yes | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RT2CUNFFFC |   Yes   |  TTL        |   2     | Yes | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RS4NPPFFFC |   Yes   |  Squires    |   4     | No  | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RS4NPNFFFC |   Yes   |  Squires    |   4     | No  | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RS4NUPFFFC |   Yes   |  Squires    |   4     | No  | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RS4NUNFFFC |   Yes   |  Squires    |   4     | No  | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RS4CPPFFFC |   Yes   |  Squires    |   4     | Yes | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RS4CPNFFFC |   Yes   |  Squires    |   4     | Yes | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RS4CUPFFFC |   Yes   |  Squires    |   4     | Yes | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RS4CUNFFFC |   Yes   |  Squires    |   4     | Yes | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RT4NPPFFFC |   Yes   |  TTL        |   4     | No  | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RT4NPNFFFC |   Yes   |  TTL        |   4     | No  | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RT4NUPFFFC |   Yes   |  TTL        |   4     | No  | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RT4NUNFFFC |   Yes   |  TTL        |   4     | No  | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RT4CPPFFFC |   Yes   |  TTL        |   4     | Yes | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RT4CPNFFFC |   Yes   |  TTL        |   4     | Yes | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RT4CUPFFFC |   Yes   |  TTL        |   4     | Yes | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|MJ/GOL | RT4CUNFFFC |   Yes   |  TTL        |   4     | Yes | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|       |            |         |             |         |     |            |          |            |             |            |            |
+|RCBUS40| RS2NPPFFFC |   Yes   |  Squires    |   2     | No  | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RS2NPNFFFC |   Yes   |  Squires    |   2     | No  | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RS2NUPFFFC |   Yes   |  Squires    |   2     | No  | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RS2NUNFFFC |   Yes   |  Squires    |   2     | No  | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RS2CPPFFFC |   Yes   |  Squires    |   2     | Yes | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RS2CPNFFFC |   Yes   |  Squires    |   2     | Yes | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RS2CUPFFFC |   Yes   |  Squires    |   2     | Yes | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RS2CUPSFFC |   Yes   |  Squires    |   2     | Yes | Jumper     | Positive |    Yes     |    No       |    No      |   SMD C&K  |
+|RCBUS40| RS2CUPSSFC |   Yes   |  Squires    |   2     | Yes | Jumper     | Positive |    Yes     |    Yes      |    No      |   SMD C&K  |
+|RCBUS40| RS2CUPSSSC |   Yes   |  Squires    |   2     | Yes | Jumper     | Positive |    Yes     |    Yes      |    Yes     |   SMD C&K  |
+|RCBUS40| RS2CUNFFFC |   Yes   |  Squires    |   2     | Yes | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RT2NPPFFFC |   Yes   |  TTL        |   2     | No  | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RT2NPNFFFC |   Yes   |  TTL        |   2     | No  | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RT2NUPFFFC |   Yes   |  TTL        |   2     | No  | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RT2NUNFFFC |   Yes   |  TTL        |   2     | No  | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RT2CPPFFFC |   Yes   |  TTL        |   2     | Yes | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RT2CPNFFFC |   Yes   |  TTL        |   2     | Yes | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RT2CUPFFFC |   Yes   |  TTL        |   2     | Yes | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RT2CUPSFFC |   Yes   |  TTL        |   2     | Yes | Jumper     | Positive |    Yes     |    No       |    No      |   SMD C&K  |
+|RCBUS40| RT2CUPSSFC |   Yes   |  TTL        |   2     | Yes | Jumper     | Positive |    Yes     |    Yes      |    No      |   SMD C&K  |
+|RCBUS40| RT2CUPSSSC |   Yes   |  TTL        |   2     | Yes | Jumper     | Positive |    Yes     |    Yes      |    Yes     |   SMD C&K  |
+|RCBUS40| RT2CUNFFFC |   Yes   |  TTL        |   2     | Yes | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RS4NPPFFFC |   Yes   |  Squires    |   4     | No  | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RS4NPNFFFC |   Yes   |  Squires    |   4     | No  | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RS4NUPFFFC |   Yes   |  Squires    |   4     | No  | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RS4NUNFFFC |   Yes   |  Squires    |   4     | No  | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RS4CPPFFFC |   Yes   |  Squires    |   4     | Yes | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RS4CPNFFFC |   Yes   |  Squires    |   4     | Yes | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RS4CUPFFFC |   Yes   |  Squires    |   4     | Yes | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RS4CUPSFFC |   Yes   |  Squires    |   4     | Yes | Jumper     | Positive |    Yes     |    No       |    No      |   SMD C&K  |
+|RCBUS40| RS4CUPSSFC |   Yes   |  Squires    |   4     | Yes | Jumper     | Positive |    Yes     |    Yes      |    No      |   SMD C&K  |
+|RCBUS40| RS4CUPSSSC |   Yes   |  Squires    |   4     | Yes | Jumper     | Positive |    Yes     |    Yes      |    Yes     |   SMD C&K  |
+|RCBUS40| RS4CUNFFFC |   Yes   |  Squires    |   4     | Yes | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RT4NPPFFFC |   Yes   |  TTL        |   4     | No  | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RT4NPNFFFC |   Yes   |  TTL        |   4     | No  | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RT4NUPFFFC |   Yes   |  TTL        |   4     | No  | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RT4NUNFFFC |   Yes   |  TTL        |   4     | No  | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RT4CPPFFFC |   Yes   |  TTL        |   4     | Yes | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RT4CPNFFFC |   Yes   |  TTL        |   4     | Yes | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RT4CUPFFFC |   Yes   |  TTL        |   4     | Yes | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS40| RT4CUPSFFC |   Yes   |  TTL        |   4     | Yes | Jumper     | Positive |    Yes     |    No       |    No      |   SMD C&K  |
+|RCBUS40| RT4CUPSSFC |   Yes   |  TTL        |   4     | Yes | Jumper     | Positive |    Yes     |    Yes      |    No      |   SMD C&K  |
+|RCBUS40| RT4CUPSSSC |   Yes   |  TTL        |   4     | Yes | Jumper     | Positive |    Yes     |    Yes      |    Yes     |   SMD C&K  |
+|RCBUS40| RT4CUNFFFC |   Yes   |  TTL        |   4     | Yes | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|       |            |         |             |         |     |            |          |            |             |            |            |
+|RCBUS80| RS2NPPFFFC |   Yes   |  Squires    |   2     | No  | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RS2NPNFFFC |   Yes   |  Squires    |   2     | No  | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RS2NUPFFFC |   Yes   |  Squires    |   2     | No  | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RS2NUNFFFC |   Yes   |  Squires    |   2     | No  | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RS2CPPFFFC |   Yes   |  Squires    |   2     | Yes | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RS2CPNFFFC |   Yes   |  Squires    |   2     | Yes | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RS2CUPFFFC |   Yes   |  Squires    |   2     | Yes | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RS2CUNFFFC |   Yes   |  Squires    |   2     | Yes | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RS2CUNSFFC |   Yes   |  Squires    |   2     | Yes | Jumper     | Negative |    Yes     |    No       |    No      |   SMD C&K  |
+|RCBUS80| RS2CUNSSFC |   Yes   |  Squires    |   2     | Yes | Jumper     | Negative |    Yes     |    Yes      |    No      |   SMD C&K  |
+|RCBUS80| RS2CUNSSSC |   Yes   |  Squires    |   2     | Yes | Jumper     | Negative |    Yes     |    Yes      |    Yes     |   SMD C&K  |
+|RCBUS80| RT2NPPFFFC |   Yes   |  TTL        |   2     | No  | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RT2NPNFFFC |   Yes   |  TTL        |   2     | No  | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RT2NUPFFFC |   Yes   |  TTL        |   2     | No  | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RT2NUNFFFC |   Yes   |  TTL        |   2     | No  | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RT2CPPFFFC |   Yes   |  TTL        |   2     | Yes | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RT2CPNFFFC |   Yes   |  TTL        |   2     | Yes | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RT2CUPFFFC |   Yes   |  TTL        |   2     | Yes | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RT2CUNFFFC |   Yes   |  TTL        |   2     | Yes | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RT2CUNSFFC |   Yes   |  TTL        |   2     | Yes | Jumper     | Negative |    Yes     |    No       |    No      |   SMD C&K  |
+|RCBUS80| RT2CUNSSFC |   Yes   |  TTL        |   2     | Yes | Jumper     | Negative |    Yes     |    Yes      |    No      |   SMD C&K  |
+|RCBUS80| RT2CUNSSSC |   Yes   |  TTL        |   2     | Yes | Jumper     | Negative |    Yes     |    Yes      |    Yes     |   SMD C&K  |
+|RCBUS80| RS4NPPFFFC |   Yes   |  Squires    |   4     | No  | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RS4NPNFFFC |   Yes   |  Squires    |   4     | No  | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RS4NUPFFFC |   Yes   |  Squires    |   4     | No  | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RS4NUNFFFC |   Yes   |  Squires    |   4     | No  | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RS4CPPFFFC |   Yes   |  Squires    |   4     | Yes | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RS4CPNFFFC |   Yes   |  Squires    |   4     | Yes | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RS4CUPFFFC |   Yes   |  Squires    |   4     | Yes | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RS4CUNFFFC |   Yes   |  Squires    |   4     | Yes | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RS4CUNSFFC |   Yes   |  Squires    |   4     | Yes | Jumper     | Negative |    Yes     |    No       |    No      |   SMD C&K  |
+|RCBUS80| RS4CUNSSFC |   Yes   |  Squires    |   4     | Yes | Jumper     | Negative |    Yes     |    Yes      |    No      |   SMD C&K  |
+|RCBUS80| RS4CUNSSSC |   Yes   |  Squires    |   4     | Yes | Jumper     | Negative |    Yes     |    Yes      |    Yes     |   SMD C&K  |
+|RCBUS80| RT4NPPFFFC |   Yes   |  TTL        |   4     | No  | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RT4NPNFFFC |   Yes   |  TTL        |   4     | No  | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RT4NUPFFFC |   Yes   |  TTL        |   4     | No  | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RT4NUNFFFC |   Yes   |  TTL        |   4     | No  | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RT4CPPFFFC |   Yes   |  TTL        |   4     | Yes | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RT4CPNFFFC |   Yes   |  TTL        |   4     | Yes | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RT4CUPFFFC |   Yes   |  TTL        |   4     | Yes | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RT4CUNFFFC |   Yes   |  TTL        |   4     | Yes | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
+|RCBUS80| RT4CUNSFFC |   Yes   |  TTL        |   4     | Yes | Jumper     | Negative |    Yes     |    No       |    No      |   SMD C&K  |
+|RCBUS80| RT4CUNSSFC |   Yes   |  TTL        |   4     | Yes | Jumper     | Negative |    Yes     |    Yes      |    No      |   SMD C&K  |
+|RCBUS80| RT4CUNSSSC |   Yes   |  TTL        |   4     | Yes | Jumper     | Negative |    Yes     |    Yes      |    Yes     |   SMD C&K  |
+|       |            |         |             |         |     |            |          |            |             |            |            |
+
+
+## Previous table
+
+Excluding switch variants 
 
 | Board | Variant   | Reverse | Squires/TTL | #layers | CTS | Serial pwr |  ± edge  | RAM switch | UART switch | USB switch |
 |-------|-----------|---------|-------------|---------|-----|------------|----------|------------|-------------|------------|
@@ -309,3 +334,153 @@ Not all of these board exist, that is to say that some combinations of features 
 |RCBUS80| RT4CUNSSF |   Yes   |  TTL        |   4     | Yes | Jumper     | Negative |    Yes     |    Yes      |    No      |
 |RCBUS80| RT4CUNSSS |   Yes   |  TTL        |   4     | Yes | Jumper     | Negative |    Yes     |    Yes      |    Yes     |
 |       |           |         |             |         |     |            |          |            |             |            |
+
+
+
+## Original table
+
+| Board | Variant | Reverse | Squires/TTL | #layers | CTS | Serial power |  ± edge  | RAM switch |
+|-------|---------|---------|-------------|---------|-----|--------|----------|------------|
+|       |         |         |             |         |     |        |          |            |
+|Squires| RS2NPPF |   Yes   |  Squires    |   2     | No  | Fixed  | Positive |    No      |
+|Squires| RS2NPNF |   Yes   |  Squires    |   2     | No  | Fixed  | Negative |    No      |
+|Squires| RS2NUPF |   Yes   |  Squires    |   2     | No  | Jumper | Positive |    No      |
+|Squires| RS2NUNF |   Yes   |  Squires    |   2     | No  | Jumper | Negative |    No      |
+|Squires| RS2CPPF |   Yes   |  Squires    |   2     | Yes | Fixed  | Positive |    No      |
+|Squires| RS2CPNF |   Yes   |  Squires    |   2     | Yes | Fixed  | Negative |    No      |
+|Squires| RS2CUPF |   Yes   |  Squires    |   2     | Yes | Jumper | Positive |    No      |
+|Squires| RS2CUNF |   Yes   |  Squires    |   2     | Yes | Jumper | Negative |    No      |
+|Squires| RT2NPPF |   Yes   |  TTL        |   2     | No  | Fixed  | Positive |    No      |
+|Squires| RT2NPNF |   Yes   |  TTL        |   2     | No  | Fixed  | Negative |    No      |
+|Squires| RT2NUPF |   Yes   |  TTL        |   2     | No  | Jumper | Positive |    No      |
+|Squires| RT2NUNF |   Yes   |  TTL        |   2     | No  | Jumper | Negative |    No      |
+|Squires| RT2CPPF |   Yes   |  TTL        |   2     | Yes | Fixed  | Positive |    No      |
+|Squires| RT2CPNF |   Yes   |  TTL        |   2     | Yes | Fixed  | Negative |    No      |
+|Squires| RT2CUPF |   Yes   |  TTL        |   2     | Yes | Jumper | Positive |    No      |
+|Squires| RT2CUNF |   Yes   |  TTL        |   2     | Yes | Jumper | Negative |    No      |
+|Squires| RS4NPPF |   Yes   |  Squires    |   4     | No  | Fixed  | Positive |    No      |
+|Squires| RS4NPNF |   Yes   |  Squires    |   4     | No  | Fixed  | Negative |    No      |
+|Squires| RS4NUPF |   Yes   |  Squires    |   4     | No  | Jumper | Positive |    No      |
+|Squires| RS4NUNF |   Yes   |  Squires    |   4     | No  | Jumper | Negative |    No      |
+|Squires| RS4CPPF |   Yes   |  Squires    |   4     | Yes | Fixed  | Positive |    No      |
+|Squires| RS4CPNF |   Yes   |  Squires    |   4     | Yes | Fixed  | Negative |    No      |
+|Squires| RS4CUPF |   Yes   |  Squires    |   4     | Yes | Jumper | Positive |    No      |
+|Squires| RS4CUNF |   Yes   |  Squires    |   4     | Yes | Jumper | Negative |    No      |
+|Squires| RT4NPPF |   Yes   |  TTL        |   4     | No  | Fixed  | Positive |    No      |
+|Squires| RT4NPNF |   Yes   |  TTL        |   4     | No  | Fixed  | Negative |    No      |
+|Squires| RT4NUPF |   Yes   |  TTL        |   4     | No  | Jumper | Positive |    No      |
+|Squires| RT4NUNF |   Yes   |  TTL        |   4     | No  | Jumper | Negative |    No      |
+|Squires| RT4CPPF |   Yes   |  TTL        |   4     | Yes | Fixed  | Positive |    No      |
+|Squires| RT4CPNF |   Yes   |  TTL        |   4     | Yes | Fixed  | Negative |    No      |
+|Squires| RT4CUPF |   Yes   |  TTL        |   4     | Yes | Jumper | Positive |    No      |
+|Squires| RT4CUNF |   Yes   |  TTL        |   4     | Yes | Jumper | Negative |    No      |
+|       |         |         |             |         |     |        |          |            |
+|MJ/GOL | RS2NPPF |   Yes   |  Squires    |   2     | No  | Fixed  | Positive |    No      |
+|MJ/GOL | RS2NPNF |   Yes   |  Squires    |   2     | No  | Fixed  | Negative |    No      |
+|MJ/GOL | RS2NUPF |   Yes   |  Squires    |   2     | No  | Jumper | Positive |    No      |
+|MJ/GOL | RS2NUNF |   Yes   |  Squires    |   2     | No  | Jumper | Negative |    No      |
+|MJ/GOL | RS2CPPF |   Yes   |  Squires    |   2     | Yes | Fixed  | Positive |    No      |
+|MJ/GOL | RS2CPNF |   Yes   |  Squires    |   2     | Yes | Fixed  | Negative |    No      |
+|MJ/GOL | RS2CUPF |   Yes   |  Squires    |   2     | Yes | Jumper | Positive |    No      |
+|MJ/GOL | RS2CUNF |   Yes   |  Squires    |   2     | Yes | Jumper | Negative |    No      |
+|MJ/GOL | RT2NPPF |   Yes   |  TTL        |   2     | No  | Fixed  | Positive |    No      |
+|MJ/GOL | RT2NPNF |   Yes   |  TTL        |   2     | No  | Fixed  | Negative |    No      |
+|MJ/GOL | RT2NUPF |   Yes   |  TTL        |   2     | No  | Jumper | Positive |    No      |
+|MJ/GOL | RT2NUNF |   Yes   |  TTL        |   2     | No  | Jumper | Negative |    No      |
+|MJ/GOL | RT2CPPF |   Yes   |  TTL        |   2     | Yes | Fixed  | Positive |    No      |
+|MJ/GOL | RT2CPNF |   Yes   |  TTL        |   2     | Yes | Fixed  | Negative |    No      |
+|MJ/GOL | RT2CUPF |   Yes   |  TTL        |   2     | Yes | Jumper | Positive |    No      |
+|MJ/GOL | RT2CUNF |   Yes   |  TTL        |   2     | Yes | Jumper | Negative |    No      |
+|MJ/GOL | RS4NPPF |   Yes   |  Squires    |   4     | No  | Fixed  | Positive |    No      |
+|MJ/GOL | RS4NPNF |   Yes   |  Squires    |   4     | No  | Fixed  | Negative |    No      |
+|MJ/GOL | RS4NUPF |   Yes   |  Squires    |   4     | No  | Jumper | Positive |    No      |
+|MJ/GOL | RS4NUNF |   Yes   |  Squires    |   4     | No  | Jumper | Negative |    No      |
+|MJ/GOL | RS4CPPF |   Yes   |  Squires    |   4     | Yes | Fixed  | Positive |    No      |
+|MJ/GOL | RS4CPNF |   Yes   |  Squires    |   4     | Yes | Fixed  | Negative |    No      |
+|MJ/GOL | RS4CUPF |   Yes   |  Squires    |   4     | Yes | Jumper | Positive |    No      |
+|MJ/GOL | RS4CUNF |   Yes   |  Squires    |   4     | Yes | Jumper | Negative |    No      |
+|MJ/GOL | RT4NPPF |   Yes   |  TTL        |   4     | No  | Fixed  | Positive |    No      |
+|MJ/GOL | RT4NPNF |   Yes   |  TTL        |   4     | No  | Fixed  | Negative |    No      |
+|MJ/GOL | RT4NUPF |   Yes   |  TTL        |   4     | No  | Jumper | Positive |    No      |
+|MJ/GOL | RT4NUNF |   Yes   |  TTL        |   4     | No  | Jumper | Negative |    No      |
+|MJ/GOL | RT4CPPF |   Yes   |  TTL        |   4     | Yes | Fixed  | Positive |    No      |
+|MJ/GOL | RT4CPNF |   Yes   |  TTL        |   4     | Yes | Fixed  | Negative |    No      |
+|MJ/GOL | RT4CUPF |   Yes   |  TTL        |   4     | Yes | Jumper | Positive |    No      |
+|MJ/GOL | RT4CUNF |   Yes   |  TTL        |   4     | Yes | Jumper | Negative |    No      |
+|       |         |         |             |         |     |        |          |            |
+|RCBUS40| RS2NPPF |   Yes   |  Squires    |   2     | No  | Fixed  | Positive |    No      |
+|RCBUS40| RS2NPNF |   Yes   |  Squires    |   2     | No  | Fixed  | Negative |    No      |
+|RCBUS40| RS2NUPF |   Yes   |  Squires    |   2     | No  | Jumper | Positive |    No      |
+|RCBUS40| RS2NUNF |   Yes   |  Squires    |   2     | No  | Jumper | Negative |    No      |
+|RCBUS40| RS2CPPF |   Yes   |  Squires    |   2     | Yes | Fixed  | Positive |    No      |
+|RCBUS40| RS2CPNF |   Yes   |  Squires    |   2     | Yes | Fixed  | Negative |    No      |
+|RCBUS40| RS2CUPF |   Yes   |  Squires    |   2     | Yes | Jumper | Positive |    No      |
+|RCBUS40| RS2CUPS |   Yes   |  Squires    |   2     | Yes | Jumper | Positive |    Yes     |
+|RCBUS40| RS2CUNF |   Yes   |  Squires    |   2     | Yes | Jumper | Negative |    No      |
+|RCBUS40| RT2NPPF |   Yes   |  TTL        |   2     | No  | Fixed  | Positive |    No      |
+|RCBUS40| RT2NPNF |   Yes   |  TTL        |   2     | No  | Fixed  | Negative |    No      |
+|RCBUS40| RT2NUPF |   Yes   |  TTL        |   2     | No  | Jumper | Positive |    No      |
+|RCBUS40| RT2NUNF |   Yes   |  TTL        |   2     | No  | Jumper | Negative |    No      |
+|RCBUS40| RT2CPPF |   Yes   |  TTL        |   2     | Yes | Fixed  | Positive |    No      |
+|RCBUS40| RT2CPNF |   Yes   |  TTL        |   2     | Yes | Fixed  | Negative |    No      |
+|RCBUS40| RT2CUPF |   Yes   |  TTL        |   2     | Yes | Jumper | Positive |    No      |
+|RCBUS40| RT2CUPS |   Yes   |  TTL        |   2     | Yes | Jumper | Positive |    Yes     |
+|RCBUS40| RT2CUNF |   Yes   |  TTL        |   2     | Yes | Jumper | Negative |    No      |
+|RCBUS40| RS4NPPF |   Yes   |  Squires    |   4     | No  | Fixed  | Positive |    No      |
+|RCBUS40| RS4NPNF |   Yes   |  Squires    |   4     | No  | Fixed  | Negative |    No      |
+|RCBUS40| RS4NUPF |   Yes   |  Squires    |   4     | No  | Jumper | Positive |    No      |
+|RCBUS40| RS4NUNF |   Yes   |  Squires    |   4     | No  | Jumper | Negative |    No      |
+|RCBUS40| RS4CPPF |   Yes   |  Squires    |   4     | Yes | Fixed  | Positive |    No      |
+|RCBUS40| RS4CPNF |   Yes   |  Squires    |   4     | Yes | Fixed  | Negative |    No      |
+|RCBUS40| RS4CUPF |   Yes   |  Squires    |   4     | Yes | Jumper | Positive |    No      |
+|RCBUS40| RS4CUPS |   Yes   |  Squires    |   4     | Yes | Jumper | Positive |    Yes     |
+|RCBUS40| RS4CUNF |   Yes   |  Squires    |   4     | Yes | Jumper | Negative |    No      |
+|RCBUS40| RT4NPPF |   Yes   |  TTL        |   4     | No  | Fixed  | Positive |    No      |
+|RCBUS40| RT4NPNF |   Yes   |  TTL        |   4     | No  | Fixed  | Negative |    No      |
+|RCBUS40| RT4NUPF |   Yes   |  TTL        |   4     | No  | Jumper | Positive |    No      |
+|RCBUS40| RT4NUNF |   Yes   |  TTL        |   4     | No  | Jumper | Negative |    No      |
+|RCBUS40| RT4CPPF |   Yes   |  TTL        |   4     | Yes | Fixed  | Positive |    No      |
+|RCBUS40| RT4CPNF |   Yes   |  TTL        |   4     | Yes | Fixed  | Negative |    No      |
+|RCBUS40| RT4CUPF |   Yes   |  TTL        |   4     | Yes | Jumper | Positive |    No      |
+|RCBUS40| RT4CUPS |   Yes   |  TTL        |   4     | Yes | Jumper | Positive |    Yes     |
+|RCBUS40| RT4CUNF |   Yes   |  TTL        |   4     | Yes | Jumper | Negative |    No      |
+|       |         |         |             |         |     |        |          |            |
+|RCBUS80| RS2NPPF |   Yes   |  Squires    |   2     | No  | Fixed  | Positive |    No      |
+|RCBUS80| RS2NPNF |   Yes   |  Squires    |   2     | No  | Fixed  | Negative |    No      |
+|RCBUS80| RS2NUPF |   Yes   |  Squires    |   2     | No  | Jumper | Positive |    No      |
+|RCBUS80| RS2NUNF |   Yes   |  Squires    |   2     | No  | Jumper | Negative |    No      |
+|RCBUS80| RS2CPPF |   Yes   |  Squires    |   2     | Yes | Fixed  | Positive |    No      |
+|RCBUS80| RS2CPNF |   Yes   |  Squires    |   2     | Yes | Fixed  | Negative |    No      |
+|RCBUS80| RS2CUPF |   Yes   |  Squires    |   2     | Yes | Jumper | Positive |    No      |
+|RCBUS80| RS2CUNF |   Yes   |  Squires    |   2     | Yes | Jumper | Negative |    No      |
+|RCBUS80| RS2CUNS |   Yes   |  Squires    |   2     | Yes | Jumper | Negative |    Yes     |
+|RCBUS80| RT2NPPF |   Yes   |  TTL        |   2     | No  | Fixed  | Positive |    No      |
+|RCBUS80| RT2NPNF |   Yes   |  TTL        |   2     | No  | Fixed  | Negative |    No      |
+|RCBUS80| RT2NUPF |   Yes   |  TTL        |   2     | No  | Jumper | Positive |    No      |
+|RCBUS80| RT2NUNF |   Yes   |  TTL        |   2     | No  | Jumper | Negative |    No      |
+|RCBUS80| RT2CPPF |   Yes   |  TTL        |   2     | Yes | Fixed  | Positive |    No      |
+|RCBUS80| RT2CPNF |   Yes   |  TTL        |   2     | Yes | Fixed  | Negative |    No      |
+|RCBUS80| RT2CUPF |   Yes   |  TTL        |   2     | Yes | Jumper | Positive |    No      |
+|RCBUS80| RT2CUNF |   Yes   |  TTL        |   2     | Yes | Jumper | Negative |    No      |
+|RCBUS80| RT2CUNS |   Yes   |  TTL        |   2     | Yes | Jumper | Negative |    Yes     |
+|RCBUS80| RS4NPPF |   Yes   |  Squires    |   4     | No  | Fixed  | Positive |    No      |
+|RCBUS80| RS4NPNF |   Yes   |  Squires    |   4     | No  | Fixed  | Negative |    No      |
+|RCBUS80| RS4NUPF |   Yes   |  Squires    |   4     | No  | Jumper | Positive |    No      |
+|RCBUS80| RS4NUNF |   Yes   |  Squires    |   4     | No  | Jumper | Negative |    No      |
+|RCBUS80| RS4CPPF |   Yes   |  Squires    |   4     | Yes | Fixed  | Positive |    No      |
+|RCBUS80| RS4CPNF |   Yes   |  Squires    |   4     | Yes | Fixed  | Negative |    No      |
+|RCBUS80| RS4CUPF |   Yes   |  Squires    |   4     | Yes | Jumper | Positive |    No      |
+|RCBUS80| RS4CUNF |   Yes   |  Squires    |   4     | Yes | Jumper | Negative |    No      |
+|RCBUS80| RS4CUNS |   Yes   |  Squires    |   4     | Yes | Jumper | Negative |    Yes     |
+|RCBUS80| RT4NPPF |   Yes   |  TTL        |   4     | No  | Fixed  | Positive |    No      |
+|RCBUS80| RT4NPNF |   Yes   |  TTL        |   4     | No  | Fixed  | Negative |    No      |
+|RCBUS80| RT4NUPF |   Yes   |  TTL        |   4     | No  | Jumper | Positive |    No      |
+|RCBUS80| RT4NUNF |   Yes   |  TTL        |   4     | No  | Jumper | Negative |    No      |
+|RCBUS80| RT4CPPF |   Yes   |  TTL        |   4     | Yes | Fixed  | Positive |    No      |
+|RCBUS80| RT4CPNF |   Yes   |  TTL        |   4     | Yes | Fixed  | Negative |    No      |
+|RCBUS80| RT4CUPF |   Yes   |  TTL        |   4     | Yes | Jumper | Positive |    No      |
+|RCBUS80| RT4CUNF |   Yes   |  TTL        |   4     | Yes | Jumper | Negative |    No      |
+|RCBUS80| RT4CUNS |   Yes   |  TTL        |   4     | Yes | Jumper | Negative |    Yes     |
+|       |         |         |             |         |     |        |          |            |
+
+
