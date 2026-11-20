@@ -23,7 +23,7 @@ However, using the Wayback machine I managed to get hold of some PDFs of the sch
 
 While I couldn't find any PDFs of the v1.0 schematic digram, I did manage to get some screenshots of the v1.0 schematic digram, from a video. See the section **Screenshots** below.
 
-In the same video, [Z80 Playground - the Single Board Computer that runs CP/M](https://www.youtube.com/watch?v=CIgxkcXNp1w), at [1:45](https://www.youtube.com/watch?v=CIgxkcXNp1w&t=105), John states that the schematics (for v1.0) were drawn in **EasyEDA** and there is no reason no to assume that the same package was used for the v1.2 schematics.
+In the same video, [Z80 Playground - the Single Board Computer that runs CP/M](https://www.youtube.com/watch?v=CIgxkcXNp1w), at [1:45](https://www.youtube.com/watch?v=CIgxkcXNp1w&t=105), John states that the schematics (for v1.0) were drawn in **EasyEDA** and there is no reason not to assume that the same package was used for the v1.2 schematics.
 
 From the schematic diagrams, using KiCAD 6, I managed to recreate the schematics and the PCB, for v1.2.
 
@@ -304,7 +304,7 @@ These are subdivided into another two types:
 
 Each of these four board types all share a very similar layout (component locations may shift slightly between boards), only the bus is the *main* difference.
 
-Then there are <strike>six</strike> seven sub-variants, which offer different options:
+Then there are <strike>six</strike> <strike>seven</strike> ten sub-variants, which offer different options:
 
    - R/F - **R**everse or **F**ront mounted bus (Alternatively: **R**everse or **F**orward)
    - T/S - Common FTDI **T**TL, or **S**quires' original, serial board orientation
@@ -313,8 +313,11 @@ Then there are <strike>six</strike> seven sub-variants, which offer different op
    - U/P - VCC is jumpered, or not (**U**npluggable/**P**owered)
    - P/N - **P**ositive or **N**egative edge triggered NMI (not RCBUS40)
    - F/S - **F**ixed or **S**witchable RAM (RCBUS40 and RCBUS80 only; The Squires and MJ/GOL boards will not support external memory boards)
-   - U/N - **U**SB or **N**ot
-   - U/N - **U**ART or **N**ot
+   - F/S **F**ixed or **S**witchable USB
+     - Originally: U/N - **U**SB or **N**ot
+   - F/S **F**ixed or **S**witchable UART
+     - Originally: U/N - **U**ART or **N**ot
+   - C/D/O - Switch type: **C**&K SMD, **D**ual, or **O**mron thru-hole 
     
 Note: No front mounted bus boards have been published, due to excessive number of vias arising through routing, so the  `R` is effectively redundant, seeing as *all* of the published boards have reverse mounted buses. Thus, the (first) `F` actually *is* redundant.
 
@@ -571,6 +574,9 @@ From datasheet:
 
 See [Z80 Playground v1.2 - MJ/GOL_ fix for width of 7400 ICs](documentation/Z80%20Playground%20v1.2%20-%20MJ_GOL_%20fix%20for%20width%20of%207400%20ICs.md)
 
+### Switches
+
+See [Z80 Playground v1.2 - Switches](Z80%20Playground%20v1.2%20-%20Switches.md)
 
 ## TODO
 
