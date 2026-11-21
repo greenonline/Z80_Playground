@@ -33,8 +33,8 @@ Blocking and remaining issues to fix:
    - I recommend installing KiCad and opening the PCB files, and maybe the schematics, to do a sanity check, before using the Gerbers
    - I would also recommend purchasing a CH375S yourself and measuring the pin gaps of the two connectors, and verifying these on the PCB, before using the Gerbers.
    - The RCBUS40 4 layer boards do not appear to have filled VCC and GND planes
-   - The RCBUS variants will not run RomWBW as is, unless RomWBW is patched. The RAM and ROM would need to be disabled, and (possibly) the USB and UART also
-     - The TBA "Pro" version of Z80PG would be compatible w.r.t. the USB and UART as they have fuller addressing and relocatable addresses, via DIP switch. 
+   - The RCBUS variants will not run RomWBW as is, unless RomWBW is patched. The RAM and ROM would need to be disabled, and (possibly) the USB and UART also, due to potential bus conflicts. That is why I created the `...SSSx` variant, which allow RAM, USB and UART to be disabled (fortunately, the ROM is *already* jumpered in the original Squires board)
+     - The TBA "Pro" version of Z80PG would be compatible with RomWBW as the ROM and RAM are switchable w.r.t. the USB and UART as they have fuller addressing and relocatable addresses, via DIP switch. 
 
 
 
