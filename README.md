@@ -21,7 +21,7 @@ There don't appear to be any parts lists, schematics, PCB layouts, Gerber files,
 
 However, using the Wayback machine I managed to get hold of some PDFs of the schematic diagrams for v1.1 and v.1.2, and some additional software, see the section **Wayback data** below. 
 
-While I couldn't find any PDFs of the v1.0 schematic digram, I did manage to get some screenshots of the v1.0 schematic digram, from a video. See the section **Screenshots** below.
+While I couldn't find any PDFs of the v1.0 schematic digram, I did manage to get some screenshots of the v1.0 schematic diagram, from a video. See the section **Screenshots** below.
 
 In the same video, [Z80 Playground - the Single Board Computer that runs CP/M](https://www.youtube.com/watch?v=CIgxkcXNp1w), at [1:45](https://www.youtube.com/watch?v=CIgxkcXNp1w&t=105), John states that the schematics (for v1.0) were drawn in **EasyEDA** and there is no reason not to assume that the same package was used for the v1.2 schematics.
 
@@ -348,7 +348,7 @@ TODO: Add ability to modify address?
 
 #### Better decoding
 
-Could combine /M1 and /IORQ to /CS2 – using OR and NOR/NOT, as per /CSUSB – freeing CS1 for an address line, but that would change the address, unless an invertor was used.
+Could combine /M1 and /IORQ to /CS2 – using OR and NOR/NOT, as per /CSUSB – freeing CS1 for an address line, but that would change the address, unless an inverter was used.
 
 Better to free /CS2 for A3 and A4, by moving /M1 and /IORQ to CS1 via two NOR gates: 
 
@@ -421,7 +421,7 @@ While better addressing would be nice, in the meanwhile, adding the ability to d
  
 ### Changing address of CH375
 
-Original addressing: `0x10`, repeating every 16!!! A0 goes direct ot CH375, plus decoding with A4.
+Original addressing: `0x10`, repeating every 16!!! A0 goes direct to CH375, plus decoding with A4.
 
  - Make address selectable for CH375?
    - Maybe both A4 and A5 (or A3) instead of just A4
@@ -429,7 +429,7 @@ Original addressing: `0x10`, repeating every 16!!! A0 goes direct ot CH375, plus
    - Would need additional logic gate or wired-AND
    - Maybe for Pro version
 
-Note: Why was U8A (NOR) used as an invertor when there is a spare invertor? Maybe it was due to locally of the NOR as opposed to the NOT gate which is right across the board – same issue as I had with the negative edge NMI.
+Note: Why was U8A (NOR) used as an inverter when there is a spare inverter? Maybe it was due to locally of the NOR as opposed to the NOT gate which is right across the board – same issue as I had with the negative edge NMI.
 
 #### Best decoding
 
@@ -471,7 +471,7 @@ Use a 74HCT138 3 to 8 line decoder. SMB uses A4-A7, /IORQ and /M1.
 
 From [Z80 retrocomputing 15 - CP/M on RC2014 Revisited, Using RomWBW](https://www.youtube.com/watch?v=pxZC2J-aeu0):
 
-[![Addressing using 74HCT138 - SMB paging sceenshot][23]][23]
+[![Addressing using 74HCT138 - SMB paging screenshot][23]][23]
 
 [![Addressing using 74HCT138 - SMB paging][24]][24]
 
@@ -519,11 +519,11 @@ See [Z80 Playground v1.2 - Fixing the externalNMI debacle](Z80%20Playground%20v1
  - Positive edge
    - required routing correction fix
  - Negative edge
-   - required two diodes and a pull-up, or a mix of positive and negative logic involving the NOR gate, and an aditional NOT gate.
+   - required two diodes and a pull-up, or a mix of positive and negative logic involving the NOR gate, and an additional NOT gate.
 
 ### Inverting the NMI (for RCBUS) - negative edge trigger
 
-See [Z80 Playground v1.2 - Providing a negative edge triggered NMI](documentation/Z80%20Playground%20v1.2%20-%20Providing%20a%20negative%20edge%20triggered%20NMI.md) for the board implmentations.
+See [Z80 Playground v1.2 - Providing a negative edge triggered NMI](documentation/Z80%20Playground%20v1.2%20-%20Providing%20a%20negative%20edge%20triggered%20NMI.md) for the board implementations.
 
 See [Z80 Playground v1.2 - Inverting the NMI (for RCBUS) - negative edge trigger](documentation/Z80%20Playground%20v1.2%20-%20Inverting%20the%20NMI%20(for%20RCBUS)%20-%20negative%20edge%20trigger.md) for the design.
 
@@ -636,7 +636,7 @@ A PRO version with the improvements:
    - PAGE_EN?
  - Better (i.e. full) address decoding of IO: 
    - Currently repeating at `0x10` intervals
-   - USB, add 8 input NAND, or two 4 input NAND (7420) to replace `U8d`, to map USB to `0xF0` instead of `0x10`. Or use a dual 4 input NOR (7425) and an invertor on A4 to map `0x10` properly
+   - USB, add 8 input NAND, or two 4 input NAND (7420) to replace `U8d`, to map USB to `0xF0` instead of `0x10`. Or use a dual 4 input NOR (7425) and an inverter on A4 to map `0x10` properly
      - Code written for this board would still work on original board, but it would break all original code, which would need tweaking the BDOS.
  - Better (i.e. full) address decoding of UART
    - Currently repeating at `0x08` intervals
