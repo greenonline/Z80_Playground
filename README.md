@@ -219,9 +219,10 @@ The original circuit from 8bitstack.co.uk featured a 28 pin ZIF socket for the R
  - Cost
    - As it isn't strictly necessary, it is a bit of a luxury to have.
  - Maybe you don't need it.
-   - Maybe you will got one ROM image and stick with it for life. 
+   - Maybe you will get one ROM image and stick with it for life. 
  - Easy to add one
    - If a ZIF *is* required then just put one in the socket – maybe stack a few sockets if additional height clearance, from neighbouring ICs (i.e. the UART), or other components, is required on a populated board.
+ - You could use a [OneROM](https://onerom.org/), thus dispensing with the need for a ZIF socket completely!
 
 ### Four layer board?
 
