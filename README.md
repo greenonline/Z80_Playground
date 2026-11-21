@@ -256,7 +256,7 @@ See [Homebrew](documentation/Homebrew/Homebrew.md) for some rough auxiliary note
 
 Address: `0x10` (16) (A4 only), and *every* `0x10` thereafter.
 
-Note: The 2×3 footprint used should be two 1×3 modules with a slight gap between them. From [CH375 USB Storage](https://rc2014.co.uk/modules/ch375-usb-storage/). Also, 
+Note: The 2×3 footprint used should be two 1×3 modules with a slight gap between them. Also, from [CH375 USB Storage](https://rc2014.co.uk/modules/ch375-usb-storage/)
 
 > There are, however, two module variants, both of which look identical at first glance. The most obvious difference is a singe 1×3 header vs two 1×3 headers. The more critical difference though is the 2×8 pinout. The RC2014 module is designed to take the CH375 module with the 8 data lines, D0-D7 on the very outside pins, and the power and control pins on the inside. The variant with a single 1×3 header has the data lines on the inside pins and the power and control pins on the outside. This latter module will not work with this PCB.
 
