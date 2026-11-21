@@ -2,6 +2,10 @@
 
 Note: Not all of these board and variant combinations exist, that is to say that some combinations of features are not available (yet)
 
+For example, the Squires boards do not have a negative edge triggered NMI, as NMI is not routed to the bus, so there was no point.
+
+Note: As the PCB are, as yet, untested, so they all have an "alpha" suffix to the version number, i.e. `v1.2.1alpha`. Once a board/variant combination has been manufactured and confirmed to operate perfectly, then it will lose its "alpha" status.
+
 ## Legend
 
 (Taken from the README)
@@ -108,6 +112,8 @@ Note: Omron and Dual button variants are still to be added
 |RCBUS40| RS2CUPSFFC |   Yes   |  Squires    |   2     | Yes | Jumper     | Positive |    Yes     |    No       |    No      |   SMD C&K  |
 |RCBUS40| RS2CUPSSFC |   Yes   |  Squires    |   2     | Yes | Jumper     | Positive |    Yes     |    Yes      |    No      |   SMD C&K  |
 |RCBUS40| RS2CUPSSSC |   Yes   |  Squires    |   2     | Yes | Jumper     | Positive |    Yes     |    Yes      |    Yes     |   SMD C&K  |
+|RCBUS40| RS2CUPSSSD |   Yes   |  Squires    |   2     | Yes | Jumper     | Positive |    Yes     |    Yes      |    Yes     |    Dual    |
+|RCBUS40| RS2CUPSSSO |   Yes   |  Squires    |   2     | Yes | Jumper     | Positive |    Yes     |    Yes      |    Yes     |    Omron   |
 |RCBUS40| RS2CUNFFFC |   Yes   |  Squires    |   2     | Yes | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
 |RCBUS40| RT2NPPFFFC |   Yes   |  TTL        |   2     | No  | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
 |RCBUS40| RT2NPNFFFC |   Yes   |  TTL        |   2     | No  | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
@@ -119,6 +125,8 @@ Note: Omron and Dual button variants are still to be added
 |RCBUS40| RT2CUPSFFC |   Yes   |  TTL        |   2     | Yes | Jumper     | Positive |    Yes     |    No       |    No      |   SMD C&K  |
 |RCBUS40| RT2CUPSSFC |   Yes   |  TTL        |   2     | Yes | Jumper     | Positive |    Yes     |    Yes      |    No      |   SMD C&K  |
 |RCBUS40| RT2CUPSSSC |   Yes   |  TTL        |   2     | Yes | Jumper     | Positive |    Yes     |    Yes      |    Yes     |   SMD C&K  |
+|RCBUS40| RT2CUPSSSD |   Yes   |  TTL        |   2     | Yes | Jumper     | Positive |    Yes     |    Yes      |    Yes     |    Dual    |
+|RCBUS40| RT2CUPSSSO |   Yes   |  TTL        |   2     | Yes | Jumper     | Positive |    Yes     |    Yes      |    Yes     |    Omron   |
 |RCBUS40| RT2CUNFFFC |   Yes   |  TTL        |   2     | Yes | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
 |RCBUS40| RS4NPPFFFC |   Yes   |  Squires    |   4     | No  | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
 |RCBUS40| RS4NPNFFFC |   Yes   |  Squires    |   4     | No  | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
@@ -130,6 +138,7 @@ Note: Omron and Dual button variants are still to be added
 |RCBUS40| RS4CUPSFFC |   Yes   |  Squires    |   4     | Yes | Jumper     | Positive |    Yes     |    No       |    No      |   SMD C&K  |
 |RCBUS40| RS4CUPSSFC |   Yes   |  Squires    |   4     | Yes | Jumper     | Positive |    Yes     |    Yes      |    No      |   SMD C&K  |
 |RCBUS40| RS4CUPSSSC |   Yes   |  Squires    |   4     | Yes | Jumper     | Positive |    Yes     |    Yes      |    Yes     |   SMD C&K  |
+|RCBUS40| RS4CUPSSSD |   Yes   |  Squires    |   4     | Yes | Jumper     | Positive |    Yes     |    Yes      |    Yes     |    Dual    |
 |RCBUS40| RS4CUNFFFC |   Yes   |  Squires    |   4     | Yes | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
 |RCBUS40| RT4NPPFFFC |   Yes   |  TTL        |   4     | No  | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
 |RCBUS40| RT4NPNFFFC |   Yes   |  TTL        |   4     | No  | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
@@ -141,6 +150,7 @@ Note: Omron and Dual button variants are still to be added
 |RCBUS40| RT4CUPSFFC |   Yes   |  TTL        |   4     | Yes | Jumper     | Positive |    Yes     |    No       |    No      |   SMD C&K  |
 |RCBUS40| RT4CUPSSFC |   Yes   |  TTL        |   4     | Yes | Jumper     | Positive |    Yes     |    Yes      |    No      |   SMD C&K  |
 |RCBUS40| RT4CUPSSSC |   Yes   |  TTL        |   4     | Yes | Jumper     | Positive |    Yes     |    Yes      |    Yes     |   SMD C&K  |
+|RCBUS40| RT4CUPSSSD |   Yes   |  TTL        |   4     | Yes | Jumper     | Positive |    Yes     |    Yes      |    Yes     |    Dual    |
 |RCBUS40| RT4CUNFFFC |   Yes   |  TTL        |   4     | Yes | Jumper     | Negative |    No      |    No       |    No      |   SMD C&K  |
 |       |            |         |             |         |     |            |          |            |             |            |            |
 |RCBUS80| RS2NPPFFFC |   Yes   |  Squires    |   2     | No  | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
@@ -154,6 +164,7 @@ Note: Omron and Dual button variants are still to be added
 |RCBUS80| RS2CUNSFFC |   Yes   |  Squires    |   2     | Yes | Jumper     | Negative |    Yes     |    No       |    No      |   SMD C&K  |
 |RCBUS80| RS2CUNSSFC |   Yes   |  Squires    |   2     | Yes | Jumper     | Negative |    Yes     |    Yes      |    No      |   SMD C&K  |
 |RCBUS80| RS2CUNSSSC |   Yes   |  Squires    |   2     | Yes | Jumper     | Negative |    Yes     |    Yes      |    Yes     |   SMD C&K  |
+|RCBUS80| RS2CUNSSSD |   Yes   |  Squires    |   2     | Yes | Jumper     | Negative |    Yes     |    Yes      |    Yes     |    Dual    |
 |RCBUS80| RT2NPPFFFC |   Yes   |  TTL        |   2     | No  | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
 |RCBUS80| RT2NPNFFFC |   Yes   |  TTL        |   2     | No  | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
 |RCBUS80| RT2NUPFFFC |   Yes   |  TTL        |   2     | No  | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
@@ -165,6 +176,7 @@ Note: Omron and Dual button variants are still to be added
 |RCBUS80| RT2CUNSFFC |   Yes   |  TTL        |   2     | Yes | Jumper     | Negative |    Yes     |    No       |    No      |   SMD C&K  |
 |RCBUS80| RT2CUNSSFC |   Yes   |  TTL        |   2     | Yes | Jumper     | Negative |    Yes     |    Yes      |    No      |   SMD C&K  |
 |RCBUS80| RT2CUNSSSC |   Yes   |  TTL        |   2     | Yes | Jumper     | Negative |    Yes     |    Yes      |    Yes     |   SMD C&K  |
+|RCBUS80| RT2CUNSSSD |   Yes   |  TTL        |   2     | Yes | Jumper     | Negative |    Yes     |    Yes      |    Yes     |    Dual    |
 |RCBUS80| RS4NPPFFFC |   Yes   |  Squires    |   4     | No  | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
 |RCBUS80| RS4NPNFFFC |   Yes   |  Squires    |   4     | No  | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
 |RCBUS80| RS4NUPFFFC |   Yes   |  Squires    |   4     | No  | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
@@ -176,6 +188,7 @@ Note: Omron and Dual button variants are still to be added
 |RCBUS80| RS4CUNSFFC |   Yes   |  Squires    |   4     | Yes | Jumper     | Negative |    Yes     |    No       |    No      |   SMD C&K  |
 |RCBUS80| RS4CUNSSFC |   Yes   |  Squires    |   4     | Yes | Jumper     | Negative |    Yes     |    Yes      |    No      |   SMD C&K  |
 |RCBUS80| RS4CUNSSSC |   Yes   |  Squires    |   4     | Yes | Jumper     | Negative |    Yes     |    Yes      |    Yes     |   SMD C&K  |
+|RCBUS80| RS4CUNSSSD |   Yes   |  Squires    |   4     | Yes | Jumper     | Negative |    Yes     |    Yes      |    Yes     |    Dual    |
 |RCBUS80| RT4NPPFFFC |   Yes   |  TTL        |   4     | No  | Fixed      | Positive |    No      |    No       |    No      |   SMD C&K  |
 |RCBUS80| RT4NPNFFFC |   Yes   |  TTL        |   4     | No  | Fixed      | Negative |    No      |    No       |    No      |   SMD C&K  |
 |RCBUS80| RT4NUPFFFC |   Yes   |  TTL        |   4     | No  | Jumper     | Positive |    No      |    No       |    No      |   SMD C&K  |
@@ -187,6 +200,8 @@ Note: Omron and Dual button variants are still to be added
 |RCBUS80| RT4CUNSFFC |   Yes   |  TTL        |   4     | Yes | Jumper     | Negative |    Yes     |    No       |    No      |   SMD C&K  |
 |RCBUS80| RT4CUNSSFC |   Yes   |  TTL        |   4     | Yes | Jumper     | Negative |    Yes     |    Yes      |    No      |   SMD C&K  |
 |RCBUS80| RT4CUNSSSC |   Yes   |  TTL        |   4     | Yes | Jumper     | Negative |    Yes     |    Yes      |    Yes     |   SMD C&K  |
+|RCBUS80| RT4CUNSSSD |   Yes   |  TTL        |   4     | Yes | Jumper     | Negative |    Yes     |    Yes      |    Yes     |    Dual    |
+|RCBUS80| RT4CUNSSSO |   Yes   |  TTL        |   4     | Yes | Jumper     | Negative |    Yes     |    Yes      |    Yes     |    Omron   |
 |       |            |         |             |         |     |            |          |            |             |            |            |
 
 
