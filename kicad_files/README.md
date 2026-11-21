@@ -6,18 +6,21 @@ Status: Electrically the boards seem to be sound. Silkscreen needs finalising.
 
 Blocking and remaining issues to fix:
 
- - Update feature table/matrix with C/D/O switches variant
+ - Update feature table/matrix with C/D/O switches variant         - **DONE**
+ - Add the D/O switch variants to feature table/matrix
  - Update website front page
    - include matrix
    - explain boards
    - explain variants
    - archive the "wordy design voyage of discovery" that was the previous front page
  - Add "C" to all existing variant names, for the C&K SMD switch:
-   - folders
-   - pcb sheet
-   - schematic sheets
+   - folders                 - **DONE**
+   - pcb sheet               - **DONE**
+   - schematic sheets        - **DONE**
    - silkscreen
- - Add "alpha" to all boards names and silkscreens until confirmed working
+ - Add "alpha" (until confirmed working) to:
+   -  all boards names and;  - **DONE**
+   -  silkscreens 
  - Finalise silkscreen
  - Apply silkscreen
  - Check discrete component sizes vis-a-vis the footprints, for resistors, capacitors (both ceramic and electrolytic)
