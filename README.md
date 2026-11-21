@@ -608,7 +608,7 @@ A PRO version with the improvements:
  - SMD pre-mounted bypass 1 µF capacitors
  - bypass capacitor's IDs match their IC's ID (i.e. C5 -> U5)   
  - TTL pin order
- - CTS? <---- THIS!!!
+ - CTS? <---- THIS!!! [Edit - the base boards now offer this as a variant]
  - Closer XTAL to UART
  - CPU XTAL not on edge of board
  - Also re-annotates components 
@@ -624,7 +624,7 @@ A PRO version with the improvements:
    - Banking
    - Can disable RAM and ROM, if not 512kB and need external board
      - Add jumper to disable RAM, to VCC on CE
-     - ROM is already jumpered, up with the two three pin jumpers. add a new jumper.
+     - ROM is already jumpered, up with the two three-pin jumpers. add a new jumper.
    - 7408 AND for NMI?
    - 512 kB RAM
    - 512 kB FLASH
