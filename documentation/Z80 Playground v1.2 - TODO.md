@@ -385,8 +385,8 @@
    - Probably, see [28c256?](https://github.com/piersfinlayson/one-rom/discussions/168)
    - Removes requirement for TL866 or equivalent EPROM programmer
  - Ensure Squires NPPFFF is silkscreen perfect (components etc.)
- - Make version with OMRON buttons
-   - Add OMROM to all boards at the same time.
+ - Make version/variant with OMRON buttons
+   - Add OMRON to all boards at the same time.
    - 12 x 7.3 mm
    - `Button_Switch_THT:SW_PUSH-12mm`
      - huge! and pins seem too close together
