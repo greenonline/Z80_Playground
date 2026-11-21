@@ -7,9 +7,9 @@ Status: Electrically the boards seem to be sound. Silkscreen needs finalising.
 Blocking and remaining issues to fix:
 
  - <strike>Update feature table with C/D/O switches variant</strike>  - **DONE**
- - Add the D/O switch variants to feature table
+ - Add the D/O switch variants to feature table  - **DONE**
  - <strike>Tidy the PCB candidates table</strike>  - **DONE**
- - Add the D/O switch variants to PCB candidates table
+ - Add the D/O switch variants to PCB candidates table  - **DONE**
  - Update website front page
    - include matrix
    - explain boards
